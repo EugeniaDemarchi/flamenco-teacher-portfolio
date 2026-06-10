@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "ostrichSans";
+  src: url("./FONTS/ostrich-regular.ttf") format("truetype");
+}
+
+.root {
+  /*COLOR*/
+  /*Black: #000000
+Rosy Brown: #b68b89
+Worn Silver: #d1bebb
+Hot Flamingo: #a85565
+Velvet Wine: #9a3f55
+Planet of the Apes: #8b2f45
+Black Metal: #050505
+Carbon Fiber: #2f2f2f*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ostrichSans";
+  letter-spacing: 3px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
