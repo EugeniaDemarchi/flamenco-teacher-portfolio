@@ -1,0 +1,63 @@
+.bio-container {
+}
+.bio-section {
+}
+.bio-img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 4/3;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+.bio-img-wrapper {
+  position: relative;
+}
+.bio-img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-candlelight-peach);
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+}
+.bio-img-wrapper--maestros::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: color-burn;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.bio-img--docencia {
+  mask-image: linear-gradient(to top, black 70%, transparent 100%);
+}
+.bio-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  line-height: var(--line-height-general-text);
+  font-size: clamp(1rem, 0.875rem + 1vw, 1.125rem);
+  padding: 3rem 2rem;
+  text-align: justify;
+}
+.bio-img.bio-img--maestros {
+  aspect-ratio: 3/4;
+  object-position: top center;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  color: white;
+  opacity: 0;
+  transform: translateY(calc(100% + 2rem));
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+#scrollTopBtn.active {
+  opacity: 1;
+  transform: translateY(0);
+}

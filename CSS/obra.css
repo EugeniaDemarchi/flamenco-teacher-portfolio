@@ -1,0 +1,48 @@
+.titulo_seccion_obras {
+  text-align: center;
+  padding: 4rem 6rem;
+}
+.obras__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.obras__portada {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.obras__portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.obras__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 8/5;
+}
+.obras__titulo {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1002;
+}
+.obras__flecha {
+  position: absolute;
+  color: white;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+  z-index: 1002;
+  font-size: clamp(1rem, 2vh, 4rem);
+}

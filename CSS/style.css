@@ -3,16 +3,42 @@
   src: url("./FONTS/ostrich-regular.ttf") format("truetype");
 }
 
-.root {
-  /*COLOR*/
-  /*Black: #000000
-Rosy Brown: #b68b89
-Worn Silver: #d1bebb
-Hot Flamingo: #a85565
-Velvet Wine: #9a3f55
-Planet of the Apes: #8b2f45
-Black Metal: #050505
-Carbon Fiber: #2f2f2f*/
+@font-face {
+  font-family: "ostrichSansBold";
+  src: url("./FONTS/OstrichSans-Black.otf") format("truetype");
+}
+
+:root {
+  /* === COLOR PALETTE === */
+  --color-black: #000000;
+  --color-rosy-brown: #b68b89;
+  --color-worn-silver: #d1bebb;
+  --color-hot-flamingo: #a85565;
+  --color-velvet-wine: #9a3f55;
+  --color-planet-of-the-apes: #8b2f45;
+  --color-black-metal: #050505;
+  --color-carbon-fiber: #2f2f2f;
+  --color-candlelight-peach: #ffe6ce;
+
+  /* Variante en RGB de Black Metal, para usar con rgba() y controlar opacidad */
+  --color-black-metal-rgb: 5, 5, 5;
+
+  /* === TRANSITIONS === */
+  --transition-base: 0.3s ease-in-out; /* hovers, micro-interacciones */
+  --transition-slow: 700ms ease; /* movimientos grandes: menu slide-in/out */
+
+  /* === FONT-FAMILY===*/
+  --font-family-h1: "ostrichSansBold"; /*font-family para titulos MUY 
+  importantes*/
+  --font-family-h2: "ostrichSans";
+
+  /*typography: LINE-HIGHT*/
+  --line-height-general-text: 1.8rem;
+
+  /* === TYPE SCALE (clamp: min, preferred, max) === */
+  --font-size-h1: clamp(2rem, 4vh, 8rem); /* título principal del nav */
+  --font-size-icon: clamp(1.6rem, 4vw, 2.5rem); /* iconos hamburguesa/cierre */
+  --font-size-menu-link: clamp(1rem, 3vh, 6rem); /* links del menú mobile */
 }
 
 * {
@@ -22,9 +48,26 @@ Carbon Fiber: #2f2f2f*/
   font-family: "ostrichSans";
   letter-spacing: 3px;
 }
-
+body {
+  background-color: #050505;
+}
 button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+  font-family: var(--font-family-h2);
+}
+p {
+  color: white;
 }

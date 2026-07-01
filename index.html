@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Natalia Riopedre-HOME</title>
     <link rel="stylesheet" href="./CSS/layout.css" />
     <link rel="stylesheet" href="./CSS/index.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
@@ -11,13 +11,22 @@
   <body>
     <div id="nav-container"></div>
     <section class="hero">
-      <div class="hero__video-wrapper">
-        <iframe
-          src="https://player.vimeo.com/video/1199402157?autoplay=1&muted=1&loop=1&background=1"
-          frameborder="0"
-          allow="autoplay; fullscreen"
-        ></iframe>
-      </div>
+      <picture>
+        <source
+          srcset="
+            ASSETS/IMAGES/hero_small.webp     768w,
+            ASSETS/IMAGES/hero_large_hq.webp 1920w
+          "
+          sizes="100vw"
+          type="image/webp"
+        />
+        <img
+          src="./ASSETS/IMAGES/hero_small.webp"
+          class="hero-img"
+          alt="Natalia Riopedre"
+          loading="eager"
+        />
+      </picture>
     </section>
     <div id="footer-container"></div>
     <script
@@ -28,6 +37,7 @@
       nomodule
       src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
     ></script>
-    <script src="./JS/main.js"></script>
+
+    <script src="./JS/dist/main.js" type="module"></script>
   </body>
 </html>
