@@ -49,7 +49,7 @@
   letter-spacing: 3px;
 }
 body {
-  background-color: #050505;
+  background-color: var(--color-black);
 }
 button {
   background: none;
@@ -70,4 +70,21 @@ h2 {
 }
 p {
   color: white;
+}
+
+@keyframes deslizar-desde-derecha {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.titulo_seccion {
+  text-align: center;
+  padding: 4rem;
+  animation: deslizar-desde-derecha 0.9s ease-in-out;
 }

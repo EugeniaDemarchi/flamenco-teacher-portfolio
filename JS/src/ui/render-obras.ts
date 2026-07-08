@@ -9,7 +9,7 @@ export function renderObras(obras: Obra[]) {
   obras.forEach((obra) => {
     const caja = document.createElement("a");
     caja.classList.add("obras__portada");
-    caja.href = `obras/obra-detail.html?slug=${obra.slugObra}`;
+    caja.href = `obra-detalle.html?slug=${obra.slugObra}`;
 
     const img = document.createElement("img");
     img.classList.add("obras__img");

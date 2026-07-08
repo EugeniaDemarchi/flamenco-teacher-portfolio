@@ -1,0 +1,58 @@
+body {
+  color: white;
+}
+#obra-detalle__container {
+}
+.obra-detalle__img-ppal {
+  display: block;
+  width: 100%;
+}
+.obra-detalle__grid {
+  display: grid;
+  align-items: center;
+  padding: 2rem;
+}
+.obra-detalle__titulo {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: clamp(1.5rem, 2vh, 5rem);
+}
+.obra-detalle__descripcion-corta,
+.obra-detalle__descripcion-larga,
+.obra-detalle__rol {
+  font-family: "Inter", sans-serif;
+  line-height: var(--line-height-general-text);
+}
+.obra-detalle__rol {
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: end;
+  padding-bottom: 0.5rem;
+}
+.obra-detalle__descripcion-corta {
+  font-size: clamp(0.8rem + 1vw, 1.5rem);
+  text-align: end;
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+.obra-detalle__galeria {
+  display: grid;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+.obra-detalle__galeria img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.obra-detalle__descripcion-larga {
+  font-size: clamp(0.875rem, 1vw, 1.125rem);
+  text-align: justify;
+  padding-bottom: 2rem;
+}
+.obra-detalle__video {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}

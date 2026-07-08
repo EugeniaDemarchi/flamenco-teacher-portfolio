@@ -1,0 +1,60 @@
+.shows__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1rem;
+}
+.shows__card {
+  border: solid 2px;
+  padding: 1rem;
+  border-color: var(--color-worn-silver);
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: 1rem;
+  background-color: var(--color-candlelight-peach);
+}
+.shows__titulo {
+  color: var(--color-carbon-fiber);
+  text-align: center;
+}
+.shows__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.shows__descCorta {
+  color: var(--color-carbon-fiber);
+  text-align: justify;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem + 1vw, 1.125rem);
+}
+.shows__artistas {
+  text-decoration: none;
+}
+.shows__artistas-li {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem + 1vw, 1.125rem);
+}
+.shows__fecha,
+.shows__dia,
+.shows__horario {
+  color: var(--color-carbon-fiber);
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem + 1vw, 1.125rem);
+  text-align: end;
+  background-color: aliceblue;
+}
+.shows__contacto {
+}
+.shows__espacio,
+.shows__tel,
+.shows__link,
+.shows__ubicacion {
+  color: var(--color-carbon-fiber);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem + 1vw, 1.125rem);
+}
+.shows__obraRelacionada {
+  text-decoration: underline;
+}

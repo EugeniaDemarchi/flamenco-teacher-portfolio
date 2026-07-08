@@ -1,7 +1,3 @@
-.titulo_seccion_obras {
-  text-align: center;
-  padding: 4rem 6rem;
-}
 .obras__grid {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,35 @@
+/*scroll-top-btn*/
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  color: white;
+  opacity: 0;
+  transform: translateY(calc(100% + 2rem));
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease-in-out;
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
+}
+#scrollTopBtn.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#scrollTopBtn:hover {
+  transform: scale(1.15);
+  color: var(--color-candlelight-peach);
+}
+
+/*mas info btn*/
+.mas-info-btn {
+  color: white;
+  border: solid 2px white;
+  width: 8rem;
+}
+.parrafo {
+  display: none;
+}
+.show {
+  display: block;
+}
