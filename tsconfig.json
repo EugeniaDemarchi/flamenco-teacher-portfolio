@@ -23,6 +23,5 @@
 
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "include": ["JS/src/**/*.ts"]
+  }
 }

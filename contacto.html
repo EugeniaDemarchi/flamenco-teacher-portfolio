@@ -6,6 +6,7 @@
     <title>CONTACTO</title>
     <link rel="stylesheet" href="./CSS/layout.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/contacto.css" />
     <link rel="stylesheet" href="./CSS/scroll-to-top.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +17,55 @@
   </head>
   <body>
     <div id="nav-container"></div>
-
+    <h2 class="titulo_seccion">CONTACTO</h2>
+    <section class="contacto__grid">
+      <div>
+        <img
+          src="/ASSETS/IMAGES/clases/tientos.jpg"
+          alt=""
+          class="contacto__img"
+        />
+      </div>
+      <form
+        action="/procesar-datos"
+        method="POST"
+        id="form"
+        class="contacto__form"
+      >
+        <div class="contacto__campo">
+          <label for="nombre" class="visually-hidden">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+        <div class="contacto__campo">
+          <label for="mail" class="visually-hidden">Email:</label>
+          <input
+            type="text"
+            id="mail"
+            name="mail"
+            placeholder="Mail"
+            required
+          />
+        </div>
+        <div class="contacto__campo">
+          <label for="mensaje" class="visually-hidden">Mensaje:</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="5"
+            cols="40"
+            placeholder="Mensaje:"
+            required
+          ></textarea>
+        </div>
+        <button class="contacto__btn" type="submit">Enviar</button>
+      </form>
+    </section>
     <div id="footer-container"></div>
     <script
       type="module"
@@ -26,7 +75,7 @@
       nomodule
       src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
     ></script>
+    <script src="./JS/dist/contacto.js" type="module"></script>
     <script src="./JS/dist/main.js" type="module"></script>
   </body>
 </html>
->

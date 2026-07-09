@@ -1,0 +1,50 @@
+.contacto__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "imagen"
+    "form";
+  gap: 1rem;
+  margin: 2rem;
+  background-color: #fce4dc;
+}
+.contacto__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  grid-area: imagen;
+}
+.contacto__form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.contacto__campo input,
+.contacto__campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.2rem;
+}
+.contacto__campo input:focus,
+.contacto__campo textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-planet-of-the-apes);
+}
+.contacto__btn {
+  background-color: #000000;
+  color: white;
+  align-self: flex-start;
+  padding: 0.8rem;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
