@@ -14,49 +14,56 @@ export function renderShows(showsEnCartel) {
         imgShow.src = show.imagen;
         imgShow.alt = show.titulo;
         caja.appendChild(imgShow);
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("shows__info");
         const descCorta = document.createElement("p");
         descCorta.classList.add("shows__descCorta");
         if (show.descripcionCorta) {
             descCorta.textContent = show.descripcionCorta;
-            caja.appendChild(descCorta);
+            infoContainer.appendChild(descCorta);
         }
-        const categoriaShow = document.createElement("h3");
-        categoriaShow.textContent = show.categoria;
         if (show.categoria === "Espectáculo" && show.obraRelacionada) {
             const obraRelacionada = document.createElement("a");
             obraRelacionada.classList.add("shows__obraRelacionada");
             obraRelacionada.href = `obra-detalle.html?slug=${show.obraRelacionada}`;
             obraRelacionada.textContent = show.titulo;
-            caja.appendChild(obraRelacionada);
+            infoContainer.appendChild(obraRelacionada);
         }
-        caja.appendChild(categoriaShow);
-        const artistas = document.createElement("ul");
+        const artistas = document.createElement("div");
         artistas.classList.add("shows__artistas");
         show.artistas.forEach((artista) => {
-            const li = document.createElement("li");
-            li.textContent = `${artista.rol}: ${artista.nombre}`;
-            li.classList.add("shows__artistas-li");
-            artistas.appendChild(li);
+            const datosArtista = document.createElement("div");
+            datosArtista.classList.add("shows__datosArtista");
+            const rol = document.createElement("h3");
+            rol.textContent = artista.rol;
+            const nombre = document.createElement("p");
+            nombre.textContent = artista.nombre;
+            datosArtista.appendChild(rol);
+            datosArtista.appendChild(nombre);
+            artistas.appendChild(datosArtista);
         });
-        caja.appendChild(artistas);
-        /*     const temporalidad = document.createElement("p"); */
+        infoContainer.appendChild(artistas);
+        const funcionContainer = document.createElement("div");
+        funcionContainer.classList.add("shows__funcionDatos");
         if (show.tipo === "puntual") {
             const fechaShow = document.createElement("p");
             fechaShow.textContent = show.fecha;
             fechaShow.classList.add("shows__fecha");
-            caja.appendChild(fechaShow);
+            funcionContainer.appendChild(fechaShow);
+            infoContainer.appendChild(funcionContainer);
         }
         else {
             const diaSemana = document.createElement("p");
-            diaSemana.textContent = `Día: ${show.diaSemana}`;
+            diaSemana.textContent = `Días: ${show.diaSemana}`;
             diaSemana.classList.add("shows__dia");
-            caja.appendChild(diaSemana);
+            funcionContainer.appendChild(diaSemana);
+            infoContainer.appendChild(funcionContainer);
         }
         const horarioShow = document.createElement("p");
         horarioShow.textContent = `Horario: ${show.horario}`;
         horarioShow.classList.add("shows__horario");
-        caja.appendChild(horarioShow);
-        /*  caja.appendChild(temporalidad); */
+        funcionContainer.appendChild(horarioShow);
+        infoContainer.appendChild(funcionContainer);
         const contacto = document.createElement("ul");
         contacto.classList.add("shows__contacto");
         if (show.contacto.link) {
@@ -67,12 +74,14 @@ export function renderShows(showsEnCartel) {
             link.rel = "noopener noreferrer";
             link.textContent = show.contacto.espacio;
             contacto.appendChild(link);
+            infoContainer.appendChild(contacto);
         }
         if (show.contacto.telefono) {
             const telefono = document.createElement("p");
             telefono.textContent = show.contacto.telefono;
             telefono.classList.add("shows__tel");
             contacto.appendChild(telefono);
+            infoContainer.appendChild(contacto);
         }
         const ubicacion = document.createElement("a");
         ubicacion.textContent = `${show.contacto.ubicacion.direccion}, ${show.contacto.ubicacion.barrio}`;
@@ -82,15 +91,16 @@ export function renderShows(showsEnCartel) {
             ubicacion.target = "_blank";
             ubicacion.rel = "noopener noreferrer";
             contacto.appendChild(ubicacion);
+            infoContainer.appendChild(contacto);
         }
+        infoContainer.appendChild(contacto);
         const localidades = document.createElement("p");
         if (show.localidadesAgotadas === true) {
             localidades.textContent = "Localidades agotadas";
             localidades.classList.add("shows__localidadesAgotadas");
-            caja.appendChild(localidades);
+            infoContainer.appendChild(localidades);
         }
-        caja.appendChild(contacto);
-        caja.appendChild(ubicacion);
+        caja.appendChild(infoContainer);
         containerShows.appendChild(caja);
     });
 }

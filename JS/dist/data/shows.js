@@ -5,7 +5,7 @@ export const showsEnCartel = [
         diaSemana: "jueves",
         horario: "21 hs",
         imagen: "/ASSETS/IMAGES/shows/paquito.PNG",
-        titulo: "Tablao de Paquito",
+        titulo: "Juerga flamenca",
         descripcionCorta: "Cada jueves esta esquina se convierte en un portal al país del tapeo, con nuestra juerga flamenca. Música que ambienta la noche y nos pone a gozar entre copas, amigos y sabores fuera de lo común.",
         contacto: {
             espacio: "Paquito bar",
@@ -13,7 +13,7 @@ export const showsEnCartel = [
             link: "https://www.instagram.com/xpaquitobarx/",
             ubicacion: {
                 direccion: "Thames 1999",
-                mapsUrl: "https://www.google.com/maps/place/Paquito+bar/@-34.5855847,-58.4295765,17z/data=!4m15!1m8!3m7!1s0x95bcb585df705d2d:0x88f695d68f554ac2!2sThames+1999,+C1414DDM+Cdad.+Aut%C3%B3noma+de+Buenos+Aires!3b1!8m2!3d-34.5855847!4d-58.4270016!16s%2Fg%2F11c4vl91s4!3m5!1s0x95bcb54f9d113aa9:0x7641386f65ef36c3!8m2!3d-34.5855844!4d-58.4270015!16s%2Fg%2F11p60kphrc?entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D",
+                mapsUrl: "https://www.google.com/maps/place/Paquito+bar/@-34.5855844,-58.4295764,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb54f9d113aa9:0x7641386f65ef36c3!8m2!3d-34.5855844!4d-58.4270015!16s%2Fg%2F11p60kphrc?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D",
                 barrio: "Palermo",
             },
         },
@@ -21,15 +21,15 @@ export const showsEnCartel = [
         artistas: [
             {
                 nombre: "Natalia Riopedre",
-                rol: "bailarina",
+                rol: "Bailarina",
             },
             {
                 nombre: "Pedro Gutierrez",
-                rol: "guitarra",
+                rol: "Guitarra",
             },
             {
                 nombre: "Pedro Gutierrez",
-                rol: "cante",
+                rol: "Cante",
             },
         ],
     },
@@ -52,15 +52,15 @@ export const showsEnCartel = [
                 barrio: "Palermo",
             },
         },
-        localidadesAgotadas: false,
+        localidadesAgotadas: true,
         artistas: [
             {
                 nombre: "Sil Cerri",
-                rol: "bailarina",
+                rol: "Bailarina",
             },
             {
                 nombre: "Pedro Gutierrez",
-                rol: "guitarra",
+                rol: "Guitarra",
             },
         ],
     },
