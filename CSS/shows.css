@@ -1,79 +1,142 @@
 .shows__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
   margin: 2rem;
 }
+.titulo_seccion {
+  background-color: white;
+  color: black;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.993),
+    0 0 10px rgba(255, 255, 255, 0.918);
+}
 .shows__card {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "titulo"
-    "imagen"
-    "info";
   width: auto;
-  padding: 1rem;
-  gap: 1.3rem;
-  background-color: var(--color-candlelight-peach);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.shows__imgWrapper {
+  position: relative;
 }
 .shows__titulo {
-  color: var(--color-carbon-fiber);
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  padding: 0.8rem;
+  margin: 0;
   text-align: center;
-  grid-area: titulo;
 }
+
+.shows__funcionDatos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: white;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  border-radius: 0;
+}
+
 .shows__img {
   width: 100%;
   height: auto;
-  display: block;
-  grid-area: imagen;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /*   display: block; */
+  object-fit: cover;
+  min-height: 30rem;
 }
-
 .shows__info {
-  grid-area: info;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
+
 .shows__descCorta {
   color: var(--color-carbon-fiber);
   text-align: justify;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+  color: white;
+}
+.shows__obraRelacionada {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  transition: color 0.3s ease-in-out;
+  text-decoration: underline;
+  color: var(--color-worn-silver);
+}
+.shows__obraRelacionada:hover {
+  color: var(--color-candlelight-peach);
+}
+.shows__obraRelacionada:active {
+  color: var(--color-candlelight-peach);
 }
 .shows__artistas {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  color: white;
 }
 .shows__datosArtista {
   display: flex;
   flex-direction: row;
   justify-content: start;
   gap: 0.8rem;
-  color: var(--color-carbon-fiber);
+  color: white;
 }
 .shows__datosArtista p {
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
-  color: var(--color-planet-of-the-apes);
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+  color: white;
 }
-.shows__datosArtista h3 {
+/* .shows__datosArtista h4 {
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: white;
+} */
+.shows__funcionDatos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: white;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  border-radius: 0;
 }
+
 .shows__funcionDatos {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   border-radius: 4px;
-  background-color: #ffedde;
+  color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   padding: 1rem;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
 }
-.shows__fecha {
+*/ .shows__fecha {
 }
 
 .shows__dia {
@@ -83,10 +146,10 @@
 .shows__fecha,
 .shows__dia,
 .shows__horario {
-  color: var(--color-carbon-fiber);
+  color: white;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   text-align: end;
 }
 .shows__contacto {
@@ -94,20 +157,41 @@
   flex-direction: column;
   gap: 0.5rem;
   text-align: end;
+  color: white;
 }
 .shows__espacio,
 .shows__tel,
 .shows__link,
 .shows__ubicacion {
-  color: var(--color-carbon-fiber);
+  color: white;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
-.shows__obraRelacionada {
-  text-decoration: underline;
-}
+
 .shows__localidadesAgotadas {
   color: red;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .shows__card {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shows__card {
+    flex-direction: column;
+  }
+  .shows__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shows__grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

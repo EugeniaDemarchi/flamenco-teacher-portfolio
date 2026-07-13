@@ -10,7 +10,7 @@
   transition:
     opacity 0.3s ease,
     transform 0.3s ease-in-out;
-  font-size: clamp(1.2rem, 1vw, 1.5rem);
+  font-size: clamp(1.8rem, 1vw, 2rem);
 }
 #scrollTopBtn.active {
   opacity: 1;

@@ -49,21 +49,28 @@ export function renderClases(clases: Clase[]) {
     const clasesDiv = document.createElement("div");
     clasesDiv.classList.add("clases__div");
 
-    const imgClase = document.createElement("img") as HTMLImageElement;
-    imgClase.src = clase.imagenClase;
-    imgClase.alt = clase.titulo;
-    imgClase.classList.add("clases__img");
-
-    const clasesInfoDiv = document.createElement("div");
-    clasesInfoDiv.classList.add("clases__infoDiv");
+    const imgWrapper = document.createElement("div");
+    imgWrapper.classList.add("clases__imgWrapper");
 
     const titulo = document.createElement("h2") as HTMLParagraphElement;
     titulo.textContent = clase.titulo;
     titulo.classList.add("clases__titulo");
 
+    const imgClase = document.createElement("img") as HTMLImageElement;
+    imgClase.src = clase.imagenClase;
+    imgClase.alt = clase.titulo;
+    imgClase.classList.add("clases__img");
+
     const nivel = document.createElement("h3") as HTMLParagraphElement;
-    nivel.textContent = clase.nivelClase;
+    nivel.textContent = `Nivel: ${clase.nivelClase}`;
     nivel.classList.add("clases__nivel");
+
+    imgWrapper.appendChild(imgClase);
+    imgWrapper.appendChild(titulo);
+    imgWrapper.appendChild(nivel);
+
+    const clasesInfoDiv = document.createElement("div");
+    clasesInfoDiv.classList.add("clases__infoDiv");
 
     const horarios = document.createElement("ul");
     horarios.classList.add("clases__horarios");
@@ -74,9 +81,8 @@ export function renderClases(clases: Clase[]) {
       horarios.appendChild(li);
     });
 
-    clasesDiv.appendChild(imgClase);
-    clasesInfoDiv.appendChild(titulo);
-    clasesInfoDiv.appendChild(nivel);
+    clasesDiv.appendChild(imgWrapper);
+
     clasesInfoDiv.appendChild(horarios);
 
     const descCorta = document.createElement("p") as HTMLParagraphElement;
@@ -96,7 +102,7 @@ export function renderClases(clases: Clase[]) {
 
     const ubicacion = document.createElement("a");
     ubicacion.classList.add("clases__ubicacion");
-    ubicacion.textContent = `${clase.ubicacion.direccion}, ${clase.ubicacion.barrio}`;
+    ubicacion.textContent = `📍${clase.ubicacion.direccion}, ${clase.ubicacion.barrio}`;
     if (clase.ubicacion.mapsUrl) {
       ubicacion.href = clase.ubicacion.mapsUrl;
       ubicacion.target = "_blank";

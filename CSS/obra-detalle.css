@@ -33,6 +33,11 @@ body {
   font-size: clamp(0.8rem + 1vw, 1.5rem);
   text-align: end;
   font-weight: 500;
+  padding-bottom: 1rem;
+}
+.obra-detalle__anio {
+  color: white;
+  text-align: end;
   padding-bottom: 2rem;
 }
 .obra-detalle__galeria {
@@ -52,7 +57,11 @@ body {
 }
 .obra-detalle__video {
   width: 100%;
+}
+.obra-detalle__video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
   height: auto;
-  display: flex;
-  justify-content: center;
+  display: block;
+  border: none;
 }

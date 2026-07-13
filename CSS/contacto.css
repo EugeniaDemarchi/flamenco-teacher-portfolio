@@ -3,17 +3,36 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     "imagen"
-    "form";
+    "form"
+    "exito";
   gap: 1rem;
   margin: 2rem;
-  background-color: #fce4dc;
+
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+.contacto__contenedor-img {
+  position: relative;
+  overflow: hidden;
+}
+.contacto__contenedor-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+
+  z-index: 1;
 }
 .contacto__img {
   width: 100%;
   height: auto;
   display: block;
   grid-area: imagen;
+  position: relative;
+  z-index: 2;
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
+
 .contacto__form {
   grid-area: form;
   display: flex;
@@ -21,23 +40,44 @@
   padding: 1rem;
   gap: 1rem;
 }
+.contacto__form.oculto {
+  display: none;
+}
 .contacto__campo input,
 .contacto__campo textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 0.5rem 0.2rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem + 1vw, 1.125rem);
 }
 .contacto__campo input:focus,
 .contacto__campo textarea:focus {
   outline: none;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-planet-of-the-apes);
+  border: 1px solid #dc0046;
 }
-.contacto__btn {
-  background-color: #000000;
+.contacto__btn,
+.contacto__btnReiniciar {
+  background-color: #dc0046;
   color: white;
   align-self: flex-start;
   padding: 0.8rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  font-weight: 700;
+}
+.contacto__btn:hover,
+.contacto__btnReiniciar:hover {
+  transform: scale(1.05);
+  background-color: #ff0755;
+}
+.contacto__btn:active,
+.contacto__btnReiniciar:active {
+  transform: scale(0.95);
+  background-color: #ff0755;
 }
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -47,4 +87,37 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+.contacto__exito {
+  grid-area: exito;
+  display: none;
+  line-height: 30px;
+  font-weight: 550;
+}
+.contacto__exito p {
+  font-size: clamp(1.2rem, 1vw, 1.7rem);
+}
+.contacto__exito.show {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.contacto__btnReiniciar {
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  /* Laptop */
+}
+
+@media (min-width: 1440px) {
+  /* Desktop */
 }

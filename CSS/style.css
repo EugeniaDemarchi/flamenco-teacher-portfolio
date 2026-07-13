@@ -11,8 +11,9 @@
 :root {
   /* === COLOR PALETTE === */
   --color-black: #000000;
-  --color-rosy-brown: #b68b89;
+  --color-rosy-brown: #b8807d;
   --color-worn-silver: #d1bebb;
+  --color-dreamy-barbie: #fce4dc;
   --color-hot-flamingo: #a85565;
   --color-velvet-wine: #9a3f55;
   --color-planet-of-the-apes: #8b2f45;
@@ -85,6 +86,7 @@ p {
 
 .titulo_seccion {
   text-align: center;
-  padding: 4rem;
+  font-size: clamp(1.5rem, 3vh, 6rem);
+  padding: 1.5rem;
   animation: deslizar-desde-derecha 0.9s ease-in-out;
 }

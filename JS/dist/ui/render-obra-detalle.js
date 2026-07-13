@@ -28,7 +28,7 @@ function initObraDetalle() {
     }
     renderObraDetalle(encontrado);
 }
-function mostrarError(mensaje) {
+export function mostrarError(mensaje) {
     const errorMsg = document.createElement("p");
     errorMsg.textContent = mensaje;
     document.body.appendChild(errorMsg);
@@ -51,6 +51,8 @@ export function renderObraDetalle(obra) {
     });
     const rol = document.querySelector(".obra-detalle__rol");
     rol.innerHTML = obra.rol;
+    const anio = document.querySelector(".obra-detalle__anio");
+    anio.textContent = String(obra.anio);
     const descripcionLarga = document.querySelector(".obra-detalle__descripcion-larga");
     if (obra.descripcionLarga) {
         descripcionLarga.textContent = obra.descripcionLarga;

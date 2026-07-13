@@ -1,15 +1,36 @@
-.titulo_seccion--bio {
-  padding-bottom: 0;
+.bio-hero {
+  width: 100%;
 }
-.bio-container {
+.bio-hero__imgWrapper {
+  position: relative;
 }
-.bio-section {
+.bio-hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3/4;
 }
-.bio-section::after {
-  /*VER: NO FUNCIONA*/
+.bio-hero__titulo {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+  font-size: clamp(1.5rem, 3vh, 6rem);
+  margin: 0;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+/* .bio-section::after {
+
   background: linear-gradient(to top, #050505, transparent);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+} */
+
+.bio-container {
 }
+
 .bio-img {
   width: 100%;
   object-fit: cover;
@@ -50,5 +71,18 @@
 }
 .bio-img.bio-img--maestros {
   aspect-ratio: 3/4;
-  object-position: top center;
+}
+
+@media (min-width: 768px) {
+  .bio-hero__titulo {
+    bottom: 10rem;
+    left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1440px) {
+  /* Desktop */
 }

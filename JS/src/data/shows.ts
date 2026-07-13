@@ -6,7 +6,7 @@ export const showsEnCartel: ShowsEnCartel[] = [
     tipo: "recurrente",
     diaSemana: "jueves",
     horario: "21 hs",
-    imagen: "/ASSETS/IMAGES/shows/paquito.PNG",
+    imagen: "/ASSETS/IMAGES/shows/paquito_1.jpg",
     titulo: "Juerga flamenca",
     descripcionCorta:
       "Cada jueves esta esquina se convierte en un portal al país del tapeo, con nuestra juerga flamenca. Música que ambienta la noche y nos pone a gozar entre copas, amigos y sabores fuera de lo común.",
@@ -50,7 +50,7 @@ export const showsEnCartel: ShowsEnCartel[] = [
 
     contacto: {
       espacio: "Teatro Hasta Trilce",
-      telefono: "0111556965636",
+      telefono: "11556965636",
       link: "https://paquitobar.meitre.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnU6fcG6Y_S1weyDVS5SPqM96myHuHzZfDgKaVCmX4stYxefU7N-ysrN1TdRw_aem_30zRazJFQ4hxUrSXEdyUbA",
       ubicacion: {
         direccion: "Thames 1999",

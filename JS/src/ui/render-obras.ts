@@ -6,7 +6,9 @@ const conatinerObras = document.querySelector(".obras__grid") as HTMLDivElement;
 export function renderObras(obras: Obra[]) {
   conatinerObras.innerHTML = "";
 
-  obras.forEach((obra) => {
+  const copiaObras = [...obras].sort((a, b) => b.anio - a.anio);
+
+  copiaObras.forEach((obra) => {
     const caja = document.createElement("a");
     caja.classList.add("obras__portada");
     caja.href = `obra-detalle.html?slug=${obra.slugObra}`;

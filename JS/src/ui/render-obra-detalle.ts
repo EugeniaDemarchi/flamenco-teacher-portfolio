@@ -37,7 +37,7 @@ function initObraDetalle() {
   renderObraDetalle(encontrado);
 }
 
-function mostrarError(mensaje: string) {
+export function mostrarError(mensaje: string) {
   const errorMsg = document.createElement("p");
   errorMsg.textContent = mensaje;
   document.body.appendChild(errorMsg);
@@ -75,6 +75,11 @@ export function renderObraDetalle(obra: Obra) {
     ".obra-detalle__rol",
   ) as HTMLParagraphElement;
   rol.innerHTML = obra.rol;
+
+  const anio = document.querySelector(
+    ".obra-detalle__anio",
+  ) as HTMLParagraphElement;
+  anio.textContent = String(obra.anio);
 
   const descripcionLarga = document.querySelector(
     ".obra-detalle__descripcion-larga",

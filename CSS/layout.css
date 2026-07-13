@@ -4,7 +4,7 @@
 } */
 
 h1 a {
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   font-family: var(--font-family-h1);
   font-size: clamp(2rem, 3vh, 8rem); /*VER: NO FUNCIONA*/
   color: white;
@@ -18,7 +18,13 @@ nav.nav--fixed {
   top: 0;
   left: 0;
   z-index: 1000;
-  color: white;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+nav.nav--fixed.nav--oculto {
+  opacity: 0;
+  visibility: hidden;
 }
 nav {
   display: flex;
@@ -27,6 +33,8 @@ nav {
   margin: 1rem;
   padding: 2rem 2rem 0rem 0rem;
   width: 100%;
+  color: white;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.6), transparent);
 }
 .hbg-btn--white {
   color: white;
@@ -129,5 +137,8 @@ footer {
   transition: var(--transition-base);
 }
 .chivo:hover {
+  color: var(--color-candlelight-peach);
+}
+.chivo:active {
   color: var(--color-candlelight-peach);
 }

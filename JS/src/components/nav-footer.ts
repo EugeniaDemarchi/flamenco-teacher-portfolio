@@ -1,3 +1,7 @@
+/* const tituloBio = document.querySelector(
+  ".titulo_seccion--bio",
+) as HTMLTitleElement; */
+
 export async function getComponent(
   id: string,
   filepath: string,
@@ -35,10 +39,22 @@ export async function getComponent(
 
     hbgBtn.addEventListener("click", toggleNavMenu);
 
-    if (window.location.pathname === "/index.html") {
+    if (
+      ["/index.html", "/bio.html", "/clases.html"].includes(
+        window.location.pathname,
+      )
+    ) {
       nav.classList.add("nav--fixed");
-      //  hbgBtn.classList.add("hbg-btn--white");
+      hbgBtn.classList.add("hbg-btn--white");
     }
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        nav.classList.add("nav--oculto");
+      } else {
+        nav.classList.remove("nav--oculto");
+      }
+    });
 
     closeBtn.addEventListener("click", () => {
       navMenu.classList.remove("open");
