@@ -1,6 +1,3 @@
-/* const tituloBio = document.querySelector(
-  ".titulo_seccion--bio",
-) as HTMLTitleElement; */
 export async function getComponent(id, filepath) {
     const response = await fetch(filepath);
     const html = await response.text();
@@ -9,12 +6,11 @@ export async function getComponent(id, filepath) {
         throw new Error(`No se encontro el elemento con id ${id}`);
     }
     container.innerHTML = html;
+    const nav = document.getElementById("nav-container");
     const hbgBtn = document.querySelector(".hbg-btn");
     const navMenu = document.querySelector(".nav-menu");
     const closeBtn = document.querySelector(".close-btn");
     const links = document.querySelectorAll(".menu-list a");
-    const nav = document.querySelector(".nav");
-    const footer = document.querySelector(".footer");
     if (id === "nav-container") {
         function toggleNavMenu() {
             const isOpening = !navMenu.classList.contains("open");
@@ -26,11 +22,6 @@ export async function getComponent(id, filepath) {
                 link.classList.add("active");
             }
         });
-        hbgBtn.addEventListener("click", toggleNavMenu);
-        if (["/index.html", "/bio.html", "/clases.html"].includes(window.location.pathname)) {
-            nav.classList.add("nav--fixed");
-            hbgBtn.classList.add("hbg-btn--white");
-        }
         window.addEventListener("scroll", () => {
             if (window.scrollY > 0) {
                 nav.classList.add("nav--oculto");
@@ -39,14 +30,10 @@ export async function getComponent(id, filepath) {
                 nav.classList.remove("nav--oculto");
             }
         });
+        hbgBtn.addEventListener("click", toggleNavMenu);
         closeBtn.addEventListener("click", () => {
             navMenu.classList.remove("open");
         });
-    }
-    if (id === "footer-container") {
-        if (window.location.pathname === "/index.html") {
-            footer.classList.add("footer--fixed");
-        }
     }
 }
 //# sourceMappingURL=nav-footer.js.map

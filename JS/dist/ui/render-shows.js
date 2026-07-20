@@ -4,10 +4,9 @@ const containerShows = document.querySelector(".shows__grid");
 showsEnCartel.forEach((show) => {
     const caja = document.createElement("div");
     caja.classList.add("shows__card");
-    // --- NUEVO: wrapper que contiene imagen + overlays ---
     const imgWrapper = document.createElement("div");
     imgWrapper.classList.add("shows__imgWrapper");
-    const tituloShow = document.createElement("h2");
+    const tituloShow = document.createElement("h3");
     tituloShow.textContent = show.titulo;
     tituloShow.classList.add("shows__titulo");
     imgWrapper.appendChild(tituloShow);
@@ -60,8 +59,9 @@ showsEnCartel.forEach((show) => {
     show.artistas.forEach((artista) => {
         const datosArtista = document.createElement("div");
         datosArtista.classList.add("shows__datosArtista");
-        const rol = document.createElement("h4");
-        rol.textContent = artista.rol;
+        const rol = document.createElement("p");
+        rol.classList.add("shows__rol");
+        rol.textContent = `${artista.rol}:`;
         const nombre = document.createElement("p");
         nombre.textContent = artista.nombre;
         datosArtista.appendChild(rol);
@@ -96,7 +96,7 @@ showsEnCartel.forEach((show) => {
     }
     contacto.appendChild(ubicacion);
     infoContainer.appendChild(contacto);
-    const localidades = document.createElement("p");
+    const localidades = document.createElement("h4");
     if (show.localidadesAgotadas === true) {
         localidades.textContent = "Localidades agotadas";
         localidades.classList.add("shows__localidadesAgotadas");

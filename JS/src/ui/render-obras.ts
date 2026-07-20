@@ -19,7 +19,7 @@ export function renderObras(obras: Obra[]) {
     img.src = obra.imagenPortada;
     img.alt = obra.titulo;
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.classList.add("obras__titulo");
     title.textContent = obra.titulo;
 

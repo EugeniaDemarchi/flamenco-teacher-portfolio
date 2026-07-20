@@ -2,11 +2,24 @@ import { clases, seccionClasesInfo } from "../data/clases.js";
 import { masInfo } from "./componentesComunes.js";
 const containerClases = document.querySelector(".clases__grid");
 export function renderDescripcionClases(seccionClasesInfo) {
+    const btnPlay = document.querySelector(".btn-play");
+    const descImgContainer = document.querySelector(".descripcionClases__imgContainer");
     const imgPpal = document.querySelector(".descripcionClases__img");
     imgPpal.src = seccionClasesInfo.imagenPrincipal;
     imgPpal.alt = "Clase de Natlia Riopedre";
+    btnPlay.addEventListener("click", () => {
+        if (seccionClasesInfo.videoUrl) {
+            const iframe = document.createElement("iframe");
+            iframe.src = `${seccionClasesInfo.videoUrl}&autoplay=1&muted=1&controls=0&loop=1`;
+            iframe.allow =
+                "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share";
+            descImgContainer.replaceChildren(iframe);
+        }
+    });
+    const descGralTitulo = document.querySelector(".descripcionClases__descGral-titulo");
     const descGral = document.querySelector(".descripcionClases__descGral");
     if (seccionClasesInfo.descripcionGeneral) {
+        descGralTitulo.textContent = "Enfoque";
         descGral.textContent = seccionClasesInfo.descripcionGeneral;
     }
     const imgMetodologia = document.querySelector(".descripcionClases__imgMetod");
@@ -14,8 +27,10 @@ export function renderDescripcionClases(seccionClasesInfo) {
         imgMetodologia.src = seccionClasesInfo.imagenMetodologia;
         imgMetodologia.alt = "Clases de Natalia Riopedre";
     }
+    const metodTitulo = document.querySelector(".descripcionClases__descGral-metod");
     const metodologia = document.querySelector(".descripcionClases__metodologia");
     if (seccionClasesInfo.metodologia) {
+        metodTitulo.textContent = "Modalidad";
         seccionClasesInfo.metodologia.forEach((punto) => {
             const li = document.createElement("li");
             li.textContent = punto;
@@ -31,7 +46,7 @@ export function renderClases(clases) {
         clasesDiv.classList.add("clases__div");
         const imgWrapper = document.createElement("div");
         imgWrapper.classList.add("clases__imgWrapper");
-        const titulo = document.createElement("h2");
+        const titulo = document.createElement("h3");
         titulo.textContent = clase.titulo;
         titulo.classList.add("clases__titulo");
         const imgClase = document.createElement("img");

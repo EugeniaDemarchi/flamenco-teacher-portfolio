@@ -1,38 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BIO</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./CSS/layout.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/bio.css" />
     <link rel="stylesheet" href="./CSS/componentesComunes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400; 600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div id="nav-container"></div>
-    <div class="bio-hero">
-      <div class="bio-img-wrapper bio-img-wrapper--right">
-        <img
-          src="./ASSETS/IMAGES/bio/maestros.jpg"
-          alt=""
-          class="bio-hero__img"
-        />
-        <h2 class="bio-hero__titulo fixed">BIO</h2>
-      </div>
-    </div>
+    <div id="nav-container" class="nav-container--fixed"></div>
     <button id="scrollTopBtn">
       <ion-icon name="chevron-up-outline"></ion-icon>
     </button>
 
     <div class="bio-container">
-      <div class="bio-section bio-section--origenes">
+      <div class="bio-hero bio-section bio-section--hero">
+        <div class="bio-img-wrapper bio-img-wrapper--right">
+          <img
+            src="./ASSETS/IMAGES/bio/maestros.jpg"
+            alt=""
+            class="bio-hero__img"
+          />
+        </div>
         <p class="bio-text">
           Natalia Riopedre estudió diferentes danzas desde temprana edad,
           acercamiento que se convertiría en el eje de su trayectoria
@@ -41,9 +38,10 @@
           permitió nutrirse de múltiples disciplinas antes de encontrar en el
           flamenco su forma de expresión más representativa.
         </p>
+        <h2 class="titulo_seccion">BIO</h2>
       </div>
 
-      <div class="bio-section bio-section--origenes">
+      <div class="bio-section bio-section--formacion">
         <div
           class="bio-img-wrapper bio-img-wrapper--left bio-img-wrapper--maestros"
         >

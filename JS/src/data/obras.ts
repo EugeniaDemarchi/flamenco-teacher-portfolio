@@ -15,7 +15,7 @@ export const obras: Obra[] = [
     anio: 2012,
   },
   {
-    titulo: "Apariciones, la venganza de Auroch",
+    titulo: "Apariciones",
     imagenPortada: "/ASSETS/IMAGES/obras/apariciones_flyer.jpg",
     slugObra: "la-venganza-de-auroch",
     imgPpal: "/ASSETS/IMAGES/obras/apariciones_2.jpg",
@@ -26,6 +26,7 @@ export const obras: Obra[] = [
       "Auroch propone un cruce entre lo primitivo y lo contemporáneo, con una coreografía que Natalia firma e interpreta en escena.",
     galeria: [
       "/ASSETS/IMAGES/obras/apariciones_1.jpg",
+      "/ASSETS/IMAGES/obras/apariciones_2.jpg",
       "/ASSETS/IMAGES/obras/apariciones_3.jpg",
       "/ASSETS/IMAGES/obras/apariciones.jpg",
       "/ASSETS/IMAGES/obras/apariciones_flyer.jpg",
@@ -47,6 +48,7 @@ export const obras: Obra[] = [
       "/ASSETS/IMAGES/obras/crudo.jpg",
       "/ASSETS/IMAGES/obras/crudo_2.jpg",
       "/ASSETS/IMAGES/obras/crudo_3.jpg",
+      "ASSETS/IMAGES/obras/crudo_1.jpg",
     ],
     anio: 2010,
   },
@@ -62,10 +64,11 @@ export const obras: Obra[] = [
       "Perimetral trabaja la idea de frontera -física y simbólica- como territorio de creación.",
     galeria: [
       "/ASSETS/IMAGES/obras/perimetral_1.jpg",
+      "/ASSETS/IMAGES/obras/perimetral_2.jpg",
       "/ASSETS/IMAGES/obras/perimetral_3.jpg",
       "/ASSETS/IMAGES/obras/perimetral_flyer.jpg",
     ],
-    anio: 2015,
+    anio: 2022,
   },
   {
     titulo: "Redes",
@@ -77,7 +80,10 @@ export const obras: Obra[] = [
     rol: "Directora e intérprete",
     descripcionLarga:
       "En Redes, Natalia dirige e interpreta una indagación sobre las conexiones invisibles entre cuerpos y vínculos, donde sostener y atrapar se vuelven caras de una misma trama.",
-    galeria: ["/ASSETS/IMAGES/obras/redes_1.jpg"],
+    galeria: [
+      "/ASSETS/IMAGES/obras/redes_1.jpg",
+      "/ASSETS/IMAGES/obras/redes_2.JPG",
+    ],
     anio: 2021,
   },
   {
@@ -119,6 +125,7 @@ export const obras: Obra[] = [
     galeria: [
       "/ASSETS/IMAGES/obras/abre_flamenco_1.jpg",
       "/ASSETS/IMAGES/obras/abre_flamenco_3.jpg",
+      "/ASSETS/IMAGES/obras/abre_flamenco_2.jpg",
     ],
     video: "https://www.youtube.com/watch?v=63hTNNXqDJ0",
     anio: 2025,

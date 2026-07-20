@@ -6,7 +6,7 @@ export const showsEnCartel = [
         horario: "21 hs",
         imagen: "/ASSETS/IMAGES/shows/paquito_1.jpg",
         titulo: "Juerga flamenca",
-        descripcionCorta: "Cada jueves esta esquina se convierte en un portal al país del tapeo, con nuestra juerga flamenca. Música que ambienta la noche y nos pone a gozar entre copas, amigos y sabores fuera de lo común.",
+        descripcionCorta: "Cada jueves esta esquina es testigo de nuestra juerga flamenca: cante y guitarra en vivo, sin intermediarios, para vivir el flamenco auténtico como pocas veces se presencia.",
         contacto: {
             espacio: "Paquito bar",
             telefono: "1556965636",

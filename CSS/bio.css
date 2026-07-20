@@ -1,9 +1,6 @@
 .bio-hero {
   width: 100%;
 }
-.bio-hero__imgWrapper {
-  position: relative;
-}
 .bio-hero__img {
   width: 100%;
   height: auto;
@@ -11,26 +8,12 @@
   object-fit: cover;
   aspect-ratio: 3/4;
 }
-.bio-hero__titulo {
+
+.titulo_seccion {
   position: absolute;
-  bottom: 2rem;
-  left: 1.5rem;
-  font-size: clamp(1.5rem, 3vh, 6rem);
-  margin: 0;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+  left: 2rem;
+  bottom: 30rem;
 }
-
-/* .bio-section::after {
-
-  background: linear-gradient(to top, #050505, transparent);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-} */
-
-.bio-container {
-}
-
 .bio-img {
   width: 100%;
   object-fit: cover;
@@ -40,49 +23,76 @@
 .bio-img-wrapper {
   position: relative;
 }
-.bio-img-wrapper::after {
+/* .bio-img-wrapper::after {
   content: "";
   position: absolute;
   inset: 0;
   background: var(--color-candlelight-peach);
   opacity: 0.2;
   mix-blend-mode: multiply;
-}
-.bio-img-wrapper--maestros::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.18;
-  mix-blend-mode: color-burn;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-.bio-img--docencia {
-  mask-image: linear-gradient(to top, black 70%, transparent 100%);
+} */
+.bio-img--maestros {
+  object-fit: contain;
 }
 .bio-text {
   font-family: "Inter", sans-serif;
-  font-weight: 200;
   line-height: var(--line-height-general-text);
-  font-size: clamp(1rem, 0.875rem + 1vw, 1.125rem);
+  font-size: var(--fs-p);
   padding: 3rem 2rem;
-  text-align: justify;
-}
-.bio-img.bio-img--maestros {
-  aspect-ratio: 3/4;
 }
 
 @media (min-width: 768px) {
-  .bio-hero__titulo {
-    bottom: 10rem;
-    left: 3rem;
+  .titulo_seccion {
+    position: absolute;
+    left: 4rem;
+    bottom: 5rem;
   }
 }
 
 @media (min-width: 1024px) {
+  .bio-container {
+    margin-top: 8rem;
+  }
+  .bio-hero__img {
+    aspect-ratio: 4/3;
+  }
+  .bio-section > * {
+    flex: 1 1 50%;
+  }
+  .titulo_seccion {
+    position: absolute;
+    left: 4rem;
+    bottom: 20rem;
+  }
+  .bio-img-wrapper {
+    display: flex;
+  }
+  .bio-section {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .bio-section.bio-section--trayectoria,
+  .bio-section--docencia,
+  .bio-section--hero {
+    flex-direction: row;
+  }
+  .bio-text {
+    line-height: 40px;
+    padding: 5rem;
+    background-color: var(--color-worn-silver);
+    color: black;
+  }
 }
-
 @media (min-width: 1440px) {
-  /* Desktop */
+  .bio-hero__img {
+    object-position: center 25%;
+  }
+  .titulo_seccion {
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+  }
+  .bio-text {
+    padding: 15rem;
+  }
 }

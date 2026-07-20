@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "ostrichSans";
-  src: url("./FONTS/ostrich-regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "ostrichSansBold";
-  src: url("./FONTS/OstrichSans-Black.otf") format("truetype");
-}
-
 :root {
   /* === COLOR PALETTE === */
   --color-black: #000000;
@@ -20,34 +10,42 @@
   --color-black-metal: #050505;
   --color-carbon-fiber: #2f2f2f;
   --color-candlelight-peach: #ffe6ce;
-
-  /* Variante en RGB de Black Metal, para usar con rgba() y controlar opacidad */
-  --color-black-metal-rgb: 5, 5, 5;
+  --color-candlelight-peach-rgb: 255, 230, 206;
 
   /* === TRANSITIONS === */
   --transition-base: 0.3s ease-in-out; /* hovers, micro-interacciones */
   --transition-slow: 700ms ease; /* movimientos grandes: menu slide-in/out */
 
   /* === FONT-FAMILY===*/
-  --font-family-h1: "ostrichSansBold"; /*font-family para titulos MUY 
-  importantes*/
-  --font-family-h2: "ostrichSans";
+  --font-family-h1: "Amatic SC";
+  --font-family-h2: "Amatic SC";
 
   /*typography: LINE-HIGHT*/
   --line-height-general-text: 1.8rem;
 
   /* === TYPE SCALE (clamp: min, preferred, max) === */
-  --font-size-h1: clamp(2rem, 4vh, 8rem); /* título principal del nav */
+  --fs-p: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fs-h4: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  --fs-h3: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  --fs-h2: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-h1: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+
   --font-size-icon: clamp(1.6rem, 4vw, 2.5rem); /* iconos hamburguesa/cierre */
   --font-size-menu-link: clamp(1rem, 3vh, 6rem); /* links del menú mobile */
+
+  /*BUTTON STYLES*/
+
+  --btn-padding: 0.6rem;
+  --btn-transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+  --btn-scale-hover: 1.03;
+  --btn-scale-active: 0.97;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "ostrichSans";
-  letter-spacing: 3px;
+  font-family: "Amatic SC";
 }
 body {
   background-color: var(--color-black);
@@ -56,21 +54,34 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
 h1 {
+  font-size: var(--fs-h1);
   color: white;
+  font-family: var(--font-family-h1);
+  font-weight: 700;
 }
 h2 {
+  font-size: var(--fs-h2);
   color: white;
   font-family: var(--font-family-h2);
+  font-weight: 400;
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
 }
 p {
+  font-size: var(--fs-p);
   color: white;
+  font-weight: 200;
+  text-align: left;
 }
 
 @keyframes deslizar-desde-derecha {
@@ -85,8 +96,29 @@ p {
 }
 
 .titulo_seccion {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  color: var(--color-worn-silver);
   text-align: center;
-  font-size: clamp(1.5rem, 3vh, 6rem);
-  padding: 1.5rem;
-  animation: deslizar-desde-derecha 0.9s ease-in-out;
+}
+
+.titulo_seccion::before,
+.titulo_seccion::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-candlelight-peach);
+  border-radius: 50%;
+}
+
+.titulo_seccion::before {
+  left: -0.2rem;
+}
+.titulo_seccion::after {
+  right: -0.2rem;
 }

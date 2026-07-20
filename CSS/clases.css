@@ -1,32 +1,35 @@
-.clases-hero {
-  width: 100%;
-}
-.clases-hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background: linear-gradient(to bottom, #050505, transparent);
-  z-index: 1;
-}
 .descripcionClases__imgContainer {
+  display: flex;
   position: relative;
+  aspect-ratio: 16/9;
+}
+.descripcionClases__imgContainer iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
 }
 .descripcionClases__img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
+  filter: sepia(0.3) contrast(1.1) saturate(1.3) brightness(0.95);
 }
-.clases-hero__titulo {
+.btn-play {
   position: absolute;
-  bottom: 2rem;
-  left: 3.9rem;
-  font-size: clamp(1.2rem, 2.4vh, 3rem);
-  margin: 0;
+  z-index: 1000;
+  color: white;
+  font-size: var(--fs-p);
+  top: 1rem;
+  right: 1rem;
 }
+.titulo_seccion {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 3rem;
+}
+
 .descripcionClases__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -34,14 +37,17 @@
     "descripcion"
     "imagen-metodologia "
     "metodologia";
-  padding: 2rem;
+  padding: 4rem 2rem;
   gap: 2rem;
+}
+.descripcionClases__descGral-titulo,
+.descripcionClases__descGral-metod {
+  display: none;
 }
 .descripcionClases__descGral {
   grid-area: descripcion;
-  text-align: justify;
+  text-align: start;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
   font-weight: 200;
   line-height: 1.5;
   padding-bottom: 2rem;
@@ -52,11 +58,10 @@
 }
 .descripcionClases__metodologia li {
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
-  font-weight: 200;
   position: relative;
+  font-weight: 200;
   padding-bottom: 1rem;
-  padding-left: 1.5rem;
+  padding-left: 1.6rem;
 }
 .descripcionClases__metodologia li::before {
   content: "∙";
@@ -67,11 +72,13 @@
 .descripcionClases__imgMetod {
   grid-area: imagen-metodologia;
   width: 100%;
-  height: auto;
+  object-fit: contain;
   display: block;
+  padding-bottom: 2rem;
 }
 .descripcionClases__bulletsMetod {
   color: white;
+  line-height: 1.6;
 }
 
 /*CLASE*/
@@ -99,7 +106,6 @@
   padding: 1rem;
   gap: 1.8rem;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem + 1vw, 1.125rem);
 }
 .clases__img {
   width: 100%;
@@ -109,17 +115,20 @@
   min-height: 30rem;
 }
 .clases__titulo {
+  letter-spacing: 8px;
   color: white;
   position: absolute;
   top: 0;
   width: 100%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
+  font-family: "Amatic SC";
   padding: 0.8rem;
   margin: 0;
   text-align: center;
 }
 .clases__nivel {
+  font-family: "Amatic SC";
   color: white;
   position: absolute;
   bottom: 0;
@@ -136,66 +145,77 @@
   gap: 1rem;
 }
 .clases__li {
-  color: black;
+  color: white;
   font-family: "Inter", sans-serif;
-  background-color: white;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.445);
   list-style-type: none;
   font-size: clamp(1rem, 1vw, 1.6rem);
   font-weight: 600;
   text-align: center;
+  padding: 0.5rem;
 }
 
+.clases__li {
+  background-color: black;
+}
 .clases__descCorta {
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.875rem, 1vw, 1.125rem);
   text-align: justify;
   line-height: 1.7;
 }
 .mas-info-btn {
-  padding: 1rem;
-  font-size: clamp(1rem, 1vw, 1.7rem);
-  transition: transform 0.3s ease;
+  padding: var(--btn-padding);
+  font-size: var(--fs-p);
+  transition: var(--btn-transition);
+  will-change: transform;
+  font-family: "Amatic SC";
+  font-weight: 700;
 }
 .mas-info-btn:hover {
-  transform: scale(1.05);
+  transform: scale(var(--btn-scale-hover));
 }
 .mas-info-btn:active {
-  transform: scale(0.95);
+  transform: scale(var(--btn-scale-active));
 }
 .parrafo.show {
-  font-size: clamp(0.875rem, 1vw, 1.125rem);
   text-align: justify;
   font-family: "Inter", sans-serif;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 .clases__ubicacion {
+  font-size: var(--fs-h4);
   color: white;
+  font-family: "Amatic SC";
 }
 .clases__btn-masInfo {
   color: black;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: rgba(255, 255, 255, 0.945);
   display: block;
   width: fit-content;
   margin: 2rem auto;
-  font-weight: 700;
-  font-size: clamp(1.2rem, 1vw, 1.7rem);
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
+
+  font-size: var(--fs-p);
+  transition: var(--btn-transition);
+  will-change: transform;
   cursor: pointer;
   box-shadow:
     0 0 8px rgba(255, 255, 255, 0.301),
     0 0 10px rgba(255, 255, 255, 0.37);
 }
+.clases__btn-masInfo {
+  font-family: "Amatic SC";
+  font-weight: 700;
+}
 .clases__btn-masInfo:hover {
+  transform: scale(var(--btn-scale-hover));
   background-color: white;
-  transform: scale(1.05);
 }
 
 .clases__btn-masInfo:active {
+  transform: scale(var(--btn-scale-active));
   background-color: white;
-  transform: scale(0.95);
 }
 @media (min-width: 768px) {
   .clases__div {
@@ -212,18 +232,89 @@
     align-items: flex-start;
     flex-direction: row;
   }
-  .clases__li {
-    background-color: black;
-    border: 1px solid rgba(255, 255, 255, 0.445);
-    padding: 0.5rem;
-    color: white;
+  .mas-info-btn,
+  .clases__btn-masInfo {
+    font-size: var(--fs-h4);
+    letter-spacing: 2px;
   }
 }
 
 @media (min-width: 1024px) {
-  /* Laptop */
-}
+  .titulo_seccion {
+    bottom: 0.25rem;
+    left: 7rem;
+  }
 
+  .descripcionClases__grid {
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "descripcion descripcion"
+      "imagen-metodologia  metodologia";
+  }
+
+  .descripcionClases__img {
+    object-fit: cover;
+    /*   object-position: right center; */
+  }
+  .descripcionClases__descGral {
+    line-height: 1.6;
+  }
+  .descripcionClases__metodologia {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clases__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .clases__div {
+    flex-direction: column;
+  }
+}
 @media (min-width: 1440px) {
-  /* Desktop */
+  .titulo_seccion {
+    bottom: 20rem;
+    left: 11rem;
+  }
+
+  .descripcionClases__descGral-titulo {
+    grid-area: tituloDesc;
+  }
+  .descripcionClases__descGral-metod {
+    grid-area: tituloMet;
+  }
+  .descripcionClases__grid {
+    margin: 0 20rem;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "imagen-metodologia imagen-metodologia "
+      "tituloDesc tituloMet"
+      "descripcion metodologia";
+  }
+
+  .descripcionClases__descGral-titulo,
+  .descripcionClases__descGral-metod {
+    display: block;
+    color: white;
+  }
+  .descripcionClases__descGral {
+    align-self: start;
+  }
+  .descripcionClases__imgMetod {
+    display: none;
+  }
+
+  .clases__grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: start;
+  }
+  .clases__div {
+    flex-direction: column;
+  }
 }

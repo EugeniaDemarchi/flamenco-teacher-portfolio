@@ -1,7 +1,3 @@
-/* const tituloBio = document.querySelector(
-  ".titulo_seccion--bio",
-) as HTMLTitleElement; */
-
 export async function getComponent(
   id: string,
   filepath: string,
@@ -15,14 +11,13 @@ export async function getComponent(
   }
   container.innerHTML = html;
 
+  const nav = document.getElementById("nav-container") as HTMLAnchorElement;
   const hbgBtn = document.querySelector(".hbg-btn") as HTMLButtonElement;
   const navMenu = document.querySelector(".nav-menu") as HTMLDivElement;
   const closeBtn = document.querySelector(".close-btn") as HTMLButtonElement;
   const links = document.querySelectorAll(
     ".menu-list a",
   ) as NodeListOf<HTMLAnchorElement>;
-  const nav = document.querySelector(".nav") as HTMLElement;
-  const footer = document.querySelector(".footer") as HTMLElement;
 
   if (id === "nav-container") {
     function toggleNavMenu() {
@@ -37,17 +32,6 @@ export async function getComponent(
       }
     });
 
-    hbgBtn.addEventListener("click", toggleNavMenu);
-
-    if (
-      ["/index.html", "/bio.html", "/clases.html"].includes(
-        window.location.pathname,
-      )
-    ) {
-      nav.classList.add("nav--fixed");
-      hbgBtn.classList.add("hbg-btn--white");
-    }
-
     window.addEventListener("scroll", () => {
       if (window.scrollY > 0) {
         nav.classList.add("nav--oculto");
@@ -56,14 +40,10 @@ export async function getComponent(
       }
     });
 
+    hbgBtn.addEventListener("click", toggleNavMenu);
+
     closeBtn.addEventListener("click", () => {
       navMenu.classList.remove("open");
     });
-  }
-
-  if (id === "footer-container") {
-    if (window.location.pathname === "/index.html") {
-      footer.classList.add("footer--fixed");
-    }
   }
 }

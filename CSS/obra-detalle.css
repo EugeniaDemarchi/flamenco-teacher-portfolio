@@ -1,7 +1,20 @@
 body {
   color: white;
 }
-#obra-detalle__container {
+.obra-detalle__container {
+  position: relative;
+}
+
+.obra-detalle__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10rem; /* ajustá a la altura real de tu nav */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 .obra-detalle__img-ppal {
   display: block;
@@ -16,6 +29,7 @@ body {
   text-align: center;
   padding-bottom: 1rem;
   font-size: clamp(1.5rem, 2vh, 5rem);
+  font-family: "Amatic SC";
 }
 .obra-detalle__descripcion-corta,
 .obra-detalle__descripcion-larga,
@@ -24,37 +38,39 @@ body {
   line-height: var(--line-height-general-text);
 }
 .obra-detalle__rol {
-  font-size: 0.875rem;
   font-style: italic;
   text-align: end;
   padding-bottom: 0.5rem;
 }
 .obra-detalle__descripcion-corta {
-  font-size: clamp(0.8rem + 1vw, 1.5rem);
   text-align: end;
-  font-weight: 500;
+  font-weight: 400;
   padding-bottom: 1rem;
 }
 .obra-detalle__anio {
   color: white;
   text-align: end;
   padding-bottom: 2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
 }
 .obra-detalle__galeria {
-  display: grid;
+  display: flex;
   padding-bottom: 2rem;
+  flex-direction: column;
   gap: 1rem;
 }
+
 .obra-detalle__galeria img {
   width: 100%;
   height: auto;
   display: block;
 }
 .obra-detalle__descripcion-larga {
-  font-size: clamp(0.875rem, 1vw, 1.125rem);
   text-align: justify;
   padding-bottom: 2rem;
 }
+
 .obra-detalle__video {
   width: 100%;
 }
@@ -64,4 +80,51 @@ body {
   height: auto;
   display: block;
   border: none;
+}
+
+@media (min-width: 1024px) {
+  .obra-detalle__img-ppal {
+    height: 25rem;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .obra-detalle__grid {
+    margin: 2rem 10rem;
+  }
+  .obra-detalle__galeria {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*     max-width: 90rem;
+    margin: 0 auto; */
+    flex-wrap: wrap;
+  }
+  .obra-detalle__galeria img {
+    flex: 1 1 18rem;
+    height: 20rem;
+    object-fit: cover;
+  }
+  .obra-detalle__titulo {
+    padding-bottom: 3rem;
+    font-size: var(--fs-h3);
+  }
+
+  .obra-detalle__anio {
+    font-size: var(--fs-p);
+  }
+}
+
+/**/
+
+@media (min-width: 1440px) {
+  .contacto__grid {
+    margin: 2rem 20rem;
+  }
+
+  /*   .obra-detalle__galeria img {
+    flex: 1;
+    height: 30rem;
+
+    object-fit: cover;
+  } */
 }
