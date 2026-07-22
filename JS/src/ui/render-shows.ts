@@ -115,7 +115,7 @@ showsEnCartel.forEach((show) => {
   contacto.appendChild(ubicacion);
   infoContainer.appendChild(contacto);
 
-  const localidades = document.createElement("h4");
+  const localidades = document.createElement("h3");
   if (show.localidadesAgotadas === true) {
     localidades.textContent = "Localidades agotadas";
     localidades.classList.add("shows__localidadesAgotadas");

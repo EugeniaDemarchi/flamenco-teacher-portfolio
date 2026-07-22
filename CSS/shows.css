@@ -65,7 +65,7 @@
   color: white;
 }
 .shows__obraRelacionada {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.4rem, 2vw, 2rem);
   transition: color 0.3s ease-in-out;
   text-decoration: underline;
   color: var(--color-worn-silver);

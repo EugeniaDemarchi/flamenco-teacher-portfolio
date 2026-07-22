@@ -141,14 +141,14 @@
 }
 .clases__horarios {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 .clases__li {
   color: white;
   font-family: "Inter", sans-serif;
   background-color: black;
-  border: 1px solid rgba(255, 255, 255, 0.445);
+  /*   border: 1px solid rgba(255, 255, 255, 0.445); */
   list-style-type: none;
   font-size: clamp(1rem, 1vw, 1.6rem);
   font-weight: 600;
@@ -156,9 +156,6 @@
   padding: 0.5rem;
 }
 
-.clases__li {
-  background-color: black;
-}
 .clases__descCorta {
   font-family: "Inter", sans-serif;
   text-align: justify;
@@ -166,6 +163,7 @@
 }
 .mas-info-btn {
   padding: var(--btn-padding);
+  letter-spacing: 3px;
   font-size: var(--fs-p);
   transition: var(--btn-transition);
   will-change: transform;
@@ -195,7 +193,9 @@
   display: block;
   width: fit-content;
   margin: 2rem auto;
-
+  font-family: "Amatic SC";
+  font-weight: 700;
+  letter-spacing: 3px;
   font-size: var(--fs-p);
   transition: var(--btn-transition);
   will-change: transform;
@@ -204,10 +204,7 @@
     0 0 8px rgba(255, 255, 255, 0.301),
     0 0 10px rgba(255, 255, 255, 0.37);
 }
-.clases__btn-masInfo {
-  font-family: "Amatic SC";
-  font-weight: 700;
-}
+
 .clases__btn-masInfo:hover {
   transform: scale(var(--btn-scale-hover));
   background-color: white;
