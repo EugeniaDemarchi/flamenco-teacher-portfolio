@@ -1,5 +1,6 @@
 .bio-hero {
   width: 100%;
+  position: relative;
 }
 .bio-hero__img {
   width: 100%;
@@ -12,7 +13,7 @@
 .titulo_seccion {
   position: absolute;
   left: 2rem;
-  bottom: 40rem;
+  bottom: 25rem;
 }
 .bio-img {
   width: 100%;
@@ -23,14 +24,7 @@
 .bio-img-wrapper {
   position: relative;
 }
-/* .bio-img-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--color-candlelight-peach);
-  opacity: 0.2;
-  mix-blend-mode: multiply;
-} */
+
 .bio-img--maestros {
   object-fit: contain;
 }
