@@ -43,12 +43,24 @@ export function renderObraDetalle(obra) {
     descripcionCorta.innerHTML = obra.descripcionCorta;
     const galeria = document.querySelector(".obra-detalle__galeria");
     galeria.innerHTML = "";
-    obra.galeria?.forEach((rutaImg) => {
-        const img = document.createElement("img");
-        img.src = rutaImg;
-        img.alt = obra.titulo;
-        galeria.appendChild(img);
-    });
+    /*"la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
+    /*   const mediaLaptop = window.matchMedia("(max-width: 1024px)");*/
+    const pantallaLaptop = window.matchMedia("(min-width: 1024px)");
+    let galeriaARenderizar;
+    if (pantallaLaptop.matches) {
+        galeriaARenderizar = obra.galeria;
+    }
+    else {
+        galeriaARenderizar = obra.galeria?.filter((rutaImg) => rutaImg !== obra.imgPpal);
+    }
+    if (galeriaARenderizar) {
+        galeriaARenderizar.forEach((rutaImg) => {
+            const img = document.createElement("img");
+            img.src = rutaImg;
+            img.alt = obra.titulo;
+            galeria.appendChild(img);
+        });
+    }
     const rol = document.querySelector(".obra-detalle__rol");
     rol.innerHTML = obra.rol;
     const anio = document.querySelector(".obra-detalle__anio");

@@ -11,6 +11,7 @@ export const obras: Obra[] = [
     rol: "Directora e intérprete",
     descripcionLarga:
       "Una obra que indaga en los límites entre el control y el abandono dentro del lenguaje flamenco, construida desde la dirección y la interpretación de Natalia.",
+    galeria: ["/ASSETS/IMAGES/obras/que_me_lleve_flyer.PNG"],
     video: "https://www.youtube.com/watch?v=GtyxK2XJnSQ",
     anio: 2012,
   },
@@ -97,6 +98,8 @@ export const obras: Obra[] = [
     galeria: [
       "/ASSETS/IMAGES/obras/concierto_1.jpg",
       "/ASSETS/IMAGES/obras/concierto_2.jpg",
+      "/ASSETS/IMAGES/obras/concierto_flyer.jpg",
+      "/ASSETS/IMAGES/obras/conciertodebailes.jpg",
     ],
     anio: 2023,
   },
@@ -109,7 +112,10 @@ export const obras: Obra[] = [
     rol: "Intérprete",
     descripcionLarga:
       "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.",
-    galeria: ["/ASSETS/IMAGES/obras/cria_cuervos_flyer.jpg"],
+    galeria: [
+      "/ASSETS/IMAGES/obras/cria_cuervos_flyer.jpg",
+      "/ASSETS/IMAGES/obras/cria_cuervos_ppal.jpg",
+    ],
     video: "https://www.youtube.com/watch?v=L_TxheKwyXg",
     anio: 2011,
   },
