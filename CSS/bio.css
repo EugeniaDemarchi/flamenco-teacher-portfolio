@@ -44,8 +44,8 @@
 }
 
 @media (min-width: 1024px) {
-  .bio-container {
-    margin-top: 8rem;
+
+  .bio-img.bio-img--trayectoria {
   }
   .bio-hero__img {
     aspect-ratio: 4/3;
@@ -56,7 +56,7 @@
   .titulo_seccion {
     position: absolute;
     left: 4rem;
-    bottom: 20rem;
+    bottom: 5rem;
   }
   .bio-img-wrapper {
     display: flex;

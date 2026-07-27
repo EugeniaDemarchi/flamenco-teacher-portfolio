@@ -1,6 +1,14 @@
 import { showsEnCartel } from "../data/shows.js";
 import { obras } from "../data/obras.js";
 const containerShows = document.querySelector(".shows__grid");
+const containerMsgNoShow = document.querySelector(".shows__empty-state");
+if (showsEnCartel.length === 0) {
+    const msgNoShow = document.createElement("h4");
+    msgNoShow.textContent =
+        "No hay funciones programadas por ahora. Nuevas fechas, próximamente.";
+    containerMsgNoShow.appendChild(msgNoShow);
+    msgNoShow.classList.add("shows__empty-msg");
+}
 showsEnCartel.forEach((show) => {
     const caja = document.createElement("div");
     caja.classList.add("shows__card");

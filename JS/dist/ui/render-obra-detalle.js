@@ -43,8 +43,10 @@ export function renderObraDetalle(obra) {
     descripcionCorta.innerHTML = obra.descripcionCorta;
     const galeria = document.querySelector(".obra-detalle__galeria");
     galeria.innerHTML = "";
+    const modal = document.querySelector(".obra-detalle__modal");
+    const imgModal = document.querySelector(".obra-detalle__modal-img");
+    const closeBtnGaleria = document.querySelector(".obra-detalle__close-btn");
     /*"la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
-    /*   const mediaLaptop = window.matchMedia("(max-width: 1024px)");*/
     const pantallaLaptop = window.matchMedia("(min-width: 1024px)");
     let galeriaARenderizar;
     if (pantallaLaptop.matches) {
@@ -53,12 +55,34 @@ export function renderObraDetalle(obra) {
     else {
         galeriaARenderizar = obra.galeria?.filter((rutaImg) => rutaImg !== obra.imgPpal);
     }
+    let indiceActual = 0;
     if (galeriaARenderizar) {
-        galeriaARenderizar.forEach((rutaImg) => {
+        const listaGaleria = galeriaARenderizar;
+        function abrirModal(index) {
+            indiceActual = index;
+            imgModal.src = listaGaleria[indiceActual];
+            modal.classList.add("obra-detalle__modal--activo");
+            document.body.classList.add("scroll-lock");
+        }
+        function cerrarModal() {
+            modal.classList.remove("obra-detalle__modal--activo");
+            document.body.classList.remove("scroll-lock");
+        }
+        closeBtnGaleria.addEventListener("click", cerrarModal);
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        });
+        galeriaARenderizar.forEach((rutaImg, index) => {
             const img = document.createElement("img");
+            const imgWrapper = document.createElement("div");
+            imgWrapper.classList.add("obra-detalle__img-wrapper");
             img.src = rutaImg;
             img.alt = obra.titulo;
-            galeria.appendChild(img);
+            imgWrapper.addEventListener("click", () => abrirModal(index));
+            imgWrapper.appendChild(img);
+            galeria.appendChild(imgWrapper);
         });
     }
     const rol = document.querySelector(".obra-detalle__rol");

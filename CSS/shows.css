@@ -1,3 +1,17 @@
+.shows__empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.shows__empty-msg {
+  font-family: "Inter", sans-serif;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+}
+
 .shows__grid {
   display: grid;
   grid-template-columns: 1fr;

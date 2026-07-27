@@ -31,9 +31,7 @@ export async function getComponent(id, filepath) {
             }
         });
         hbgBtn.addEventListener("click", toggleNavMenu);
-        closeBtn.addEventListener("click", () => {
-            navMenu.classList.remove("open");
-        });
+        closeBtn.addEventListener("click", toggleNavMenu);
     }
 }
 //# sourceMappingURL=nav-footer.js.map

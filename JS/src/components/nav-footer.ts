@@ -41,9 +41,6 @@ export async function getComponent(
     });
 
     hbgBtn.addEventListener("click", toggleNavMenu);
-
-    closeBtn.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-    });
+    closeBtn.addEventListener("click", toggleNavMenu);
   }
 }
