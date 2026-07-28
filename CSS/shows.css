@@ -208,6 +208,10 @@ h1 a:hover {
 }
 
 @media (min-width: 768px) {
+  .titulo_seccion {
+    top: 25rem;
+    right: 4rem;
+  }
   .shows__card {
     flex-direction: column;
   }
