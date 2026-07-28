@@ -1,3 +1,13 @@
+h1 a,
+.hbg-btn {
+  color: black;
+}
+h1 a:hover {
+  color: white;
+}
+.hbg-btn:hover {
+  color: white;
+}
 .shows__empty-state {
   display: flex;
   justify-content: center;
@@ -12,12 +22,31 @@
   color: white;
 }
 
+.shows__img-ppal {
+  display: block;
+  width: 100%;
+}
+.shows__img-ppal-container {
+  position: relative;
+}
+.titulo_seccion {
+  top: 22rem;
+  position: absolute;
+  right: 2rem;
+  top: 12rem;
+  color: black;
+}
+.titulo_seccion::before,
+.titulo_seccion::after {
+  background-color: black;
+}
 .shows__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-  margin: 0 2rem 0 2rem;
+  margin: 4rem 2rem 0 2rem;
   align-items: start;
+  justify-self: center;
 }
 
 .shows__card {
@@ -75,8 +104,11 @@
 
 .shows__descCorta {
   text-align: left;
-  font-family: "Inter", sans-serif;
+  /*   font-family: "Inter", sans-serif; */
+  font-size: var(--fs-h4);
+  font-family: "Amatic SC";
   color: white;
+  text-align: center;
 }
 .shows__obraRelacionada {
   font-size: clamp(1.4rem, 2vw, 2rem);
@@ -112,6 +144,38 @@
   font-weight: 400;
 }
 
+.shows__entradas {
+  color: black;
+  align-self: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.945);
+  /*   width: fit-content;*/
+  display: block;
+  margin: 2rem auto;
+  /*   margin: 2rem auto; */
+  /*   font-family: "Amatic SC"; */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: var(--fs-p);
+  transition: var(--btn-transition);
+  will-change: transform;
+  cursor: pointer;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.301),
+    0 0 10px rgba(255, 255, 255, 0.37);
+}
+
+.shows__entradas:hover {
+  transform: scale(var(--btn-scale-hover));
+  background-color: white;
+}
+
+.shows__entradas:active {
+  transform: scale(var(--btn-scale-active));
+  background-color: white;
+}
+
 .shows__fecha,
 .shows__dia,
 .shows__horario {
@@ -145,20 +209,36 @@
 
 @media (min-width: 768px) {
   .shows__card {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
 @media (min-width: 1024px) {
+  .shows__img-ppal {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    object-position: 30% 20%;
+  }
+  .titulo_seccion {
+    top: 15rem;
+    right: 4rem;
+  }
+
   .shows__card {
+    width: 60rem;
+    flex-direction: row;
+  }
+  .shows__info {
     flex-direction: column;
+    justify-content: space-around;
   }
   .shows__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
-    margin: 0rem 10rem;
-    align-items: start;
+    margin: 4rem 10rem;
+    align-items: center;
   }
 
   .shows__localidadesAgotadas {
@@ -168,8 +248,11 @@
 }
 
 @media (min-width: 1440px) {
+  .titulo_seccion {
+    right: 14rem;
+  }
   .shows__grid {
-    grid-template-columns: 1fr 1fr;
-    margin: 0rem 20rem;
+    grid-template-columns: 1fr;
+    margin: 4rem 20rem;
   }
 }

@@ -1,3 +1,11 @@
+.obras__img-ppal {
+  display: block;
+  width: 100%;
+}
+.obras__img-ppal-container {
+  position: relative;
+}
+
 .obras__grid {
   display: flex;
   flex-direction: column;
@@ -51,6 +59,12 @@
 }
 
 @media (min-width: 1024px) {
+  .obras__img-ppal {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    object-position: 30% 40%;
+  }
   .obras__grid {
     margin: 0 10rem;
   }
@@ -60,6 +74,9 @@
 }
 
 @media (min-width: 1440px) {
+  .obras__img-ppal {
+    object-position: top center;
+  }
   .obras__grid {
     margin: 0 20rem;
   }

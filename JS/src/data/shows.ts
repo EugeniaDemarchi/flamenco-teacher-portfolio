@@ -1,43 +1,52 @@
 import { ShowsEnCartel } from "../types/shows.js";
 
 export const showsEnCartel: ShowsEnCartel[] = [
-  /*   {
+  {
     categoria: "Tablao flamenco",
-    tipo: "recurrente",
-    diaSemana: "jueves",
-    horario: "21 hs",
-    imagen: "/ASSETS/IMAGES/shows/paquito_1.jpg",
-    titulo: "Juerga flamenca",
+    tipo: "puntual",
+    fecha: "7/8/2026",
+    horario: "22.30 hs",
+    imagen: "/ASSETS/IMAGES/shows/tablao.jpeg",
+    titulo: "Tablao",
     descripcionCorta:
-      "Cada jueves esta esquina es testigo de nuestra juerga flamenca: cante y guitarra en vivo, sin intermediarios, para vivir el flamenco auténtico como pocas veces se presencia.",
+      "Viví una noche de flamenco con baile, cante y guitarra en vivo.",
     contacto: {
-      espacio: "Paquito bar",
-      telefono: "1556965636",
-      link: "https://www.instagram.com/xpaquitobarx/",
+      espacio: "Centro Cultural Nueva Uriarte",
+      link: "https://www.instagram.com/ccnuevauriarte/?hl=es",
       ubicacion: {
-        direccion: "Thames 1999",
+        direccion: "Uriarte 1289",
         mapsUrl:
-          "https://www.google.com/maps/place/Paquito+bar/@-34.5855844,-58.4295764,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb54f9d113aa9:0x7641386f65ef36c3!8m2!3d-34.5855844!4d-58.4270015!16s%2Fg%2F11p60kphrc?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D",
+          "https://www.google.com/maps/place/DAI,+Uriarte+1289,+C1414+C1414DAI,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5897594,-58.4353168,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb58bc5a874e9:0x2aae16ae5fdbe37e!8m2!3d-34.5897594!4d-58.4353168!16s%2Fg%2F11q2wlrs7z?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
         barrio: "Palermo",
       },
     },
     localidadesAgotadas: false,
     artistas: [
       {
-        nombre: "Natalia Riopedre",
-        rol: "Bailarina",
+        nombre: "Naty Riopedre, Sil Ceri, Guada D'aniello",
+        rol: "Baile",
+      },
+      /*       {
+        nombre: "Sil Cerri",
+        rol: "Bailaora",
       },
       {
-        nombre: "Pedro Gutierrez",
-        rol: "Guitarra",
-      },
+        nombre: "Naty Riopedre",
+        rol: "Bailaora",
+      }, */
       {
-        nombre: "Pedro Gutierrez",
+        nombre: "Tatiana Portalupi",
         rol: "Cante",
       },
+      {
+        nombre: "Fernando Suarez Castro",
+        rol: "Guitarra",
+      },
     ],
+    entradas:
+      "https://livepass.com.ar/events/tablao-flamenco-en-ccnu-2026-08-07-20-00-00-0300",
   },
-  {
+  /*   {
     categoria: "Espectáculo",
     obraRelacionada: "crudo",
     tipo: "puntual",

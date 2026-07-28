@@ -133,6 +133,16 @@ showsEnCartel.forEach((show) => {
     infoContainer.appendChild(localidades);
   }
 
+  if (show.entradas) {
+    const entradas = document.createElement("a");
+    entradas.classList.add("shows__entradas");
+    entradas.textContent = "🎫 Entradas";
+    entradas.href = show.entradas;
+    entradas.target = "_blank";
+    entradas.rel = "noopener noreferrer";
+    infoContainer.appendChild(entradas);
+  }
+
   caja.appendChild(infoContainer);
   containerShows.appendChild(caja);
 });

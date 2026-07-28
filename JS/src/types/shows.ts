@@ -24,6 +24,7 @@ export type ShowsEnCartel = Categoria &
       link?: string;
       ubicacion: Ubicacion;
     };
-    localidadesAgotadas?: boolean;
     artistas: Artista[];
+    entradas?: string;
+    localidadesAgotadas?: boolean;
   };
