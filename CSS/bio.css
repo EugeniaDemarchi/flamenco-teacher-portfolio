@@ -51,7 +51,8 @@
 
 @media (min-width: 1024px) {
   .bio-hero__img {
-    /*   aspect-ratio: 4/3; */
+    aspect-ratio: 3/4;
+    /*    object-position: top center; */
   }
   .bio-section--hero {
     display: flex;
@@ -87,19 +88,22 @@
     background-color: var(--color-worn-silver);
   }
   .bio-text {
-    background-color: var(--color-dreamy-barbie);
-    line-height: 40px;
+    line-height: 1.6;
     border-radius: 4px;
     max-width: 30rem;
-    /*     background-color: var(--color-worn-silver); */
+
     color: black;
   }
 }
 @media (min-width: 1440px) {
   .bio-hero__img {
+    aspect-ratio: 4/3;
     object-position: center 25%;
   }
-  .titulo_seccion {
+  .bio-text {
+    background-color: var(--color-dreamy-barbie);
+  }
+  * .titulo_seccion {
     position: absolute;
     left: 4rem;
     bottom: 30rem;

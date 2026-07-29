@@ -268,7 +268,7 @@
   }
 
   .clases__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: start;
   }
 
@@ -292,7 +292,7 @@
     margin: 0 20rem;
     align-items: center;
     align-content: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "imagen-metodologia imagen-metodologia "
       "tituloDesc tituloMet"
@@ -311,10 +311,10 @@
     display: none;
   }
 
-  .clases__grid {
+  /*  .clases__grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: start;
-  }
+  } */
   .clases__div {
     flex-direction: column;
   }
