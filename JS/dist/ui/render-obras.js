@@ -11,15 +11,18 @@ export function renderObras(obras) {
         img.classList.add("obras__img");
         img.src = obra.imagenPortada;
         img.alt = obra.titulo;
-        const title = document.createElement("h3");
+        const contenido = document.createElement("div");
+        contenido.classList.add("obras__contenido");
+        const title = document.createElement("h4");
         title.classList.add("obras__titulo");
         title.textContent = obra.titulo;
         const link = document.createElement("ion-icon");
         link.setAttribute("name", "arrow-forward-outline");
         link.classList.add("obras__flecha");
+        contenido.appendChild(title);
+        contenido.appendChild(link);
         caja.appendChild(img);
-        caja.appendChild(title);
-        caja.appendChild(link);
+        caja.appendChild(contenido);
         conatinerObras.appendChild(caja);
     });
 }

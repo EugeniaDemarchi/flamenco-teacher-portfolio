@@ -107,14 +107,14 @@ export const obras: Obra[] = [
     titulo: "Cria cuervos",
     imagenPortada: "/ASSETS/IMAGES/obras/cria_cuervos_flyer.jpg",
     slugObra: "cria-cuervos",
-    imgPpal: "/ASSETS/IMAGES/obras/cria_cuervos_ppal.jpg",
+    imgPpal: "/ASSETS/IMAGES/obras/obras_portada.jpg",
     descripcionCorta: "",
     rol: "Intérprete",
     descripcionLarga:
       "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.",
     galeria: [
       "/ASSETS/IMAGES/obras/cria_cuervos_flyer.jpg",
-      "/ASSETS/IMAGES/obras/cria_cuervos_ppal.jpg",
+      "/ASSETS/IMAGES/obras/obras_portada.jpg",
     ],
     video: "https://www.youtube.com/watch?v=L_TxheKwyXg",
     anio: 2011,
