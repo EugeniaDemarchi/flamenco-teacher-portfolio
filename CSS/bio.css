@@ -7,7 +7,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  /*  aspect-ratio: 3/4; */
+  aspect-ratio: 3/4;
 }
 
 .titulo_seccion {
@@ -28,6 +28,11 @@
 .bio-img--maestros {
   object-fit: contain;
 }
+.bio-text-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .bio-text {
   /*   font-family: "Inter", sans-serif; */
   font-family: "Abel";
@@ -40,7 +45,7 @@
   .titulo_seccion {
     position: absolute;
     left: 4rem;
-    bottom: 5rem;
+    bottom: 30rem;
   }
 }
 
@@ -52,15 +57,19 @@
     display: flex;
     flex-direction: row;
   }
-  .bio-text.intro {
-  }
+
   .bio-section > * {
     flex: 1 1 50%;
   }
   .titulo_seccion {
     position: absolute;
-    left: 4rem;
-    bottom: 5rem;
+    left: 38rem;
+    top: 6rem;
+    color: white;
+  }
+  .titulo_seccion::before,
+  .titulo_seccion::after {
+    background-color: white;
   }
   .bio-img-wrapper {
     display: flex;
@@ -74,10 +83,15 @@
   .bio-section--hero {
     flex-direction: row;
   }
-  .bio-text {
-    line-height: 40px;
-    padding: 5rem;
+  .bio-text-col {
     background-color: var(--color-worn-silver);
+  }
+  .bio-text {
+    background-color: var(--color-dreamy-barbie);
+    line-height: 40px;
+    border-radius: 4px;
+    max-width: 30rem;
+    /*     background-color: var(--color-worn-silver); */
     color: black;
   }
 }
@@ -90,7 +104,8 @@
     left: 4rem;
     bottom: 30rem;
   }
-  .bio-text {
-    padding: 15rem;
+  .titulo_seccion {
+    left: 68rem;
+    top: 6rem;
   }
 }

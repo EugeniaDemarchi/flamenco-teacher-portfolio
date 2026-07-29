@@ -6,7 +6,8 @@ export const showsEnCartel = [
         horario: "22.30 hs",
         imagen: "/ASSETS/IMAGES/shows/tablao.jpeg",
         titulo: "Tablao",
-        descripcionCorta: "Viví una noche de flamenco con baile, cante y guitarra en vivo.",
+        /*    descripcionCorta:
+          "Viví una noche de flamenco con baile, cante y guitarra en vivo.", */
         contacto: {
             espacio: "Centro Cultural Nueva Uriarte",
             link: "https://www.instagram.com/ccnuevauriarte/?hl=es",

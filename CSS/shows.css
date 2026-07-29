@@ -101,13 +101,13 @@ h1 a:hover {
   gap: 1.8rem;
   padding: 2rem;
   box-sizing: border-box;
+  font-family: "Abel";
 }
 
 .shows__descCorta {
-  text-align: left;
   font-size: var(--fs-h4);
   font-family: "Abel";
-  color: white;
+  color: var(--color-candlelight-peach);
   text-align: center;
 }
 .shows__obraRelacionada {
@@ -136,12 +136,12 @@ h1 a:hover {
   gap: 0.8rem;
   color: white;
 }
+
+.shows__rol {
+}
 .shows__datosArtista p {
   font-family: "Inter", sans-serif;
   color: white;
-}
-.shows__rol {
-  font-weight: 400;
 }
 
 .shows__entradas {

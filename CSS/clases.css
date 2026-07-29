@@ -216,9 +216,9 @@
   background-color: white;
 }
 @media (min-width: 768px) {
-  .clases__div {
+  /*  .clases__div {
     flex-direction: row;
-  }
+  } */
   .clases__imgWrapper {
     flex: 0 0 40%; /* no crece, no encoge, ancho fijo */
   }

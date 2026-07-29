@@ -3,7 +3,7 @@
   --color-black: #000000;
   --color-rosy-brown: #b8807d;
   --color-worn-silver: #d1bebb;
-  --color-dreamy-barbie: #fce4dc;
+  --color-dreamy-barbie: #f7e9e9;
   --color-hot-flamingo: #a85565;
   --color-velvet-wine: #9a3f55;
   --color-planet-of-the-apes: #8b2f45;
@@ -24,11 +24,11 @@
   --line-height-general-text: 1.8rem;
 
   /* === TYPE SCALE (clamp: min, preferred, max) === */
-  --fs-p: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fs-p: clamp(1rem, 0.95rem + 0.25vw, 1.5rem);
   --fs-h4: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
   --fs-h3: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
   --fs-h2: clamp(2rem, 1.5rem + 2vw, 3rem);
-  --fs-h1: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  --fs-h1: clamp(2rem, 1.2rem + 2.3vw, 4rem);
 
   --font-size-icon: clamp(1.6rem, 4vw, 2.5rem); /* iconos hamburguesa/cierre */
   --font-size-menu-link: clamp(1rem, 3vh, 6rem); /* links del menú mobile */
@@ -60,6 +60,7 @@ a {
   color: inherit;
 }
 h1 {
+  /* letter-spacing: 1px; */
   font-size: var(--fs-h1);
   color: white;
   font-family: var(--font-family-h1);
@@ -111,7 +112,7 @@ p {
   transform: translateY(-50%);
   width: 1rem;
   height: 1rem;
-  background-color: var(--color-candlelight-peach);
+  background-color: var(--color-worn-silver);
   border-radius: 50%;
 }
 

@@ -7,7 +7,7 @@
 }
 
 nav {
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem 1.5rem 0 1.5rem;
 }
 .nav-container--fixed {
   position: fixed;
@@ -31,7 +31,7 @@ nav {
     visibility 0.3s ease;
 }
 h1 a {
-  letter-spacing: 3px;
+  /*   letter-spacing: 3px; */
   font-family: var(--font-family-h1);
   color: white;
   transition: var(--transition-base);
@@ -134,7 +134,8 @@ footer {
 footer p {
   text-align: center;
   font-family: "Abel";
-  letter-spacing: 1px;
+  /*   letter-spacing: 1px;
+ */
   text-transform: uppercase;
 }
 footer a ion-icon {
