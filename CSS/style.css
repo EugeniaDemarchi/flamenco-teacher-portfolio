@@ -17,8 +17,8 @@
   --transition-slow: 700ms ease; /* movimientos grandes: menu slide-in/out */
 
   /* === FONT-FAMILY===*/
-  --font-family-h1: "Amatic SC";
-  --font-family-h2: "Amatic SC";
+  --font-family-h1: "Abel";
+  --font-family-h2: "Abel";
 
   /*typography: LINE-HIGHT*/
   --line-height-general-text: 1.8rem;
@@ -45,7 +45,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 body {
   background-color: var(--color-black);
@@ -63,7 +63,6 @@ h1 {
   font-size: var(--fs-h1);
   color: white;
   font-family: var(--font-family-h1);
-  font-weight: 700;
 }
 h2 {
   font-size: var(--fs-h2);

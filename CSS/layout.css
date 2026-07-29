@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Abel";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/ASSETS/FONTS/Abel-Regular.woff2") format("woff2");
+}
+
 nav {
   padding: 2rem 2rem 0 2rem;
 }
@@ -23,7 +31,7 @@ nav {
     visibility 0.3s ease;
 }
 h1 a {
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   font-family: var(--font-family-h1);
   color: white;
   transition: var(--transition-base);
@@ -88,7 +96,7 @@ h1 a:hover {
   list-style: none;
 }
 .menu-list a {
-  font-family: "Amatic SC";
+  font-family: "Abel";
   display: block;
   padding: 0.5rem;
   transition: transform var(--transition-slow);
@@ -125,8 +133,9 @@ footer {
 }
 footer p {
   text-align: center;
-  font-family: "Amatic SC";
-  letter-spacing: 3px;
+  font-family: "Abel";
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 footer a ion-icon {
   transition: var(--transition-base);
@@ -137,7 +146,7 @@ footer a:hover ion-icon {
 }
 
 .chivo {
-  font-family: "Amatic SC";
+  font-family: "Abel";
   color: var(--color-worn-silver);
   transition: var(--transition-base);
 }

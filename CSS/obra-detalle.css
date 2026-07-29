@@ -29,7 +29,7 @@ body {
   text-align: center;
   padding-bottom: 1rem;
   font-size: clamp(1.5rem, 2vh, 5rem);
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 .obra-detalle__descripcion-corta,
 .obra-detalle__descripcion-larga,
@@ -52,7 +52,6 @@ body {
   text-align: end;
   padding-bottom: 2rem;
   font-family: "Inter", sans-serif;
-  font-weight: 700;
 }
 .obra-detalle__galeria {
   display: flex;

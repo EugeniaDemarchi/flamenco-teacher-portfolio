@@ -115,20 +115,20 @@
   min-height: 30rem;
 }
 .clases__titulo {
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   color: white;
   position: absolute;
   top: 0;
   width: 100%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
-  font-family: "Amatic SC";
+  font-family: "Abel";
   padding: 0.8rem;
   margin: 0;
   text-align: center;
 }
 .clases__nivel {
-  font-family: "Amatic SC";
+  font-family: "Abel";
   color: white;
   position: absolute;
   bottom: 0;
@@ -143,6 +143,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  align-self: center;
 }
 .clases__li {
   color: white;
@@ -167,8 +168,8 @@
   font-size: var(--fs-p);
   transition: var(--btn-transition);
   will-change: transform;
-  font-family: "Amatic SC";
-  font-weight: 700;
+  font-family: "Abel";
+  /*   font-weight: 700; */
 }
 .mas-info-btn:hover {
   transform: scale(var(--btn-scale-hover));
@@ -184,7 +185,7 @@
 .clases__ubicacion {
   font-size: var(--fs-h4);
   color: white;
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 .clases__btn-masInfo {
   color: black;
@@ -193,8 +194,8 @@
   display: block;
   width: fit-content;
   margin: 2rem auto;
-  font-family: "Amatic SC";
-  font-weight: 700;
+  font-family: "Abel";
+  /*   font-weight: 700; */
   letter-spacing: 3px;
   font-size: var(--fs-p);
   transition: var(--btn-transition);
@@ -252,7 +253,10 @@
 
   .descripcionClases__img {
     object-fit: cover;
-    /*   object-position: right center; */
+  }
+  .descripcionClases__descGral-titulo,
+  .descripcionClases__descGral-metod {
+    font-family: "Abel";
   }
   .descripcionClases__descGral {
     line-height: 1.6;

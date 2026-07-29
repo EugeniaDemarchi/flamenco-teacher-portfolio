@@ -64,9 +64,9 @@
   transition: var(--btn-transition);
   will-change: transform;
   font-size: var(--fs-p);
-  font-family: "Amatic SC";
+  font-family: "Abel";
   letter-spacing: 3px;
-  font-weight: 700;
+  /*   font-weight: 700; */
 }
 .contacto__btn:hover,
 .contacto__btnReiniciar:hover {
@@ -92,9 +92,9 @@
   line-height: 30px;
 }
 .contacto__exito p {
-  font-family: "Amatic SC";
+  font-family: "Abel";
   text-align: center;
-  font-weight: 700;
+  /*   font-weight: 700; */
   letter-spacing: 3px;
   line-height: 42px;
 }
@@ -111,7 +111,7 @@
 }
 .contacto__btnReiniciar {
   align-self: center;
-  font-weight: 700;
+  /*   font-weight: 700; */
 }
 
 @media (min-width: 768px) {

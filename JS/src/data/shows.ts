@@ -26,14 +26,7 @@ export const showsEnCartel: ShowsEnCartel[] = [
         nombre: "Naty Riopedre, Sil Ceri, Guada D'aniello",
         rol: "Baile",
       },
-      /*       {
-        nombre: "Sil Cerri",
-        rol: "Bailaora",
-      },
-      {
-        nombre: "Naty Riopedre",
-        rol: "Bailaora",
-      }, */
+
       {
         nombre: "Tatiana Portalupi",
         rol: "Cante",

@@ -44,9 +44,6 @@
 }
 
 @media (min-width: 1024px) {
-
-  .bio-img.bio-img--trayectoria {
-  }
   .bio-hero__img {
     aspect-ratio: 4/3;
   }

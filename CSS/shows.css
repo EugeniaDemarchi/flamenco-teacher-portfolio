@@ -1,12 +1,12 @@
 h1 a,
 .hbg-btn {
-  color: black;
+  color: white;
 }
 h1 a:hover {
-  color: white;
+  color: black;
 }
 .hbg-btn:hover {
-  color: white;
+  color: black;
 }
 .shows__empty-state {
   display: flex;
@@ -16,9 +16,10 @@ h1 a:hover {
 }
 
 .shows__empty-msg {
-  font-family: "Inter", sans-serif;
+  font-family: "Abel";
   padding: 3rem 2rem;
   text-align: center;
+  text-transform: uppercase;
   color: white;
 }
 
@@ -32,13 +33,13 @@ h1 a:hover {
 .titulo_seccion {
   top: 22rem;
   position: absolute;
-  right: 2rem;
+  left: 2rem;
   top: 12rem;
-  color: black;
+  color: white;
 }
 .titulo_seccion::before,
 .titulo_seccion::after {
-  background-color: black;
+  background-color: white;
 }
 .shows__grid {
   display: grid;
@@ -70,7 +71,7 @@ h1 a:hover {
   padding: 0.8rem;
   margin: 0;
   text-align: center;
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 
 .shows__img {
@@ -104,9 +105,8 @@ h1 a:hover {
 
 .shows__descCorta {
   text-align: left;
-  /*   font-family: "Inter", sans-serif; */
   font-size: var(--fs-h4);
-  font-family: "Amatic SC";
+  font-family: "Abel";
   color: white;
   text-align: center;
 }
@@ -115,7 +115,7 @@ h1 a:hover {
   transition: color 0.3s ease-in-out;
   text-decoration: underline;
   color: var(--color-worn-silver);
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 .shows__obraRelacionada:hover {
   color: var(--color-candlelight-peach);
@@ -149,12 +149,9 @@ h1 a:hover {
   align-self: center;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.945);
-  /*   width: fit-content;*/
   display: block;
   margin: 2rem auto;
-  /*   margin: 2rem auto; */
-  /*   font-family: "Amatic SC"; */
-  font-family: "Inter", sans-serif;
+  font-family: "Abel";
   font-weight: 700;
   letter-spacing: 3px;
   font-size: var(--fs-p);
@@ -204,13 +201,13 @@ h1 a:hover {
 .shows__localidadesAgotadas {
   color: red;
   text-align: center;
-  font-family: "Amatic SC";
+  font-family: "Abel";
 }
 
 @media (min-width: 768px) {
   .titulo_seccion {
-    top: 25rem;
-    right: 4rem;
+    top: 28rem;
+    left: 4rem;
   }
   .shows__card {
     flex-direction: column;
@@ -225,8 +222,8 @@ h1 a:hover {
     object-position: 30% 20%;
   }
   .titulo_seccion {
-    top: 15rem;
-    right: 4rem;
+    top: 20rem;
+    left: 3rem;
   }
 
   .shows__card {
@@ -253,7 +250,8 @@ h1 a:hover {
 
 @media (min-width: 1440px) {
   .titulo_seccion {
-    right: 14rem;
+    top: 17rem;
+    left: 2rem;
   }
   .shows__grid {
     grid-template-columns: 1fr;
