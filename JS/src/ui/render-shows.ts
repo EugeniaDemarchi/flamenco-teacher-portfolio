@@ -104,7 +104,7 @@ showsEnCartel.forEach((show) => {
     link.href = show.contacto.link;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = `🏠${show.contacto.espacio}`;
+    link.textContent = `🏠 ${show.contacto.espacio}`;
     contacto.appendChild(link);
   }
 

@@ -7,7 +7,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  aspect-ratio: 3/4;
+  /*  aspect-ratio: 3/4; */
 }
 
 .titulo_seccion {
@@ -29,7 +29,8 @@
   object-fit: contain;
 }
 .bio-text {
-  font-family: "Inter", sans-serif;
+  /*   font-family: "Inter", sans-serif; */
+  font-family: "Abel";
   line-height: var(--line-height-general-text);
   font-size: var(--fs-p);
   padding: 3rem 2rem;
@@ -45,7 +46,13 @@
 
 @media (min-width: 1024px) {
   .bio-hero__img {
-    aspect-ratio: 4/3;
+    /*   aspect-ratio: 4/3; */
+  }
+  .bio-section--hero {
+    display: flex;
+    flex-direction: row;
+  }
+  .bio-text.intro {
   }
   .bio-section > * {
     flex: 1 1 50%;
@@ -81,7 +88,7 @@
   .titulo_seccion {
     position: absolute;
     left: 4rem;
-    bottom: 4rem;
+    bottom: 30rem;
   }
   .bio-text {
     padding: 15rem;
