@@ -8,7 +8,7 @@ const containerClases = document.querySelector(
 ) as HTMLDivElement;
 
 export function renderDescripcionClases(seccionClasesInfo: SeccionClasesInfo) {
-  const btnPlay = document.querySelector(".btn-play") as HTMLButtonElement;
+  /*   const btnPlay = document.querySelector(".btn-play") as HTMLButtonElement; */
   const descImgContainer = document.querySelector(
     ".descripcionClases__imgContainer",
   ) as HTMLDivElement;
@@ -19,52 +19,51 @@ export function renderDescripcionClases(seccionClasesInfo: SeccionClasesInfo) {
   imgPpal.src = seccionClasesInfo.imagenPrincipal;
   imgPpal.alt = "Clase de Natlia Riopedre";
 
-  btnPlay.addEventListener("click", () => {
-    if (seccionClasesInfo.videoUrl) {
-      const iframe = document.createElement("iframe");
-      iframe.src = `${seccionClasesInfo.videoUrl}&autoplay=1&muted=1&controls=0&loop=1`;
-      iframe.allow =
-        "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share";
-      descImgContainer.replaceChildren(iframe);
-    }
+  /*   btnPlay.addEventListener("click", () => { */
+  if (seccionClasesInfo.videoUrl) {
+    const iframe = document.createElement("iframe");
+    iframe.src = `${seccionClasesInfo.videoUrl}&autoplay=1&muted=1&controls=0&loop=1`;
+    iframe.allow =
+      "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share";
+    descImgContainer.replaceChildren(iframe);
+  }
+}
+
+const descGralTitulo = document.querySelector(
+  ".descripcionClases__descGral-titulo",
+) as HTMLTitleElement;
+
+const descGral = document.querySelector(
+  ".descripcionClases__descGral",
+) as HTMLParagraphElement;
+if (seccionClasesInfo.descripcionGeneral) {
+  descGralTitulo.textContent = "Enfoque";
+  descGral.textContent = seccionClasesInfo.descripcionGeneral;
+}
+
+const imgMetodologia = document.querySelector(
+  ".descripcionClases__imgMetod",
+) as HTMLImageElement;
+if (seccionClasesInfo.imagenMetodologia) {
+  imgMetodologia.src = seccionClasesInfo.imagenMetodologia;
+  imgMetodologia.alt = "Clases de Natalia Riopedre";
+}
+
+const metodTitulo = document.querySelector(
+  ".descripcionClases__descGral-metod",
+) as HTMLTitleElement;
+
+const metodologia = document.querySelector(
+  ".descripcionClases__metodologia",
+) as HTMLUListElement;
+if (seccionClasesInfo.metodologia) {
+  metodTitulo.textContent = "Modalidad";
+  seccionClasesInfo.metodologia.forEach((punto) => {
+    const li = document.createElement("li");
+    li.textContent = punto;
+    li.className = "descripcionClases__bulletsMetod";
+    metodologia.appendChild(li);
   });
-
-  const descGralTitulo = document.querySelector(
-    ".descripcionClases__descGral-titulo",
-  ) as HTMLTitleElement;
-
-  const descGral = document.querySelector(
-    ".descripcionClases__descGral",
-  ) as HTMLParagraphElement;
-  if (seccionClasesInfo.descripcionGeneral) {
-    descGralTitulo.textContent = "Enfoque";
-    descGral.textContent = seccionClasesInfo.descripcionGeneral;
-  }
-
-  const imgMetodologia = document.querySelector(
-    ".descripcionClases__imgMetod",
-  ) as HTMLImageElement;
-  if (seccionClasesInfo.imagenMetodologia) {
-    imgMetodologia.src = seccionClasesInfo.imagenMetodologia;
-    imgMetodologia.alt = "Clases de Natalia Riopedre";
-  }
-
-  const metodTitulo = document.querySelector(
-    ".descripcionClases__descGral-metod",
-  ) as HTMLTitleElement;
-
-  const metodologia = document.querySelector(
-    ".descripcionClases__metodologia",
-  ) as HTMLUListElement;
-  if (seccionClasesInfo.metodologia) {
-    metodTitulo.textContent = "Modalidad";
-    seccionClasesInfo.metodologia.forEach((punto) => {
-      const li = document.createElement("li");
-      li.textContent = punto;
-      li.className = "descripcionClases__bulletsMetod";
-      metodologia.appendChild(li);
-    });
-  }
 }
 
 export function renderClases(clases: Clase[]) {

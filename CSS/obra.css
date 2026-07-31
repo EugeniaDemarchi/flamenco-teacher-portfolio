@@ -1,5 +1,6 @@
 .obras__img-ppal {
-  display: block;
+  height: var(--banner-h-mobile);
+  object-fit: cover;
   width: 100%;
 }
 .obras__img-ppal-container {
@@ -69,14 +70,16 @@
   font-size: var(--font-size-icon);
 }
 @media (min-width: 768px) {
+  .obras__img-ppal {
+    height: var(--banner-h-tablet);
+    object-position: bottom;
+  }
 }
 
 @media (min-width: 1024px) {
   .obras__img-ppal {
-    width: 100%;
-    height: 25rem;
+    height: var(--banner-h-laptop);
     object-fit: cover;
-    object-position: bottom;
   }
   .obras__grid {
     margin: 0 10rem;
@@ -88,7 +91,7 @@
 
 @media (min-width: 1440px) {
   .obras__img-ppal {
-    object-position: bottom;
+    height: var(--banner-h-desktop);
   }
   .obras__grid {
     margin: 0 20rem;

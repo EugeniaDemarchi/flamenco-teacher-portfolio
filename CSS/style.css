@@ -12,6 +12,12 @@
   --color-candlelight-peach: #ffe6ce;
   --color-candlelight-peach-rgb: 255, 230, 206;
 
+  /*=== TAMAÑO BANNER===*/
+  --banner-h-mobile: 16rem;
+  --banner-h-tablet: 20rem;
+  --banner-h-laptop: 25rem;
+  --banner-h-desktop: 30rem;
+
   /* === TRANSITIONS === */
   --transition-base: 0.3s ease-in-out; /* hovers, micro-interacciones */
   --transition-slow: 700ms ease; /* movimientos grandes: menu slide-in/out */

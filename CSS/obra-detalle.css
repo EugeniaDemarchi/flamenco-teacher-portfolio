@@ -1,6 +1,3 @@
-body {
-  color: white;
-}
 .obra-detalle__container {
   position: relative;
 }
@@ -11,15 +8,28 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 10rem; /* ajustá a la altura real de tu nav */
+  height: 8rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
 .obra-detalle__img-ppal {
-  display: block;
+  /*display: block;*/
   width: 100%;
+  height: var(--banner-h-mobile);
+  object-fit: cover;
 }
+.obra-detalle__img-ppal[data-slug="redes"] {
+  object-position: center 40%;
+}
+.obra-detalle__img-ppal[data-slug="la-venganza-de-auroch"] {
+  object-position: center 30%;
+}
+
+.obra-detalle__img-ppal[data-slug="cria-cuervos"] {
+  object-position: center 10%;
+}
+
 .obra-detalle__grid {
   display: grid;
   align-items: center;
@@ -30,6 +40,7 @@ body {
   padding-bottom: 1rem;
   font-size: clamp(1.5rem, 2vh, 5rem);
   font-family: "Abel";
+  color: white;
 }
 .obra-detalle__descripcion-corta,
 .obra-detalle__descripcion-larga,
@@ -113,7 +124,7 @@ body {
 .obra-detalle__close-btn:hover {
   transform: rotate(135deg);
 }
-/*comportamiento para cuando el modal se renderiza*/
+
 .scroll-lock {
   overflow: hidden;
 }
@@ -124,6 +135,7 @@ body {
 
 .obra-detalle__video {
   width: 100%;
+  margin-inline: auto;
 }
 .obra-detalle__video iframe {
   width: 100%;
@@ -133,9 +145,15 @@ body {
   border: none;
 }
 
+@media (min-width: 768px) {
+  .obra-detalle__img-ppal {
+    height: var(--banner-h-tablet);
+  }
+}
+
 @media (min-width: 1024px) {
   .obra-detalle__img-ppal {
-    height: 25rem;
+    height: var(--banner-h-laptop);
     object-fit: cover;
     object-position: center 40%;
   }
@@ -161,9 +179,16 @@ body {
   .obra-detalle__anio {
     font-size: var(--fs-p);
   }
+  .obra-detalle__video {
+    max-width: 42.5rem;
+  }
 }
 
 @media (min-width: 1440px) {
+  .obra-detalle__img-ppal {
+    height: var(--banner-h-desktop);
+  }
+
   .contacto__grid {
     margin: 2rem 20rem;
   }

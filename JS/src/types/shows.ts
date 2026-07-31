@@ -1,7 +1,7 @@
 import { Ubicacion } from "./comunes.js";
 
 export interface Artista {
-  nombre: string;
+  nombre: string[];
   rol: string;
 }
 

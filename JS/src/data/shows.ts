@@ -8,8 +8,9 @@ export const showsEnCartel: ShowsEnCartel[] = [
     horario: "22.30 hs",
     imagen: "/ASSETS/IMAGES/shows/tablao.jpeg",
     titulo: "Tablao",
-    /*    descripcionCorta:
-      "Viví una noche de flamenco con baile, cante y guitarra en vivo.", */
+    descripcionCorta:
+      "Viví una noche de flamenco con baile, cante y guitarra en vivo.",
+
     contacto: {
       espacio: "Centro Cultural Nueva Uriarte",
       link: "https://www.instagram.com/ccnuevauriarte/?hl=es",
@@ -23,16 +24,16 @@ export const showsEnCartel: ShowsEnCartel[] = [
     localidadesAgotadas: false,
     artistas: [
       {
-        nombre: "Naty Riopedre, Sil Ceri, Guada D'aniello",
+        nombre: ["Naty Riopedre", "Sil Ceri", "Guada D'aniello"],
         rol: "Baile",
       },
 
       {
-        nombre: "Tatiana Portalupi",
+        nombre: ["Tatiana Portalupi"],
         rol: "Cante",
       },
       {
-        nombre: "Fernando Suarez Castro",
+        nombre: ["Fernando Suarez Castro"],
         rol: "Guitarra",
       },
     ],

@@ -70,10 +70,15 @@ showsEnCartel.forEach((show) => {
         const rol = document.createElement("p");
         rol.classList.add("shows__rol");
         rol.textContent = `${artista.rol}:`;
-        const nombre = document.createElement("p");
-        nombre.textContent = artista.nombre;
+        const nombres = document.createElement("div");
+        nombres.classList.add("shows__nombres");
+        artista.nombre.forEach((nombre) => {
+            const nombreIndividual = document.createElement("p");
+            nombreIndividual.textContent = nombre;
+            nombres.appendChild(nombreIndividual);
+        });
         datosArtista.appendChild(rol);
-        datosArtista.appendChild(nombre);
+        datosArtista.appendChild(nombres);
         artistas.appendChild(datosArtista);
     });
     infoContainer.appendChild(artistas);

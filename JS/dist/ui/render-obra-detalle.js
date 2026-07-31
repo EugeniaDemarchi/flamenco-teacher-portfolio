@@ -37,6 +37,7 @@ export function renderObraDetalle(obra) {
     const imgPpal = document.querySelector(".obra-detalle__img-ppal");
     imgPpal.src = obra.imgPpal;
     imgPpal.alt = obra.titulo;
+    imgPpal.dataset.slug = obra.slugObra;
     const titulo = document.querySelector(".obra-detalle__titulo");
     titulo.innerHTML = obra.titulo;
     const descripcionCorta = document.querySelector(".obra-detalle__descripcion-corta");

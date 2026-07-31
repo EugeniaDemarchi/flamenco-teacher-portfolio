@@ -49,6 +49,7 @@ export function renderObraDetalle(obra: Obra) {
   ) as HTMLImageElement;
   imgPpal.src = obra.imgPpal;
   imgPpal.alt = obra.titulo;
+  imgPpal.dataset.slug = obra.slugObra;
 
   const titulo = document.querySelector(
     ".obra-detalle__titulo",

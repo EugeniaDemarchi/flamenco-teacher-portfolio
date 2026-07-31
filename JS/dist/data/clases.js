@@ -1,8 +1,9 @@
 export const seccionClasesInfo = {
-    imagenPrincipal: "/ASSETS/IMAGES/clases/candidato_001.webp",
-    videoUrl: "https://player.vimeo.com/video/1199402157?app_id=122963&autoplay=1",
+    imagenPrincipal: "/ASSETS/IMAGES/clases/portada_clases.jpg",
+    /*   videoUrl:
+      "https://player.vimeo.com/video/1199402157?app_id=122963&autoplay=1", */
     descripcionGeneral: "Natalia Riopedre concibe la clase como extensión de su propia búsqueda artística. Sus clases cruzan técnica, expresión y entrenamiento corporal, integrando herramientas de distintas disciplinas para potenciar el proceso individual y grupal.",
-    imagenMetodologia: "/ASSETS/IMAGES/clases/metodo_clases.jpg",
+    imagenMetodologia: "/ASSETS/IMAGES/clases/metodo_clases (3).jpg",
     metodologia: [
         "Ciclo lectivo anual y cursos de perfeccionamiento",
         "Clases Grupales para todos los niveles",

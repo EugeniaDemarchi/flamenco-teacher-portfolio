@@ -1,29 +1,28 @@
 .descripcionClases__imgContainer {
   display: flex;
   position: relative;
-  aspect-ratio: 16/9;
+  /*   aspect-ratio: 16/9; */
 }
-.descripcionClases__imgContainer iframe {
+/* .descripcionClases__imgContainer iframe {
   width: 100%;
   height: 100%;
   display: block;
   border: 0;
-}
+} */
 .descripcionClases__img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: var(--banner-h-mobile);
   object-fit: cover;
-  filter: sepia(0.3) contrast(1.1) saturate(1.3) brightness(0.95);
+  filter: sepia(0.3) contrast(1.1) saturate(1.3) brightness(0.95); /*  */
 }
-.btn-play {
+/* .btn-play {
   position: absolute;
   z-index: 1000;
   color: white;
   font-size: var(--fs-p);
   top: 1rem;
   right: 1rem;
-}
+} */
 .titulo_seccion {
   position: absolute;
   bottom: 0.25rem;
@@ -37,7 +36,7 @@
     "descripcion"
     "imagen-metodologia "
     "metodologia";
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   gap: 2rem;
 }
 .descripcionClases__descGral-titulo,
@@ -47,19 +46,19 @@
 .descripcionClases__descGral {
   grid-area: descripcion;
   text-align: start;
-  font-family: "Inter", sans-serif;
-  font-weight: 200;
+  font-family: "Abel";
   line-height: 1.5;
-  padding-bottom: 2rem;
+  /*  padding-bottom: 2rem; */
+  font-size: var(--fs-p);
 }
 .descripcionClases__metodologia {
   list-style-type: none;
   grid-area: metodologia;
 }
 .descripcionClases__metodologia li {
-  font-family: "Inter", sans-serif;
+  font-family: "Abel";
   position: relative;
-  font-weight: 200;
+  font-size: var(--fs-p);
   padding-bottom: 1rem;
   padding-left: 1.6rem;
 }
@@ -219,8 +218,15 @@
   /*  .clases__div {
     flex-direction: row;
   } */
+  .descripcionClases__img {
+    height: var(--banner-h-tablet);
+  }
   .clases__imgWrapper {
     flex: 0 0 40%; /* no crece, no encoge, ancho fijo */
+  }
+
+  .clases__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .clases__infoDiv {
     flex: 1 1 0%;
@@ -249,11 +255,15 @@
     grid-template-areas:
       "descripcion descripcion"
       "imagen-metodologia  metodologia";
+    margin: 0 10rem;
+    padding: 3rem 0rem;
   }
 
   .descripcionClases__img {
-    object-fit: cover;
+    height: var(--banner-h-laptop);
+    object-position: bottom;
   }
+
   .descripcionClases__descGral-titulo,
   .descripcionClases__descGral-metod {
     font-family: "Abel";
@@ -268,8 +278,8 @@
   }
 
   .clases__grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: start;
+    margin: 0 10rem;
   }
 
   .clases__div {
@@ -277,6 +287,10 @@
   }
 }
 @media (min-width: 1440px) {
+  .descripcionClases__img {
+    height: var(--banner-h-desktop);
+    object-position: center 70%;
+  }
   .titulo_seccion {
     bottom: 20rem;
     left: 11rem;
@@ -289,10 +303,10 @@
     grid-area: tituloMet;
   }
   .descripcionClases__grid {
-    margin: 0 20rem;
+    margin: 0 10rem;
     align-items: center;
     align-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "imagen-metodologia imagen-metodologia "
       "tituloDesc tituloMet"
@@ -311,11 +325,7 @@
     display: none;
   }
 
-  /*  .clases__grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: start;
-  } */
-  .clases__div {
-    flex-direction: column;
+  .clases__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

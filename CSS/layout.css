@@ -7,7 +7,7 @@
 }
 
 nav {
-  padding: 2rem 1.5rem 0 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .nav-container--fixed {
   position: fixed;
@@ -24,6 +24,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   width: 100%;
   color: white;
   transition:
@@ -31,7 +32,7 @@ nav {
     visibility 0.3s ease;
 }
 h1 a {
-  /*   letter-spacing: 3px; */
+  letter-spacing: 2px;
   font-family: var(--font-family-h1);
   color: white;
   transition: var(--transition-base);

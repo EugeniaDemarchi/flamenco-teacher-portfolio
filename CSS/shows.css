@@ -1,18 +1,18 @@
-h1 a,
+/* h1 a,
 .hbg-btn {
-  color: white;
+  color: var(--color-candlelight-peach);
 }
 h1 a:hover {
   color: black;
 }
 .hbg-btn:hover {
   color: black;
-}
+} */
 .shows__empty-state {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  /*   min-height: 40vh; */
 }
 
 .shows__empty-msg {
@@ -24,7 +24,9 @@ h1 a:hover {
 }
 
 .shows__img-ppal {
-  display: block;
+  height: var(--banner-h-mobile);
+  object-fit: cover;
+  object-position: top;
   width: 100%;
 }
 .shows__img-ppal-container {
@@ -67,6 +69,8 @@ h1 a:hover {
   top: 0;
   width: 100%;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 0.8rem;
   margin: 0;
@@ -77,7 +81,7 @@ h1 a:hover {
 .shows__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   min-height: 30rem;
 }
 .shows__funcionDatos {
@@ -92,7 +96,9 @@ h1 a:hover {
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 0;
 }
 .shows__info {
@@ -130,18 +136,27 @@ h1 a:hover {
   color: white;
 }
 .shows__datosArtista {
+  font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: start;
   gap: 0.8rem;
-  color: white;
+  /*  color: white; */
 }
 
 .shows__rol {
-}
-.shows__datosArtista p {
+  font-size: var(--fs-p);
+
   font-family: "Inter", sans-serif;
+}
+.shows__nombres {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
   color: white;
+}
+.shows__nombres p {
+  font-family: "Abel";
 }
 
 .shows__entradas {
@@ -205,6 +220,10 @@ h1 a:hover {
 }
 
 @media (min-width: 768px) {
+  .shows__img-ppal {
+    height: var(--banner-h-tablet);
+    object-position: top;
+  }
   .titulo_seccion {
     top: 28rem;
     left: 4rem;
@@ -216,10 +235,7 @@ h1 a:hover {
 
 @media (min-width: 1024px) {
   .shows__img-ppal {
-    width: 100%;
-    height: 25rem;
-    object-fit: cover;
-    object-position: 30% 20%;
+    height: var(--banner-h-laptop);
   }
   .titulo_seccion {
     top: 20rem;
@@ -249,6 +265,10 @@ h1 a:hover {
 }
 
 @media (min-width: 1440px) {
+  .shows__img-ppal {
+    height: var(--banner-h-desktop);
+    object-position: center 10%;
+  }
   .titulo_seccion {
     top: 17rem;
     left: 2rem;
