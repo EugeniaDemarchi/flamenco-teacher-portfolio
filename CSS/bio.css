@@ -37,7 +37,7 @@
   /*   font-family: "Inter", sans-serif; */
   font-family: "Abel";
   line-height: var(--line-height-general-text);
-  font-size: var(--fs-p);
+  font-size: var(--fs-p-a);
   padding: 3rem 2rem;
 }
 

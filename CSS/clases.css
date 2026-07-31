@@ -50,7 +50,7 @@
   font-family: "Abel";
   line-height: 1.5;
   /*  padding-bottom: 2rem; */
-  font-size: var(--fs-p);
+  font-size: var(--fs-p-a);
 }
 .descripcionClases__metodologia {
   list-style-type: none;
@@ -59,7 +59,7 @@
 .descripcionClases__metodologia li {
   font-family: "Abel";
   position: relative;
-  font-size: var(--fs-p);
+  font-size: var(--fs-p-a);
   padding-bottom: 1rem;
   padding-left: 1.6rem;
 }
@@ -164,8 +164,8 @@
 }
 .mas-info-btn {
   padding: var(--btn-padding);
-  letter-spacing: 3px;
-  font-size: var(--fs-p);
+  /*  letter-spacing: 2px; */
+  font-size: var(--fs-p-a);
   transition: var(--btn-transition);
   will-change: transform;
   font-family: "Abel";
@@ -189,15 +189,13 @@
 }
 .clases__btn-masInfo {
   color: black;
-  padding: 1rem;
+  padding: 0.6em;
   background-color: rgba(255, 255, 255, 0.945);
   display: block;
   width: fit-content;
   margin: 2rem auto;
   font-family: "Abel";
-  /*   font-weight: 700; */
-  letter-spacing: 3px;
-  font-size: var(--fs-p);
+  font-size: var(--fs-p-a);
   transition: var(--btn-transition);
   will-change: transform;
   cursor: pointer;

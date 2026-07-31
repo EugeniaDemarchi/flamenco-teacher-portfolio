@@ -158,6 +158,7 @@
     object-position: center 40%;
   }
   .obra-detalle__grid {
+    padding: 0;
     margin: 2rem 10rem;
   }
   .obra-detalle__galeria {

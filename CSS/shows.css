@@ -243,8 +243,8 @@ h1 a:hover {
   } */
 
   .shows__card {
-    width: 60rem;
-    flex-direction: row;
+    /*     width: 60rem; */
+    flex-direction: column;
   }
   .shows__info {
     flex-direction: column;
@@ -267,7 +267,7 @@ h1 a:hover {
 @media (min-width: 1440px) {
   .shows__img-ppal {
     height: var(--banner-h-desktop);
-    object-position: center 10%;
+    object-position: top;
   }
   /*  .titulo_seccion {
     top: 17rem;

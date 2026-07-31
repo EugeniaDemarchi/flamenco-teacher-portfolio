@@ -95,6 +95,6 @@
     height: var(--banner-h-desktop);
   }
   .obras__grid {
-    margin: 2rem 20rem;
+    /*  margin: 2rem 20rem; */
   }
 }
