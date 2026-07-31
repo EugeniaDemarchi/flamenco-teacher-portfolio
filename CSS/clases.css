@@ -23,12 +23,12 @@
   top: 1rem;
   right: 1rem;
 } */
-.titulo_seccion {
+/* .titulo_seccion {
   position: absolute;
   bottom: 0.25rem;
   left: 3rem;
 }
-
+ */
 .descripcionClases__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -36,7 +36,8 @@
     "descripcion"
     "imagen-metodologia "
     "metodologia";
-  padding: 3rem 2rem;
+  /*   padding: 3rem 2rem; */
+  margin: 2rem 2rem 0 2rem;
   gap: 2rem;
 }
 .descripcionClases__descGral-titulo,
@@ -244,10 +245,10 @@
 }
 
 @media (min-width: 1024px) {
-  .titulo_seccion {
+  /*   .titulo_seccion {
     bottom: 0.25rem;
     left: 7rem;
-  }
+  } */
 
   .descripcionClases__grid {
     align-items: stretch;
@@ -255,8 +256,8 @@
     grid-template-areas:
       "descripcion descripcion"
       "imagen-metodologia  metodologia";
-    margin: 0 10rem;
-    padding: 3rem 0rem;
+    margin: 2rem 10rem;
+    padding-bottom: 3rem;
   }
 
   .descripcionClases__img {
@@ -291,11 +292,11 @@
     height: var(--banner-h-desktop);
     object-position: center 70%;
   }
-  .titulo_seccion {
+  /*   .titulo_seccion {
     bottom: 20rem;
     left: 11rem;
   }
-
+ */
   .descripcionClases__descGral-titulo {
     grid-area: tituloDesc;
   }
@@ -316,6 +317,7 @@
   .descripcionClases__descGral-titulo,
   .descripcionClases__descGral-metod {
     display: block;
+    text-align: center;
     color: white;
   }
   .descripcionClases__descGral {

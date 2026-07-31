@@ -13,7 +13,8 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 3rem 2rem;
+  /*   padding: 3rem 2rem; */
+  margin: 2rem 2rem 0 2rem;
 }
 
 .obras__contenido {
@@ -82,7 +83,7 @@
     object-fit: cover;
   }
   .obras__grid {
-    margin: 0 10rem;
+    margin: 2rem 10rem;
   }
   .obras__img {
     height: 20rem;
@@ -94,6 +95,6 @@
     height: var(--banner-h-desktop);
   }
   .obras__grid {
-    margin: 0 20rem;
+    margin: 2rem 20rem;
   }
 }

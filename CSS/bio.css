@@ -10,11 +10,11 @@
   aspect-ratio: 3/4;
 }
 
-.titulo_seccion {
+/* .titulo_seccion {
   position: absolute;
   left: 2rem;
   bottom: 25rem;
-}
+} */
 .bio-img {
   width: 100%;
   object-fit: cover;
@@ -42,11 +42,11 @@
 }
 
 @media (min-width: 768px) {
-  .titulo_seccion {
+  /*   .titulo_seccion {
     position: absolute;
     left: 4rem;
     bottom: 30rem;
-  }
+  }*/
 }
 
 @media (min-width: 1024px) {
@@ -62,12 +62,12 @@
   .bio-section > * {
     flex: 1 1 50%;
   }
-  .titulo_seccion {
+  /*   .titulo_seccion {
     position: absolute;
     left: 38rem;
     top: 6rem;
     color: white;
-  }
+  } */
   .titulo_seccion::before,
   .titulo_seccion::after {
     background-color: white;
@@ -103,13 +103,9 @@
   .bio-text {
     background-color: var(--color-dreamy-barbie);
   }
-  * .titulo_seccion {
-    position: absolute;
-    left: 4rem;
-    bottom: 30rem;
-  }
-  .titulo_seccion {
+
+  /*   .titulo_seccion {
     left: 68rem;
     top: 6rem;
-  }
+  } */
 }

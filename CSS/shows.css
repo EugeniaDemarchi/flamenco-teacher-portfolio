@@ -32,22 +32,22 @@ h1 a:hover {
 .shows__img-ppal-container {
   position: relative;
 }
-.titulo_seccion {
+/* .titulo_seccion {
   top: 22rem;
   position: absolute;
   left: 2rem;
   top: 12rem;
   color: white;
-}
-.titulo_seccion::before,
+} */
+/* .titulo_seccion::before,
 .titulo_seccion::after {
   background-color: white;
-}
+} */
 .shows__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-  margin: 4rem 2rem 0 2rem;
+  margin: 2rem 2rem 0 2rem;
   align-items: start;
   justify-self: center;
 }
@@ -224,10 +224,10 @@ h1 a:hover {
     height: var(--banner-h-tablet);
     object-position: top;
   }
-  .titulo_seccion {
+  /*   .titulo_seccion {
     top: 28rem;
     left: 4rem;
-  }
+  } */
   .shows__card {
     flex-direction: column;
   }
@@ -237,10 +237,10 @@ h1 a:hover {
   .shows__img-ppal {
     height: var(--banner-h-laptop);
   }
-  .titulo_seccion {
+  /*   .titulo_seccion {
     top: 20rem;
     left: 3rem;
-  }
+  } */
 
   .shows__card {
     width: 60rem;
@@ -254,7 +254,7 @@ h1 a:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin: 4rem 10rem;
+    margin: 2rem 10rem;
     align-items: center;
   }
 
@@ -269,12 +269,12 @@ h1 a:hover {
     height: var(--banner-h-desktop);
     object-position: center 10%;
   }
-  .titulo_seccion {
+  /*  .titulo_seccion {
     top: 17rem;
     left: 2rem;
-  }
+  } */
   .shows__grid {
     grid-template-columns: 1fr;
-    margin: 4rem 20rem;
+    margin: 2rem 20rem;
   }
 }

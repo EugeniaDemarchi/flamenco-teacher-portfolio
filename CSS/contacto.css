@@ -6,7 +6,8 @@
     "form"
     "exito";
   gap: 1rem;
-  margin: 0 2rem 0 2rem;
+
+  margin: 2rem 2rem 0 2rem;
   box-shadow: 0 0px 8px rgba(255, 255, 255, 0.253);
 }
 .contacto__contenedor-img {
@@ -122,7 +123,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "imagen form";
     gap: 0;
-    margin: 0 5rem;
+    margin: 2rem 5rem;
   }
   .contacto__exito {
     grid-area: form;
@@ -133,13 +134,13 @@
     font-weight: 400;
   }
 
-.contacto__img {
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  .contacto__img {
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  }
 }
-
 @media (min-width: 1440px) {
   .contacto__grid {
     width: 60rem;
-    margin: 4rem auto;
+    margin: 2rem auto;
   }
 }

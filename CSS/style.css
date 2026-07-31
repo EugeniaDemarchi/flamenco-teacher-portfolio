@@ -105,9 +105,10 @@ p {
   position: relative;
   display: table;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 0.5rem 1rem;
   color: var(--color-worn-silver);
   text-align: center;
+  font-weight: 100;
 }
 
 .titulo_seccion::before,
@@ -116,8 +117,8 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
+  width: clamp(0.3rem, 0.4rem + 0.25vw, 1rem);
+  height: clamp(0.3rem, 0.4rem + 0.25vw, 1rem);
   background-color: var(--color-worn-silver);
   border-radius: 50%;
 }
