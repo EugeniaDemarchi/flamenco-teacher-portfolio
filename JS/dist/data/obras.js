@@ -27,7 +27,7 @@ export const obras = [
             "apariciones-portada",
         ],
         video: "https://www.youtube.com/watch?v=naOhe-ulsvk",
-        anio: 2017,
+        anio: 2024,
     },
     {
         titulo: "Crudo, un impulso quebrado",
@@ -43,7 +43,7 @@ export const obras = [
             "crudo-portada",
             "crudo-galeria-3",
         ],
-        anio: 2010,
+        anio: 2018,
     },
     {
         titulo: "Perimetral",
@@ -70,7 +70,7 @@ export const obras = [
         rol: "Directora e intérprete",
         descripcionLarga: "En Redes, Natalia dirige e interpreta una indagación sobre las conexiones invisibles entre cuerpos y vínculos, donde sostener y atrapar se vuelven caras de una misma trama.",
         galeria: ["redes-galeria-1", "redes-portada"],
-        anio: 2021,
+        anio: 2022,
     },
     {
         titulo: "Conciertos de bailes",
@@ -97,7 +97,7 @@ export const obras = [
         descripcionLarga: "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.",
         galeria: ["cria-cuervos-galeria-1", "cria-cuervos-portada"],
         video: "https://www.youtube.com/watch?v=L_TxheKwyXg",
-        anio: 2011,
+        anio: 2014,
     },
     {
         titulo: "Abre flamenco",
