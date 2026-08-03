@@ -1,4 +1,5 @@
 import { obras } from "../data/obras.js";
+import { crearPictureResponsive } from "../utils/crear-picture.js";
 export function buscarSlug(lista, slug) {
     return lista.find((obra) => obra.slugObra === slug);
 }
@@ -34,10 +35,19 @@ export function mostrarError(mensaje) {
     document.body.appendChild(errorMsg);
 }
 export function renderObraDetalle(obra) {
-    const imgPpal = document.querySelector(".obra-detalle__img-ppal");
-    imgPpal.src = obra.imgPpal;
-    imgPpal.alt = obra.titulo;
-    imgPpal.dataset.slug = obra.slugObra;
+    const imgPpalActual = document.querySelector(".obra-detalle__img-ppal");
+    const pictureNuevo = crearPictureResponsive({
+        nombreBase: obra.imgPpal,
+        carpeta: "obras",
+        alt: obra.titulo,
+        sizes: "100vw",
+        loading: "eager",
+        fetchPriority: "high",
+        className: "obra-detalle__img-ppal",
+    });
+    const imgDentro = pictureNuevo.querySelector("img");
+    imgDentro.dataset.slug = obra.slugObra;
+    imgPpalActual.replaceWith(pictureNuevo);
     const titulo = document.querySelector(".obra-detalle__titulo");
     titulo.innerHTML = obra.titulo;
     const descripcionCorta = document.querySelector(".obra-detalle__descripcion-corta");
@@ -59,9 +69,18 @@ export function renderObraDetalle(obra) {
     let indiceActual = 0;
     if (galeriaARenderizar) {
         const listaGaleria = galeriaARenderizar;
+        function actualizarImagenModal(nombreBase, alt) {
+            const carpeta = "obras";
+            const sourceAvif = document.querySelector(".obra-detalle__modal-picture source[type='image/avif']");
+            const sourceWebp = document.querySelector(".obra-detalle__modal-picture source[type='image/webp']");
+            sourceAvif.srcset = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.avif`;
+            sourceWebp.srcset = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.webp`;
+            imgModal.src = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.jpg`;
+            imgModal.alt = alt;
+        }
         function abrirModal(index) {
             indiceActual = index;
-            imgModal.src = listaGaleria[indiceActual];
+            actualizarImagenModal(listaGaleria[indiceActual], obra.titulo);
             modal.classList.add("obra-detalle__modal--activo");
             document.body.classList.add("scroll-lock");
         }
@@ -75,14 +94,18 @@ export function renderObraDetalle(obra) {
                 cerrarModal();
             }
         });
-        galeriaARenderizar.forEach((rutaImg, index) => {
-            const img = document.createElement("img");
+        galeriaARenderizar.forEach((nombreBase, index) => {
             const imgWrapper = document.createElement("div");
             imgWrapper.classList.add("obra-detalle__img-wrapper");
-            img.src = rutaImg;
-            img.alt = obra.titulo;
+            const picture = crearPictureResponsive({
+                nombreBase,
+                carpeta: "obras",
+                alt: obra.titulo,
+                sizes: "(min-width: 1024px) 20rem, 100vw",
+                loading: "lazy",
+            });
             imgWrapper.addEventListener("click", () => abrirModal(index));
-            imgWrapper.appendChild(img);
+            imgWrapper.appendChild(picture);
             galeria.appendChild(imgWrapper);
         });
     }

@@ -1,9 +1,7 @@
 export const seccionClasesInfo = {
-    imagenPrincipal: "/ASSETS/IMAGES/clases/portada_clases.jpg",
-    /*   videoUrl:
-      "https://player.vimeo.com/video/1199402157?app_id=122963&autoplay=1", */
+    imagenPrincipal: "clase-flamenco-zapateo",
     descripcionGeneral: "Natalia Riopedre concibe la clase como extensión de su propia búsqueda artística. Sus clases cruzan técnica, expresión y entrenamiento corporal, integrando herramientas de distintas disciplinas para potenciar el proceso individual y grupal.",
-    imagenMetodologia: "/ASSETS/IMAGES/clases/metodo_clases (3).jpg",
+    imagenMetodologia: "muestra-alumnas-flamenco",
     metodologia: [
         "Ciclo lectivo anual y cursos de perfeccionamiento",
         "Clases Grupales para todos los niveles",
@@ -15,7 +13,7 @@ export const seccionClasesInfo = {
 };
 export const clases = [
     {
-        imagenClase: "ASSETS/IMAGES/clases/alegrias.jpg",
+        imagenClase: "clase-flamenco-alegrias",
         titulo: "Alegrías",
         nivelClase: "intermedio",
         horarios: [
@@ -31,7 +29,7 @@ export const clases = [
         },
     },
     {
-        imagenClase: "ASSETS/IMAGES/clases/clase_1.jpg",
+        imagenClase: "clase-flamenco-martinete",
         titulo: "Martinete con bastón ",
         nivelClase: "avanzado",
         horarios: [
@@ -47,7 +45,7 @@ export const clases = [
         },
     },
     {
-        imagenClase: "ASSETS/IMAGES/clases/bulerias.jpg",
+        imagenClase: "clase-flamenco-bulerias",
         titulo: "Bulerías",
         nivelClase: "intermedio",
         horarios: [{ dia: "Martes", horario: "18 hs" }],
@@ -60,7 +58,7 @@ export const clases = [
         },
     },
     {
-        imagenClase: "ASSETS/IMAGES/clases/farruca.jpg",
+        imagenClase: "clase-flamenco-farruca",
         titulo: "Farruca ",
         nivelClase: "avanzado",
         horarios: [{ dia: "Martes", horario: "19 hs" }],

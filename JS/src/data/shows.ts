@@ -6,7 +6,7 @@ export const showsEnCartel: ShowsEnCartel[] = [
     tipo: "puntual",
     fecha: "7/8/2026",
     horario: "22.30 hs",
-    imagen: "/ASSETS/IMAGES/shows/tablao.jpeg",
+    imagen: "tablao",
     titulo: "Tablao",
     descripcionCorta:
       "Viví una noche de flamenco con baile, cante y guitarra en vivo.",

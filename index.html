@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Natalia Riopedre, bailaora y profesora de flamenco en Buenos Aires. Clases para todos los niveles, shows en vivo y obra artística. Conocé la agenda de shows en cartel y sumate a sus clases."
+    />
     <meta property="og:title" content="Natalia Riopedre — Flamenco" />
     <meta
       property="og:description"
       content="Bailaora, coreógrafa y docente de flamenco en Buenos Aires. Obras, clases y shows en vivo."
     />
-    <meta
+    <!--     <meta
       property="og:image"
       content="https://nataliariopedre.netlify.app/ASSETS/SOCIAL/whatsapp.png"
-    />
+    /> -->
     <meta property="og:url" content="https://nataliariopedre.netlify.app/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,7 +38,9 @@
       href="/ASSETS/FAVICON/apple-touch-icon.png"
     />
     <link rel="manifest" href="/ASSETS/FAVICON/site.webmanifest" />
-    <title>HOME</title>
+    <title>
+      Natalia Riopedre — Bailaora y profesora de flamenco en Buenos Aires
+    </title>
     <link
       rel="preload"
       href="/ASSETS/FONTS/Abel-Regular.woff2"
@@ -52,17 +58,37 @@
       <picture>
         <source
           srcset="
-            ASSETS/IMAGES/hero_small.webp     768w,
-            ASSETS/IMAGES/hero_large_hq.webp 1920w
+            ASSETS/IMAGES/index/hero_small.avif     768w,
+            ASSETS/IMAGES/index/hero_medium.avif   1440w,
+            ASSETS/IMAGES/index/hero_large_hq.avif 1920w
+          "
+          sizes="100vw"
+          type="image/avif"
+        />
+
+        <source
+          srcset="
+            ASSETS/IMAGES/index/hero_small.webp     768w,
+            ASSETS/IMAGES/index/hero_medium.webp   1440w,
+            ASSETS/IMAGES/index/hero_large_hq.webp 1920w
           "
           sizes="100vw"
           type="image/webp"
         />
         <img
-          src="./ASSETS/IMAGES/hero_small.webp"
+          src="./ASSETS/IMAGES/index/hero_small.jpg"
+          srcset="
+            ASSETS/IMAGES/index/hero_small.jpg     768w,
+            ASSETS/IMAGES/index/hero_medium.jpg   1440w,
+            ASSETS/IMAGES/index/hero_large_hq.jpg 1920w
+          "
+          sizes="100vw"
           class="hero-img"
           alt="Natalia Riopedre"
+          width="2048"
+          height="1365"
           loading="eager"
+          fetchpriority="high"
         />
       </picture>
     </section>

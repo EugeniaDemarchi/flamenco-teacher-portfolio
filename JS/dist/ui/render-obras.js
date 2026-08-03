@@ -1,4 +1,5 @@
 import { obras } from "../data/obras.js";
+import { crearPictureResponsive } from "../utils/crear-picture.js";
 const conatinerObras = document.querySelector(".obras__grid");
 export function renderObras(obras) {
     conatinerObras.innerHTML = "";
@@ -7,10 +8,16 @@ export function renderObras(obras) {
         const caja = document.createElement("a");
         caja.classList.add("obras__portada");
         caja.href = `obra-detalle.html?slug=${obra.slugObra}`;
-        const img = document.createElement("img");
-        img.classList.add("obras__img");
-        img.src = obra.imagenPortada;
-        img.alt = obra.titulo;
+        const picture = crearPictureResponsive({
+            nombreBase: obra.imagenPortada,
+            carpeta: "obras",
+            alt: obra.titulo,
+            sizes: "100vw",
+            loading: "lazy",
+            className: "obras__img",
+        });
+        const imgDentro = picture.querySelector("img");
+        imgDentro.dataset.slug = obra.slugObra;
         const contenido = document.createElement("div");
         contenido.classList.add("obras__contenido");
         const title = document.createElement("h4");
@@ -21,7 +28,7 @@ export function renderObras(obras) {
         link.classList.add("obras__flecha");
         contenido.appendChild(title);
         contenido.appendChild(link);
-        caja.appendChild(img);
+        caja.appendChild(picture);
         caja.appendChild(contenido);
         conatinerObras.appendChild(caja);
     });

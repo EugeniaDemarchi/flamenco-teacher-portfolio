@@ -43,14 +43,45 @@
       <ion-icon name="chevron-up-outline"></ion-icon>
     </button>
 
-    <div class="bio-container">
+    <!-- <div class="bio-container">
       <div class="bio-hero bio-section bio-section--hero">
         <div class="bio-img-wrapper bio-img-wrapper--right">
-          <img
-            src="./ASSETS/IMAGES/bio/maestros.jpg"
-            alt=""
-            class="bio-hero__img"
-          />
+          <picture>
+            <source
+              srcset="
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-small.avif   768w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.avif 1440w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-large.avif  1920w
+              "
+              sizes="100vw"
+              type="image/avif"
+            />
+
+            <source
+              srcset="
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-small.webp   768w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.webp 1440w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-large.webp  1920w
+              "
+              sizes="100vw"
+              type="image/webp"
+            />
+            <img
+              src="./ASSETS/IMAGES/bio/natalia-riopedre-obra-small.jpg"
+              srcset="
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-small.jpg   768w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.jpg 1440w,
+                ASSETS/IMAGES/bio/natalia-riopedre-obra-large.jpg  1920w
+              "
+              sizes="100vw"
+              class="bio-img bio-img--maestros"
+              alt="Natalia Riopedre"
+              width="2048"
+              height="1365"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
         <div class="bio-text-col">
           <p class="bio-text intro">
@@ -62,17 +93,48 @@
             flamenco su forma de expresión más representativa.
           </p>
         </div>
-        <!--         <h2 class="titulo_seccion">BIO</h2> -->
       </div>
+
       <div class="bio-section bio-section--formacion">
         <div
           class="bio-img-wrapper bio-img-wrapper--left bio-img-wrapper--maestros"
         >
-          <img
-            src="./ASSETS/IMAGES/bio/origenes.jpg"
-            alt=""
-            class="bio-img bio-img--maestros"
-          />
+          <picture>
+            <source
+              srcset="
+                ASSETS/IMAGES/bio/natalia-riopedre-small.avif   768w,
+                ASSETS/IMAGES/bio/natalia-riopedre-medium.avif 1440w,
+                ASSETS/IMAGES//bio/natalia-riopedre-large.avif 1920w
+              "
+              sizes="100vw"
+              type="image/avif"
+            />
+
+            <source
+              srcset="
+                ASSETS/IMAGES//bio/natalia-riopedre-small.webp   768w,
+                ASSETS/IMAGES//bio/natalia-riopedre-medium.webp 1440w,
+                ASSETS/IMAGES//bio/natalia-riopedre-large.webp  1920w
+              "
+              sizes="100vw"
+              type="image/webp"
+            />
+            <img
+              src="./ASSETS/IMAGES/bio/natalia-riopedre-small.jpg"
+              srcset="
+                ASSETS/IMAGES/bio/natalia-riopedre-small.jpg   768w,
+                ASSETS/IMAGES/bio/natalia-riopedre-medium.jpg 1440w,
+                ASSETS/IMAGES/bio/natalia-riopedre-large.jpg  1920w
+              "
+              sizes="100vw"
+              class="bio-img bio-img--maestros"
+              alt="Natalia Riopedre"
+              width="2048"
+              height="1365"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
         <div class="bio-text-col">
           <p class="bio-text">
@@ -87,11 +149,41 @@
 
       <div class="bio-section bio-section--trayectoria">
         <div class="bio-img-wrapper bio-img-wrapper--right">
-          <img
-            src="./ASSETS/IMAGES/bio/trayectoria.jpg"
-            alt=""
-            class="bio-img bio-img--trayectoria"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.avif   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.avif 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.avif  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.webp   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.webp 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.webp  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <img
+              src="./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.jpg"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.jpg   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.jpg 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.jpg  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+              class="bio-img bio-img--trayectoria"
+              alt="Natalia Riopedre bailando flamenco en un tablao"
+              width="1920"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="bio-text-col">
           <p class="bio-text">
@@ -106,11 +198,41 @@
 
       <div class="bio-section bio-section--obra">
         <div class="bio-img-wrapper bio-img-wrapper--left">
-          <img
-            src="./ASSETS/IMAGES/bio/obra.JPG"
-            alt=""
-            class="bio-img bio-img--obra"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.avif   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.avif 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.avif  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.webp   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.webp 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.webp  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <img
+              src="./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.jpg"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.jpg   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.jpg 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.jpg  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+              class="bio-img bio-img--obra"
+              alt="Escena de la obra Cría Cuervos, de Natalia Riopedre"
+              width="1920"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="bio-text-col">
           <p class="bio-text">
@@ -125,11 +247,41 @@
 
       <div class="bio-section bio-section--docencia">
         <div class="bio-img-wrapper bio-img-wrapper--right">
-          <img
-            src="./ASSETS/IMAGES/bio/docencia.jpg"
-            alt=""
-            class="bio-img bio-img--docencia"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.avif   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.avif 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.avif  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.webp   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.webp 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.webp  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <img
+              src="./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.jpg"
+              srcset="
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.jpg   768w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.jpg 1440w,
+                ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.jpg  1920w
+              "
+              sizes="(max-width: 768px) 100vw, 50vw"
+              class="bio-img bio-img--docencia"
+              alt="Muestra anual"
+              width="1920"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="bio-text-col">
           <p class="bio-text">
@@ -140,6 +292,252 @@
             enseñanza.
           </p>
         </div>
+      </div>
+    </div> -->
+    <div class="bio-hero bio-section bio-section--hero">
+      <div class="bio-img-wrapper bio-img-wrapper--right">
+        <picture>
+          <source
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-small.avif   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.avif 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-large.avif  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            type="image/avif"
+          />
+          <source
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-small.webp   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.webp 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-large.webp  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            type="image/webp"
+          />
+          <img
+            src="./ASSETS/IMAGES/bio/natalia-riopedre-obra-small.jpg"
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-small.jpg   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-medium.jpg 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-obra-large.jpg  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            class="bio-hero__img"
+            alt="Natalia Riopedre, bailaora y coreógrafa de flamenco"
+            width="2048"
+            height="1365"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
+      <div class="bio-text-col">
+        <p class="bio-text intro">
+          Natalia Riopedre estudió diferentes danzas desde temprana edad,
+          acercamiento que se convertiría en el eje de su trayectoria
+          profesional. Es egresada de la Universidad Nacional de las Artes
+          (UNA), de la carrera de Composición Coreográfica, formación que le
+          permitió nutrirse de múltiples disciplinas antes de encontrar en el
+          flamenco su forma de expresión más representativa.
+        </p>
+      </div>
+    </div>
+
+    <div class="bio-section bio-section--formacion">
+      <div
+        class="bio-img-wrapper bio-img-wrapper--left bio-img-wrapper--maestros"
+      >
+        <picture>
+          <source
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-small.avif   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-medium.avif 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-large.avif  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            type="image/avif"
+          />
+          <source
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-small.webp   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-medium.webp 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-large.webp  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            type="image/webp"
+          />
+          <img
+            src="./ASSETS/IMAGES/bio/natalia-riopedre-small.jpg"
+            srcset="
+              ASSETS/IMAGES/bio/natalia-riopedre-small.jpg   768w,
+              ASSETS/IMAGES/bio/natalia-riopedre-medium.jpg 1440w,
+              ASSETS/IMAGES/bio/natalia-riopedre-large.jpg  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            class="bio-img"
+            alt="Natalia Riopedre en formación de danza flamenca"
+            width="2048"
+            height="1365"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="bio-text-col">
+        <p class="bio-text">
+          Se formó en Argentina con maestros como José Zartmann, Graciela Ríos
+          Saiz y Sibila, entre otros. También estudió con bailaores españoles
+          como Ángel Pericet, La China, Belén Maya y Manuel Liñán. En 2012, 2017
+          y 2022 viajó a España, donde tomó clases con Andrés Marín, Úrsula
+          López, Alicia Márquez y Leonor Leal.
+        </p>
+      </div>
+    </div>
+
+    <div class="bio-section bio-section--trayectoria">
+      <div class="bio-img-wrapper bio-img-wrapper--right">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.avif   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.avif 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.avif  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.webp   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.webp 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.webp  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <img
+            src="./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.jpg"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-small.jpg   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-medium.jpg 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-tablao-large.jpg  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            class="bio-img"
+            alt="Natalia Riopedre bailando flamenco en un tablao"
+            width="1920"
+            height="1280"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="bio-text-col">
+        <p class="bio-text">
+          Trabajó en diversos tablaos y en shows para eventos. Formó parte del
+          grupo Moraires Flamenco, con el que grabó un disco y se presentó en
+          distintos teatros de Buenos Aires. Participó como bailaora en
+          espectáculos como Doña Francisquita, Claroscuro, Federico Vive y Cría
+          Cuervos, entre otros.
+        </p>
+      </div>
+    </div>
+
+    <div class="bio-section bio-section--obra">
+      <div class="bio-img-wrapper bio-img-wrapper--left">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.avif   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.avif 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.avif  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.webp   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.webp 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.webp  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <img
+            src="./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.jpg"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-small.jpg   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-medium.jpg 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-cria-cuervos-large.jpg  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            class="bio-img"
+            alt="Escena de la obra Cría Cuervos, de Natalia Riopedre"
+            width="1920"
+            height="1280"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="bio-text-col">
+        <p class="bio-text">
+          Como directora y coreógrafa Natalia Riopedre es autora de las obras
+          Que Me Lleve Donde Quiera, Apariciones, Crudo y Perimetral, esta
+          última su producción más reciente. Varias de estas producciones
+          continúan en cartel, mientras nuevos proyectos se encuentran en
+          desarrollo.
+        </p>
+      </div>
+    </div>
+
+    <div class="bio-section bio-section--docencia">
+      <div class="bio-img-wrapper bio-img-wrapper--right">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.avif   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.avif 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.avif  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.webp   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.webp 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.webp  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+          />
+          <img
+            src="./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.jpg"
+            srcset="
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-small.jpg   768w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-medium.jpg 1440w,
+              ./ASSETS/IMAGES/bio/natalia-riopedre-alumnas-large.jpg  1920w
+            "
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            class="bio-img"
+            alt="Muestra anual de alumnas de flamenco de Natalia Riopedre"
+            width="1920"
+            height="1280"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="bio-text-col">
+        <p class="bio-text">
+          Inició su carrera docente en flamenco en el año 2000, trabajando con
+          distintos grupos en la preparación de obras y presentaciones en
+          tablaos y peñas. Es también docente de Expresión Corporal en escuelas
+          y de manera particular, integrando ambas disciplinas en su enseñanza.
+        </p>
       </div>
     </div>
 

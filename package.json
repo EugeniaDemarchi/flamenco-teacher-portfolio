@@ -1,0 +1,23 @@
+{
+  "name": "flamenco-teacher-portfolio",
+  "version": "1.0.0",
+  "description": "/_mapsUrl — Natalia lo consigue buscando el lugar en Google Maps, clickeando \"Compartir\", y copiando el link._/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio/issues"
+  },
+  "homepage": "https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio#readme",
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}

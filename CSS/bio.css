@@ -1,4 +1,4 @@
-.bio-hero {
+/* .bio-hero {
   width: 100%;
   position: relative;
 }
@@ -10,11 +10,6 @@
   aspect-ratio: 3/4;
 }
 
-/* .titulo_seccion {
-  position: absolute;
-  left: 2rem;
-  bottom: 25rem;
-} */
 .bio-img {
   width: 100%;
   object-fit: cover;
@@ -34,7 +29,6 @@
   justify-content: center;
 }
 .bio-text {
-  /*   font-family: "Inter", sans-serif; */
   font-family: "Abel";
   line-height: var(--line-height-general-text);
   font-size: var(--fs-p-a);
@@ -42,17 +36,11 @@
 }
 
 @media (min-width: 768px) {
-  /*   .titulo_seccion {
-    position: absolute;
-    left: 4rem;
-    bottom: 30rem;
-  }*/
 }
 
 @media (min-width: 1024px) {
   .bio-hero__img {
     aspect-ratio: 3/4;
-    /*    object-position: top center; */
   }
   .bio-section--hero {
     display: flex;
@@ -62,12 +50,7 @@
   .bio-section > * {
     flex: 1 1 50%;
   }
-  /*   .titulo_seccion {
-    position: absolute;
-    left: 38rem;
-    top: 6rem;
-    color: white;
-  } */
+
   .titulo_seccion::before,
   .titulo_seccion::after {
     background-color: white;
@@ -103,9 +86,81 @@
   .bio-text {
     background-color: var(--color-dreamy-barbie);
   }
+}
+ */
+.bio-hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+/* .bio-hero {
+  width: 100%;
+  position: relative;
+}
+ */
+.bio-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.bio-img-wrapper {
+  position: relative;
+}
 
-  /*   .titulo_seccion {
-    left: 68rem;
-    top: 6rem;
-  } */
+.bio-text-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bio-text {
+  font-family: "Abel";
+  line-height: var(--line-height-general-text);
+  font-size: var(--fs-p-a);
+  padding: 3rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .bio-section--hero {
+    display: flex;
+    flex-direction: row;
+  }
+  .bio-section > * {
+    flex: 1 1 50%;
+  }
+  .titulo_seccion::before,
+  .titulo_seccion::after {
+    background-color: white;
+  }
+  .bio-img-wrapper {
+    display: flex;
+  }
+  .bio-section {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .bio-section.bio-section--trayectoria,
+  .bio-section--docencia,
+  .bio-section--hero {
+    flex-direction: row;
+  }
+  .bio-text-col {
+    background-color: var(--color-worn-silver);
+  }
+  .bio-text {
+    line-height: 1.6;
+    border-radius: 4px;
+    max-width: 30rem;
+    color: black;
+  }
+}
+@media (min-width: 1440px) {
+  .bio-hero__img {
+    aspect-ratio: 4/3;
+    object-position: center 25%;
+  }
+  .bio-text {
+    background-color: var(--color-dreamy-barbie);
+  }
 }

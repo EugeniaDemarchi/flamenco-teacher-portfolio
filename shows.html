@@ -27,9 +27,42 @@
   <body>
       <div id="nav-container" class="nav-container--fixed" ></div>
       <div class="shows__img-ppal-container">
-            <img src="ASSETS/IMAGES/shows/portada_3.jpg" alt="" class="shows__img-ppal">
+<div class="shows__img-ppal-container">
+  <picture>
+    <source
+      type="image/avif"
+      srcset="
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-small.avif   768w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-medium.avif 1440w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-large.avif  1920w
+      "
+      sizes="100vw"
+    />
+    <source
+      type="image/webp"
+      srcset="
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-small.webp   768w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-medium.webp 1440w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-large.webp  1920w
+      "
+      sizes="100vw"
+    />
+    <img
+      src="/ASSETS/IMAGES/shows/tablao-natalia-riopedre-small.jpg"
+      srcset="
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-small.jpg   768w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-medium.jpg 1440w,
+        /ASSETS/IMAGES/shows/tablao-natalia-riopedre-large.jpg  1920w
+      "
+      sizes="100vw"
+      alt="Natalia Riopedre en un tablao"
+      class="shows__img-ppal"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
+</div>
       </div>
-  
     <h3 class="titulo_seccion">En cartel</h3> 
       <button id="scrollTopBtn">
         <ion-icon name="chevron-up-outline"></ion-icon>

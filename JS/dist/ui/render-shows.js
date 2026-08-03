@@ -1,5 +1,6 @@
 import { showsEnCartel } from "../data/shows.js";
 import { obras } from "../data/obras.js";
+import { crearPictureResponsive } from "../utils/crear-picture.js";
 const containerShows = document.querySelector(".shows__grid");
 const containerMsgNoShow = document.querySelector(".shows__empty-state");
 if (showsEnCartel.length === 0) {
@@ -18,11 +19,20 @@ showsEnCartel.forEach((show) => {
     tituloShow.textContent = show.titulo;
     tituloShow.classList.add("shows__titulo");
     imgWrapper.appendChild(tituloShow);
-    const imgShow = document.createElement("img");
+    /*   const imgShow = document.createElement("img");
     imgShow.classList.add("shows__img");
     imgShow.src = show.imagen;
     imgShow.alt = show.titulo;
-    imgWrapper.appendChild(imgShow);
+    imgWrapper.appendChild(imgShow); */
+    const pictureShow = crearPictureResponsive({
+        nombreBase: show.imagen,
+        carpeta: "shows",
+        alt: show.titulo,
+        sizes: "100vw",
+        loading: "lazy",
+        className: "shows__img",
+    });
+    imgWrapper.appendChild(pictureShow);
     const funcionContainer = document.createElement("div");
     funcionContainer.classList.add("shows__funcionDatos");
     if (show.tipo === "puntual") {
@@ -43,7 +53,6 @@ showsEnCartel.forEach((show) => {
     funcionContainer.appendChild(horarioShow);
     imgWrapper.appendChild(funcionContainer);
     caja.appendChild(imgWrapper);
-    // --- FIN del wrapper ---
     const infoContainer = document.createElement("div");
     infoContainer.classList.add("shows__info");
     const descCorta = document.createElement("p");

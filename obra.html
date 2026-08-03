@@ -40,11 +40,79 @@
   <body>
     <div id="nav-container" class="nav-container--fixed"></div>
     <div class="obras_img-ppal-container">
-      <img
+      <!--    <img
         src="/ASSETS/IMAGES/obras/obras_portada.jpg"
         alt=""
         class="obras__img-ppal"
-      />
+      /> -->
+      <div class="obras_img-ppal-container">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-small.avif   768w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-medium.avif 1440w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-large.avif  1920w
+            "
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-small.webp   768w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-medium.webp 1440w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-large.webp  1920w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="/ASSETS/IMAGES/obras/abre-flamenco-portada-small.jpg"
+            srcset="
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-small.jpg   768w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-medium.jpg 1440w,
+              /ASSETS/IMAGES/obras/abre-flamenco-portada-large.jpg  1920w
+            "
+            sizes="100vw"
+            alt="Natalia Riopedre en la obra Abre Flamenco"
+            class="obras__img-ppal"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
+        <!--         <picture>
+          <source
+            type="image/avif"
+            srcset="
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.avif   768w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.avif 1440w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.avif  1920w
+            "
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.webp   768w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.webp 1440w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.webp  1920w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="/ASSETS/IMAGES/obras/abre-flamenco-portada-small.jpg"
+            srcset="
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.jpg   768w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.jpg 1440w,
+              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.jpg  1920w
+            "
+            sizes="100vw"
+            alt="Natalia Riopedre en la obra Cría Cuervos"
+            class="obras__img-ppal"
+            loading="eager"
+            fetchpriority="high"
+          /> 
+        </picture>-->
+      </div>
     </div>
     <h3 class="titulo_seccion">Obra</h3>
     <button id="scrollTopBtn">

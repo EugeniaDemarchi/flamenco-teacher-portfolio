@@ -67,7 +67,6 @@ a {
   color: inherit;
 }
 h1 {
-  /* letter-spacing: 1px; */
   font-size: var(--fs-h1);
   color: white;
   font-family: var(--font-family-h1);

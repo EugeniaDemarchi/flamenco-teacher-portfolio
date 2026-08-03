@@ -1,3 +1,6 @@
+.nav-container--fixed {
+  position: static;
+}
 .contacto__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -66,8 +69,7 @@
   will-change: transform;
   font-size: var(--fs-p);
   font-family: "Abel";
-  letter-spacing: 3px;
-  /*   font-weight: 700; */
+  letter-spacing: 1px;
 }
 .contacto__btn:hover,
 .contacto__btnReiniciar:hover {

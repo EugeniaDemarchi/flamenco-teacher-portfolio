@@ -34,15 +34,49 @@
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/contacto.css" />
     <link rel="stylesheet" href="./CSS/scroll-to-top.css" />
+
+    <!--  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <div id="nav-container"></div>
+    <div id="nav-container" class="nav-container--fixed"></div>
     <h3 class="titulo_seccion">Contacto</h3>
     <section class="contacto__grid">
       <div class="contacto__contenedor-img">
-        <img src="/ASSETS/IMAGES/contacto.jpg" alt="" class="contacto__img" />
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.avif   768w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.avif 1440w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.avif  1920w
+            "
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.webp   768w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.webp 1440w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.webp  1920w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="/ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg"
+            srcset="
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg   768w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.jpg 1440w,
+              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.jpg  1920w
+            "
+            sizes="100vw"
+            alt="Natalia Riopedre, bailaora de flamenco"
+            class="contacto__img"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </div>
       <form
         action="/procesar-datos"
