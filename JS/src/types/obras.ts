@@ -8,5 +8,5 @@ export interface Obra {
   descripcionLarga?: string;
   galeria?: string[];
   video?: string;
-  anio: number;
+  anio?: number;
 }

@@ -102,6 +102,7 @@ p {
 }
 
 .titulo_seccion {
+  font-size: var(--fs-h3);
   position: relative;
   display: table;
   margin: 0 auto;

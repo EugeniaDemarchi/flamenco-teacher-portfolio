@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conocé las obras de Natalia Riopedre: dirección, coreografía e interpretación en danza flamenca, de Que Me Lleve Donde Quiera a Perimetral y Redes."
+    />
     <link rel="icon" type="image/x-icon" href="/ASSETS/FAVICON/favicon.ico" />
     <link
       rel="icon"
@@ -22,7 +26,7 @@
       href="/ASSETS/FAVICON/apple-touch-icon.png"
     />
     <link rel="manifest" href="/ASSETS/FAVICON/site.webmanifest" />
-    <title>Obra</title>
+    <title>Obra | Natalia Riopedre</title>
     <link
       rel="preload"
       href="/ASSETS/FONTS/Abel-Regular.woff2"
@@ -34,17 +38,10 @@
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/componentesComunes.css" />
     <link rel="stylesheet" href="./CSS/obra.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <div id="nav-container" class="nav-container--fixed"></div>
     <div class="obras_img-ppal-container">
-      <!--    <img
-        src="/ASSETS/IMAGES/obras/obras_portada.jpg"
-        alt=""
-        class="obras__img-ppal"
-      /> -->
       <div class="obras_img-ppal-container">
         <picture>
           <source
@@ -79,46 +76,13 @@
             fetchpriority="high"
           />
         </picture>
-        <!--         <picture>
-          <source
-            type="image/avif"
-            srcset="
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.avif   768w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.avif 1440w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.avif  1920w
-            "
-            sizes="100vw"
-          />
-          <source
-            type="image/webp"
-            srcset="
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.webp   768w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.webp 1440w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.webp  1920w
-            "
-            sizes="100vw"
-          />
-          <img
-            src="/ASSETS/IMAGES/obras/abre-flamenco-portada-small.jpg"
-            srcset="
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-small.jpg   768w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-medium.jpg 1440w,
-              /ASSETS/IMAGES/obras/natalia-riopedre-cria-cuervos-portada-large.jpg  1920w
-            "
-            sizes="100vw"
-            alt="Natalia Riopedre en la obra Cría Cuervos"
-            class="obras__img-ppal"
-            loading="eager"
-            fetchpriority="high"
-          /> 
-        </picture>-->
       </div>
     </div>
-    <h3 class="titulo_seccion">Obra</h3>
-    <button id="scrollTopBtn">
-      <ion-icon name="chevron-up-outline"></ion-icon>
+    <h2 class="titulo_seccion">Obra</h2>
+    <button id="scrollTopBtn" aria-label="Volver arriba ">
+      <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
     </button>
-    <div class="obras__grid"></div>
+    <main class="obras__grid"></main>
     <div id="footer-container"></div>
     <script
       type="module"

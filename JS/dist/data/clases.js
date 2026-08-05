@@ -60,7 +60,7 @@ export const clases = [
     {
         imagenClase: "clase-flamenco-farruca",
         titulo: "Farruca ",
-        nivelClase: "avanzado",
+        nivelClase: "inicial",
         horarios: [{ dia: "Martes", horario: "19 hs" }],
         descripcionCorta: "Desarrollá la fuerza, la precisión y el carácter de la farruca mediante el trabajo técnico del zapateo y la expresión corporal.",
         descripcionLarga: "Clase de nivel avanzado centrada en la farruca, un palo de gran fuerza y sobriedad que requiere control técnico y musical. Trabajamos la limpieza del zapateo, la coordinación, la colocación corporal y la calidad del movimiento, buscando una interpretación sólida y expresiva. El recorrido pone especial énfasis en la potencia escénica sin perder la elegancia característica de este estilo.",
@@ -68,6 +68,19 @@ export const clases = [
             direccion: "Tucumán 3378",
             mapsUrl: "https://www.google.com/maps/place/Mediterr%C3%A1nea+Caf%C3%A9+Teatro/@-34.600177,-58.4133485,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcca8916aefda1:0xfaf2d315de3a1fc!8m2!3d-34.600177!4d-58.4133485!16s%2Fg%2F1wn_78qd?entry=ttu&g_ep=EgoyMDI2MDcyNi4wIKXMDSoASAFQAw%3D%3D",
             barrio: "Abasto",
+        },
+    },
+    {
+        imagenClase: "clase-flamenco-guajira",
+        titulo: "Guajira con abanico ",
+        nivelClase: "intermedio",
+        horarios: [{ dia: "Sábados", horario: "16 hs" }],
+        descripcionCorta: "Técnica, musicalidad y abanico en una de las danzas más refinadas del flamenco.",
+        descripcionLarga: "Una propuesta para profundizar en la Guajira a través del trabajo con abanico, explorando la relación entre el movimiento, el ritmo y la expresividad. La clase combina técnica, secuencias coreográficas e interpretación para potenciar la presencia escénica de cada bailaora.",
+        ubicacion: {
+            direccion: "French 266",
+            mapsUrl: "https://www.google.com/maps/place/French+266,+B1828HKF+Banfield,+Provincia+de+Buenos+Aires/@-34.7426342,-58.4006939,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcd29e37689f83:0xb3894f33e277cba8!8m2!3d-34.7426342!4d-58.398119?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",
+            barrio: "Banfield",
         },
     },
 ];

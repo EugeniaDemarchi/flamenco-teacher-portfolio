@@ -3,7 +3,7 @@ import { crearPictureResponsive } from "../utils/crear-picture.js";
 const conatinerObras = document.querySelector(".obras__grid");
 export function renderObras(obras) {
     conatinerObras.innerHTML = "";
-    const copiaObras = [...obras].sort((a, b) => b.anio - a.anio);
+    const copiaObras = [...obras].sort((a, b) => a.titulo.localeCompare(b.titulo, "es"));
     copiaObras.forEach((obra) => {
         const caja = document.createElement("a");
         caja.classList.add("obras__portada");
@@ -13,7 +13,7 @@ export function renderObras(obras) {
             carpeta: "obras",
             alt: obra.titulo,
             sizes: "100vw",
-            loading: "lazy",
+            loading: "eager",
             className: "obras__img",
         });
         const imgDentro = picture.querySelector("img");

@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Descubrí el detalle de cada obra de Natalia Riopedre: dirección, coreografía, interpretación y galería del flamenco contemporáneo argentino."
+    />
     <link rel="icon" type="image/x-icon" href="/ASSETS/FAVICON/favicon.ico" />
     <link
       rel="icon"
@@ -22,7 +26,7 @@
       href="/ASSETS/FAVICON/apple-touch-icon.png"
     />
     <link rel="manifest" href="/ASSETS/FAVICON/site.webmanifest" />
-    <title>Obra Detalle</title>
+    <title>Obras | Natalia Riopedre</title>
     <link
       rel="preload"
       href="/ASSETS/FONTS/Abel-Regular.woff2"
@@ -35,18 +39,16 @@
     <link rel="stylesheet" href="./CSS/componentesComunes.css" />
     <link rel="stylesheet" href="./CSS/obra.css" />
     <link rel="stylesheet" href="./CSS/obra-detalle.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <div id="nav-container" class="nav-container--fixed"></div>
-    <button id="scrollTopBtn">
-      <ion-icon name="chevron-up-outline"></ion-icon>
+    <button id="scrollTopBtn" aria-label="Volver arriba">
+      <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
     </button>
 
     <div class="obra-detalle__container">
       <img src="" alt="" class="obra-detalle__img-ppal" />
-      <h3 class="titulo_seccion">Obras</h3>
+      <h2 class="titulo_seccion">Obras</h2>
       <div class="obra-detalle__grid">
         <h3 class="obra-detalle__titulo"></h3>
         <p class="obra-detalle__rol"></p>
@@ -57,17 +59,7 @@
         <div class="obra-detalle__video"></div>
       </div>
     </div>
-    <!-- 
-    <div class="obra-detalle__modal">
-      <button class="obra-detalle__close-btn">
-        <ion-icon
-          name="close-outline"
-          md="close-sharp"
-          class="close-outline"
-        ></ion-icon>
-      </button>
-      <img src="" alt="" class="obra-detalle__modal-img" />
-    </div> -->
+
     <div class="obra-detalle__modal">
       <button class="obra-detalle__close-btn">
         <ion-icon

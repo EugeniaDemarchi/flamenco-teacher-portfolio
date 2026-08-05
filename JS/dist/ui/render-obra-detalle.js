@@ -112,7 +112,9 @@ export function renderObraDetalle(obra) {
     const rol = document.querySelector(".obra-detalle__rol");
     rol.innerHTML = obra.rol;
     const anio = document.querySelector(".obra-detalle__anio");
-    anio.textContent = String(obra.anio);
+    if (obra.anio) {
+        anio.textContent = String(obra.anio);
+    }
     const descripcionLarga = document.querySelector(".obra-detalle__descripcion-larga");
     if (obra.descripcionLarga) {
         descripcionLarga.textContent = obra.descripcionLarga;

@@ -7,13 +7,10 @@ export const obras: Obra[] = [
     slugObra: "que-me-lleve-donde-quiera",
     imgPpal: "que-me-lleve-flyer",
     descripcionCorta:
-      "Una exploración escénica sobre el deseo, el control y la entrega en el lenguaje flamenco.",
+      "Que me lleve donde quiera explora, desde una perspectiva experimental, las posibilidades expresivas del lenguaje flamenco.",
     rol: "Directora e intérprete",
-    descripcionLarga:
-      "Una obra que indaga en los límites entre el control y el abandono dentro del lenguaje flamenco, construida desde la dirección y la interpretación de Natalia.",
     galeria: ["que-me-lleve-flyer"],
     video: "https://www.youtube.com/watch?v=GtyxK2XJnSQ",
-    anio: 2012,
   },
   {
     titulo: "Apariciones",
@@ -21,10 +18,8 @@ export const obras: Obra[] = [
     slugObra: "apariciones",
     imgPpal: "apariciones-galeria-1",
     descripcionCorta:
-      "Una coreografía que revisita mitos ancestrales desde el cuerpo.",
+      "Apariciones propone una reflexión poética sobre el último período de la dictadura militar argentina, indagando en la memoria, la ausencia y la persistencia de aquello que resiste al olvido.",
     rol: "Coreógrafa e intérprete",
-    descripcionLarga:
-      "Auroch propone un cruce entre lo primitivo y lo contemporáneo, con una coreografía que Natalia firma e interpreta en escena.",
     galeria: [
       "apariciones-galeria-1",
       "apariciones-galeria-2",
@@ -33,7 +28,6 @@ export const obras: Obra[] = [
       "apariciones-portada",
     ],
     video: "https://www.youtube.com/watch?v=naOhe-ulsvk",
-    anio: 2024,
   },
   {
     titulo: "Crudo, un impulso quebrado",
@@ -41,17 +35,15 @@ export const obras: Obra[] = [
     slugObra: "crudo",
     imgPpal: "crudo-portada",
     descripcionCorta:
-      "Una pieza que trabaja la fractura como motor de movimiento.",
+      "Crudo indaga en las tensiones del trabajo artístico, donde la pasión por la creación convive con la incertidumbre, el esfuerzo y la fragilidad de sus condiciones laborales.",
     rol: "Directora y coreógrafa",
-    descripcionLarga:
-      "Crudo parte de la idea del impulso interrumpido, explorando la tensión entre lo que se contiene y lo que finalmente se libera en el cuerpo.",
+
     galeria: [
       "crudo-galeria-1",
       "crudo-galeria-2",
       "crudo-portada",
       "crudo-galeria-3",
     ],
-    anio: 2018,
   },
   {
     titulo: "Perimetral",
@@ -59,17 +51,15 @@ export const obras: Obra[] = [
     slugObra: "perimetral",
     imgPpal: "perimetral-galeria-1",
     descripcionCorta:
-      "Una obra sobre los bordes y los límites del espacio escénico.",
+      "Perimetral investiga el cuerpo femenino como territorio en donde se enmarca la violencia patriarcal. Esta tragedia contemporánea juega en los límites del género flamenco resignificando los estereotipos de la pasión y la sangre.",
     rol: "Directora e intérprete",
-    descripcionLarga:
-      "Perimetral trabaja la idea de frontera -física y simbólica- como territorio de creación.",
     galeria: [
       "perimetral-galeria-1",
       "perimetral-galeria-2",
       "perimetral-galeria-3",
+      "perimetral-galeria-4",
       "perimetral-portada",
     ],
-    anio: 2022,
   },
   {
     titulo: "Redes",
@@ -77,12 +67,9 @@ export const obras: Obra[] = [
     slugObra: "redes",
     imgPpal: "redes-galeria-1",
     descripcionCorta:
-      "Una pieza sobre los vínculos que sostienen y los que atrapan.",
+      "Desde el lenguaje más tradicional del flamenco, el encuentro de 3 bailaoras muestra sus profundos vínculos.",
     rol: "Directora e intérprete",
-    descripcionLarga:
-      "En Redes, Natalia dirige e interpreta una indagación sobre las conexiones invisibles entre cuerpos y vínculos, donde sostener y atrapar se vuelven caras de una misma trama.",
     galeria: ["redes-galeria-1", "redes-portada"],
-    anio: 2022,
   },
   {
     titulo: "Conciertos de bailes",
@@ -98,7 +85,6 @@ export const obras: Obra[] = [
       "conciertos-de-bailes-galeria-3",
       "conciertos-de-bailes-portada",
     ],
-    anio: 2025,
   },
   {
     titulo: "Cria cuervos",
@@ -107,27 +93,24 @@ export const obras: Obra[] = [
     imgPpal: "cria-cuervos-galeria-1",
     descripcionCorta: "",
     rol: "Intérprete",
-    descripcionLarga:
-      "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.",
+    /*     descripcionLarga:
+      "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.", */
     galeria: ["cria-cuervos-galeria-1", "cria-cuervos-portada"],
     video: "https://www.youtube.com/watch?v=L_TxheKwyXg",
-    anio: 2014,
   },
   {
     titulo: "Abre flamenco",
     imagenPortada: "abre-flamenco-galeria-2",
     slugObra: "abre-flamenco",
     imgPpal: "abre-flamenco-galeria-2",
-    descripcionCorta: "",
+    descripcionCorta:
+      "Abre Flamenco, obra post pandemia que nos recuerda la necesidad de la comunicacion y el encuentro.",
     rol: "Intérprete",
-    descripcionLarga:
-      "Abre Flamenco celebra el flamenco como fiesta viva, donde la energía del grupo sostiene y potencia lo que sucede en el aquí y ahora. Natalia participa como intérprete en un encuentro que pone el vínculo colectivo en el centro de la escena.",
     galeria: [
       "abre-flamenco-galeria-1",
       "abre-flamenco-galeria-2",
       "abre-flamenco-portada",
     ],
     video: "https://www.youtube.com/watch?v=63hTNNXqDJ0",
-    anio: 2021,
   },
 ];

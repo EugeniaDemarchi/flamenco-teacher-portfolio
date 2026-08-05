@@ -168,7 +168,9 @@ export function renderObraDetalle(obra: Obra) {
   const anio = document.querySelector(
     ".obra-detalle__anio",
   ) as HTMLParagraphElement;
-  anio.textContent = String(obra.anio);
+  if (obra.anio) {
+    anio.textContent = String(obra.anio);
+  }
 
   const descripcionLarga = document.querySelector(
     ".obra-detalle__descripcion-larga",

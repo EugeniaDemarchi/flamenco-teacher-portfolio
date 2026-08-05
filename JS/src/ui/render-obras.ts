@@ -7,7 +7,9 @@ const conatinerObras = document.querySelector(".obras__grid") as HTMLDivElement;
 export function renderObras(obras: Obra[]) {
   conatinerObras.innerHTML = "";
 
-  const copiaObras = [...obras].sort((a, b) => b.anio - a.anio);
+  const copiaObras = [...obras].sort((a, b) =>
+    a.titulo.localeCompare(b.titulo, "es"),
+  );
 
   copiaObras.forEach((obra) => {
     const caja = document.createElement("a");
@@ -19,7 +21,7 @@ export function renderObras(obras: Obra[]) {
       carpeta: "obras",
       alt: obra.titulo,
       sizes: "100vw",
-      loading: "lazy",
+      loading: "eager",
       className: "obras__img",
     });
 
