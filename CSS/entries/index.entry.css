@@ -1,0 +1,3 @@
+/* CSS/entries/index.entry.css */
+@import "../index.css";
+/*Ojo con index: el orden original en index.html era layout → index → style — index.css iba antes que style.css. Con la arquitectura nueva, base.entry.css (layout+style) carga entero antes que el bundle de página, así que index.css va a quedar después de style.css, no en el medio. Si index.css tiene alguna regla pensada para pisar algo de style.css con ese orden específico, se puede romper visualmente. Armalo igual y verificá index.html a ojo después del build — es la única página con riesgo real de regresión de cascada.*/

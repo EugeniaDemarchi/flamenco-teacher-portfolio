@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio#readme",
   "devDependencies": {
+    "esbuild": "^0.28.1",
     "sharp": "^0.35.3"
   }
 }
