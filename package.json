@@ -4,7 +4,9 @@
   "description": "/_mapsUrl — Natalia lo consigue buscando el lugar en Google Maps, clickeando \"Compartir\", y copiando el link._/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

@@ -81,12 +81,12 @@ export const obras = [
         titulo: "Cria cuervos",
         imagenPortada: "cria-cuervos-portada",
         slugObra: "cria-cuervos",
-        imgPpal: "cria-cuervos-galeria-1",
+        imgPpal: "cria-cuervos-portada",
         descripcionCorta: "",
         rol: "Intérprete",
         /*     descripcionLarga:
           "Cría cuervos forma parte del recorrido de Natalia como intérprete, en una obra que aborda vínculos familiares desde el lenguaje del baile.", */
-        galeria: ["cria-cuervos-galeria-1", "cria-cuervos-portada"],
+        galeria: ["cria-cuervos-portada"],
         video: "https://www.youtube.com/watch?v=L_TxheKwyXg",
     },
     {
