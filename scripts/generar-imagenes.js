@@ -1,15 +1,11 @@
+
 // scripts/generar-imagenes.js
 // Genera automáticamente las variantes responsive (AVIF/WebP/JPG x 3 medidas)
 // de cada imagen dentro de ASSETS/IMAGES/_originales/<carpeta>/,
 // preservando la misma carpeta de sección en la salida.
-//
-// Estructura esperada:
-//   ASSETS/IMAGES/_originales/bio/retrato-taller.jpg
-//   ASSETS/IMAGES/_originales/obras/obra-01.jpg
-//   ...
-// Genera en:
-//   ASSETS/IMAGES/bio/retrato-taller-small.avif  (+ medium, large, webp, jpg)
-//   ASSETS/IMAGES/obras/obra-01-small.avif       (+ ...)
+// Además captura el ancho/alto real de cada imagen original y genera
+// JS/src/data/imagenes-dimensiones.generated.ts, para poder setear
+// width/height en los <img> y evitar layout shift (CLS).
 //
 // Uso: node scripts/generar-imagenes.js
 
@@ -25,6 +21,14 @@ const RAIZ_ORIGENES = path.join(
   "_originales",
 );
 const RAIZ_SALIDA = path.join(__dirname, "..", "ASSETS", "IMAGES");
+const RUTA_DIMENSIONES = path.join(
+  __dirname,
+  "..",
+  "JS",
+  "src",
+  "data",
+  "imagenes-dimensiones.generated.ts",
+);
 
 const MEDIDAS = [
   { nombre: "small", ancho: 768 },
@@ -39,6 +43,8 @@ const FORMATOS = [
 ];
 
 async function procesarImagen(rutaOrigen, carpetaSalida, nombreBase) {
+  const metadata = await sharp(rutaOrigen).metadata();
+
   for (const medida of MEDIDAS) {
     for (const formato of FORMATOS) {
       const nombreSalida = `${nombreBase}-${medida.nombre}.${formato.ext}`;
@@ -53,6 +59,8 @@ async function procesarImagen(rutaOrigen, carpetaSalida, nombreBase) {
       console.log(`    ${nombreSalida} — ${(size / 1024).toFixed(0)} KB`);
     }
   }
+
+  return { width: metadata.width, height: metadata.height };
 }
 
 async function procesarCarpeta(nombreCarpeta) {
@@ -67,17 +75,31 @@ async function procesarCarpeta(nombreCarpeta) {
     .readdirSync(origenCarpeta)
     .filter((f) => /\.(jpg|jpeg|png)$/i.test(f));
 
+  const dimensionesCarpeta = {};
+
   for (const archivo of archivos) {
     const nombreBase = path.parse(archivo).name;
     console.log(`\n  [${nombreCarpeta}] ${archivo}`);
-    await procesarImagen(
+    dimensionesCarpeta[nombreBase] = await procesarImagen(
       path.join(origenCarpeta, archivo),
       salidaCarpeta,
       nombreBase,
     );
   }
 
-  return archivos.length;
+  return { cantidad: archivos.length, dimensiones: dimensionesCarpeta };
+}
+
+function escribirDimensiones(dimensiones) {
+  const contenido = `// AUTO-GENERADO por scripts/generar-imagenes.js — no editar a mano.
+// Corré "node scripts/generar-imagenes.js" para regenerar este archivo.
+
+export const dimensionesImagenes = ${JSON.stringify(dimensiones, null, 2)} as const;
+`;
+
+  fs.mkdirSync(path.dirname(RUTA_DIMENSIONES), { recursive: true });
+  fs.writeFileSync(RUTA_DIMENSIONES, contenido);
+  console.log(`\nDimensiones escritas en ${RUTA_DIMENSIONES}`);
 }
 
 async function main() {
@@ -101,9 +123,15 @@ async function main() {
   }
 
   let total = 0;
+  const dimensionesTotales = {};
+
   for (const carpeta of carpetas) {
-    total += await procesarCarpeta(carpeta);
+    const { cantidad, dimensiones } = await procesarCarpeta(carpeta);
+    total += cantidad;
+    dimensionesTotales[carpeta] = dimensiones;
   }
+
+  escribirDimensiones(dimensionesTotales);
 
   console.log(
     `\nListo: ${total} imagen(es) procesadas en ${carpetas.length} carpeta(s) x 9 variantes cada una.`,

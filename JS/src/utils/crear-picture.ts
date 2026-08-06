@@ -1,3 +1,4 @@
+import { dimensionesImagenes } from "../data/imagenes-dimensiones.generated.js";
 interface OpcionesPicture {
   nombreBase: string;
   carpeta: string;
@@ -61,6 +62,12 @@ export function crearPictureResponsive(
   img.decoding = "async";
   if (fetchPriority) img.fetchPriority = fetchPriority;
   if (className) img.classList.add(className);
+
+  const dims = (dimensionesImagenes as any)[carpeta]?.[nombreBase];
+  if (dims) {
+    img.width = dims.width;
+    img.height = dims.height;
+  }
 
   picture.appendChild(img);
   return picture;

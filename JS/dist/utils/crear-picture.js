@@ -1,3 +1,4 @@
+import { dimensionesImagenes } from "../data/imagenes-dimensiones.generated.js";
 export function crearPictureResponsive(opciones) {
     const { nombreBase, carpeta, alt, sizes = "100vw", loading = "lazy", fetchPriority, soloLarge = false, className, } = opciones;
     const medidas = soloLarge
@@ -33,6 +34,11 @@ export function crearPictureResponsive(opciones) {
         img.fetchPriority = fetchPriority;
     if (className)
         img.classList.add(className);
+    const dims = dimensionesImagenes[carpeta]?.[nombreBase];
+    if (dims) {
+        img.width = dims.width;
+        img.height = dims.height;
+    }
     picture.appendChild(img);
     return picture;
 }
