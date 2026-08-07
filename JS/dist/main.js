@@ -1,2 +1,6 @@
-async function o(t,i){let r=await(await fetch(i)).text(),s=document.getElementById(t);if(!s)throw new Error(`No se encontro el elemento con id ${t}`);s.innerHTML=r;let c=document.getElementById("nav-container"),d=document.querySelector(".hbg-btn"),l=document.querySelector(".nav-menu"),m=document.querySelector(".close-btn"),u=document.querySelectorAll(".menu-list a");if(t==="nav-container"){let n=function(){let e=!l.classList.contains("open");l.classList.toggle("open"),document.body.style.overflow=e?"hidden":""};var p=n;u.forEach(e=>{e.getAttribute("href")===window.location.pathname&&e.classList.add("active")}),window.addEventListener("scroll",()=>{window.scrollY>0?c.classList.add("nav--oculto"):c.classList.remove("nav--oculto")}),d.addEventListener("click",n),m.addEventListener("click",n)}}function a(){let t=document.getElementById("scrollTopBtn");t&&(window.addEventListener("scroll",()=>{window.scrollY>200?t.classList.add("active"):t.classList.remove("active")}),t.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}))}o("nav-container","/COMPONENTS/nav.html");o("footer-container","/COMPONENTS/footer.html");a();
+import { getComponent } from "./components/nav-footer.js";
+import { scrollToTop } from "./ui/componentesComunes.js";
+getComponent("nav-container", "/COMPONENTS/nav.html");
+getComponent("footer-container", "/COMPONENTS/footer.html");
+scrollToTop();
 //# sourceMappingURL=main.js.map

@@ -1,2 +1,133 @@
-var M=[{titulo:"Que me lleve donde quiera",imagenPortada:"que-me-lleve-flyer",slugObra:"que-me-lleve-donde-quiera",imgPpal:"que-me-lleve-flyer",descripcionCorta:"Que me lleve donde quiera explora, desde una perspectiva experimental, las posibilidades expresivas del lenguaje flamenco.",rol:"Directora e int\xE9rprete",galeria:["que-me-lleve-flyer"],video:"https://www.youtube.com/watch?v=GtyxK2XJnSQ"},{titulo:"Apariciones",imagenPortada:"apariciones-portada",slugObra:"apariciones",imgPpal:"apariciones-galeria-1",descripcionCorta:"Apariciones propone una reflexi\xF3n po\xE9tica sobre el \xFAltimo per\xEDodo de la dictadura militar argentina, indagando en la memoria, la ausencia y la persistencia de aquello que resiste al olvido.",rol:"Core\xF3grafa e int\xE9rprete",galeria:["apariciones-galeria-1","apariciones-galeria-2","apariciones-galeria-3","apariciones-galeria-4","apariciones-portada"],video:"https://www.youtube.com/watch?v=naOhe-ulsvk"},{titulo:"Crudo, un impulso quebrado",imagenPortada:"crudo-portada",slugObra:"crudo",imgPpal:"crudo-portada",descripcionCorta:"Crudo indaga en las tensiones del trabajo art\xEDstico, donde la pasi\xF3n por la creaci\xF3n convive con la incertidumbre, el esfuerzo y la fragilidad de sus condiciones laborales.",rol:"Directora y core\xF3grafa",galeria:["crudo-galeria-1","crudo-galeria-2","crudo-portada","crudo-galeria-3"]},{titulo:"Perimetral",imagenPortada:"perimetral-portada",slugObra:"perimetral",imgPpal:"perimetral-galeria-1",descripcionCorta:"Perimetral investiga el cuerpo femenino como territorio en donde se enmarca la violencia patriarcal. Esta tragedia contempor\xE1nea juega en los l\xEDmites del g\xE9nero flamenco resignificando los estereotipos de la pasi\xF3n y la sangre.",rol:"Directora e int\xE9rprete",galeria:["perimetral-galeria-1","perimetral-galeria-2","perimetral-galeria-3","perimetral-galeria-4","perimetral-portada"]},{titulo:"Redes",imagenPortada:"redes-portada",slugObra:"redes",imgPpal:"redes-galeria-1",descripcionCorta:"Desde el lenguaje m\xE1s tradicional del flamenco, el encuentro de 3 bailaoras muestra sus profundos v\xEDnculos.",rol:"Directora e int\xE9rprete",galeria:["redes-galeria-1","redes-portada"]},{titulo:"Conciertos de bailes",imagenPortada:"conciertos-de-bailes-portada",slugObra:"conciertos-de-bailes",imgPpal:"conciertos-de-bailes-galeria-1",descripcionCorta:"Un espect\xE1culo grupal junto a la compa\xF1\xEDa La Empecinada.",rol:"Int\xE9rprete, La Empecinada",galeria:["conciertos-de-bailes-galeria-1","conciertos-de-bailes-galeria-2","conciertos-de-bailes-galeria-3","conciertos-de-bailes-portada"]},{titulo:"Cria cuervos",imagenPortada:"cria-cuervos-portada",slugObra:"cria-cuervos",imgPpal:"cria-cuervos-portada",descripcionCorta:"",rol:"Int\xE9rprete",galeria:["cria-cuervos-portada"],video:"https://www.youtube.com/watch?v=L_TxheKwyXg"},{titulo:"Abre flamenco",imagenPortada:"abre-flamenco-galeria-2",slugObra:"abre-flamenco",imgPpal:"abre-flamenco-galeria-2",descripcionCorta:"Abre Flamenco, obra post pandemia que nos recuerda la necesidad de la comunicacion y el encuentro.",rol:"Int\xE9rprete",galeria:["abre-flamenco-galeria-1","abre-flamenco-galeria-2","abre-flamenco-portada"],video:"https://www.youtube.com/watch?v=63hTNNXqDJ0"}];var T={bio:{"natalia-riopedre-alumnas":{width:1920,height:1280},"natalia-riopedre-cria-cuervos":{width:1920,height:1280},"natalia-riopedre":{width:1920,height:1280},"natalia-riopedre-obra":{width:1920,height:2881},"natalia-riopedre-tablao":{width:1920,height:1280}},clases:{"clase-flamenco-alegrias":{width:1920,height:2740},"clase-flamenco-bulerias":{width:1920,height:2880},"clase-flamenco-farruca":{width:1920,height:1071},"clase-flamenco-guajira":{width:1920,height:1536},"clase-flamenco-martinete":{width:1920,height:2875},"clase-flamenco-zapateo":{width:1920,height:1005},"muestra-alumnas-flamenco":{width:1920,height:1341}},contacto:{"natalia-riopedre-bailaora":{width:1920,height:1571}},index:{},obras:{"abre-flamenco-galeria-1":{width:1920,height:2881},"abre-flamenco-galeria-2":{width:1920,height:1280},"abre-flamenco-portada":{width:1920,height:1280},"apariciones-galeria-1":{width:1920,height:2876},"apariciones-galeria-2":{width:1920,height:2735},"apariciones-galeria-3":{width:1920,height:2880},"apariciones-galeria-4":{width:1920,height:2880},"apariciones-portada":{width:1920,height:2876},"conciertos-de-bailes-galeria-1":{width:1920,height:1280},"conciertos-de-bailes-galeria-2":{width:1920,height:1280},"conciertos-de-bailes-galeria-3":{width:1920,height:2400},"conciertos-de-bailes-portada":{width:1920,height:1280},"cria-cuervos-portada":{width:1920,height:1384},"crudo-galeria-1":{width:1920,height:1280},"crudo-galeria-2":{width:1920,height:1280},"crudo-galeria-3":{width:1920,height:1280},"crudo-portada":{width:1920,height:1280},"perimetral-galeria-1":{width:1920,height:2880},"perimetral-galeria-2":{width:1920,height:3481},"perimetral-galeria-3":{width:1920,height:2880},"perimetral-portada":{width:1920,height:1173},"que-me-lleve-flyer":{width:1920,height:1356},"redes-galeria-1":{width:1920,height:2880},"redes-portada":{width:1920,height:1280}},shows:{tablao:{width:1920,height:2224},"tablao-natalia-riopedre":{width:1920,height:1102}}};function L(e){let{nombreBase:a,carpeta:i,alt:f,sizes:u="100vw",loading:v="lazy",fetchPriority:d,soloLarge:t=!1,className:g}=e,h=t?[{nombre:"large",ancho:1920}]:[{nombre:"small",ancho:768},{nombre:"medium",ancho:1440},{nombre:"large",ancho:1920}],m=document.createElement("picture");["avif","webp"].forEach(n=>{let c=document.createElement("source");c.type=`image/${n}`,c.srcset=h.map(w=>`/ASSETS/IMAGES/${i}/${a}-${w.nombre}.${n} ${w.ancho}w`).join(", "),t||(c.sizes=u),m.appendChild(c)});let r=document.createElement("img"),b=t?"large":"small";r.src=`/ASSETS/IMAGES/${i}/${a}-${b}.jpg`,r.srcset=h.map(n=>`/ASSETS/IMAGES/${i}/${a}-${n.nombre}.jpg ${n.ancho}w`).join(", "),t||(r.sizes=u),r.alt=f,r.loading=v,r.decoding="async",d&&(r.fetchPriority=d),g&&r.classList.add(g);let p=T[i]?.[a];return p&&(r.width=p.width,r.height=p.height),m.appendChild(r),m}function A(e,a){return e.find(i=>i.slugObra===a)}function O(e){let a=new URL(e),i;return a.hostname==="youtube.be"?i=a.pathname.slice(1):i=a.searchParams.get("v"),`https://www.youtube.com/embed/${i}`}function $(){let a=new URLSearchParams(window.location.search).get("slug");if(!a){q("Pagina no encontrada");return}let i=A(M,a);if(!i){q("Pagina no encontrada");return}H(i)}function q(e){let a=document.createElement("p");a.textContent=e,document.body.appendChild(a)}function H(e){let a=document.querySelector(".obra-detalle__img-ppal"),i=L({nombreBase:e.imgPpal,carpeta:"obras",alt:e.titulo,sizes:"100vw",loading:"eager",fetchPriority:"high",className:"obra-detalle__img-ppal"}),f=i.querySelector("img");f.dataset.slug=e.slugObra,a.replaceWith(i);let u=document.querySelector(".obra-detalle__titulo");u.innerHTML=e.titulo;let v=document.querySelector(".obra-detalle__descripcion-corta");v.innerHTML=e.descripcionCorta;let d=document.querySelector(".obra-detalle__galeria");d.innerHTML="";let t=document.querySelector(".obra-detalle__modal"),g=document.querySelector(".obra-detalle__modal-img"),h=document.querySelector(".obra-detalle__close-btn"),m=window.matchMedia("(min-width: 1024px)"),r;m.matches?r=e.galeria:r=e.galeria?.filter(s=>s!==e.imgPpal);let b=0;if(r){let P=function(o,S){let l="obras",E=document.querySelector(".obra-detalle__modal-picture source[type='image/avif']"),C=document.querySelector(".obra-detalle__modal-picture source[type='image/webp']");E.srcset=`/ASSETS/IMAGES/${l}/${o}-large.avif`,C.srcset=`/ASSETS/IMAGES/${l}/${o}-large.webp`,g.src=`/ASSETS/IMAGES/${l}/${o}-large.jpg`,g.alt=S},_=function(o){b=o,P(s[b],e.titulo),t.classList.add("obra-detalle__modal--activo"),document.body.classList.add("scroll-lock")},y=function(){t.classList.remove("obra-detalle__modal--activo"),document.body.classList.remove("scroll-lock")};var x=P,I=_,D=y;let s=r;h.addEventListener("click",y),t.addEventListener("click",o=>{o.target===t&&y()}),r.forEach((o,S)=>{let l=document.createElement("div");l.classList.add("obra-detalle__img-wrapper");let E=L({nombreBase:o,carpeta:"obras",alt:e.titulo,sizes:"(min-width: 1024px) 20rem, 100vw",loading:"lazy"});l.addEventListener("click",()=>_(S)),l.appendChild(E),d.appendChild(l)})}let p=document.querySelector(".obra-detalle__rol");p.innerHTML=e.rol;let n=document.querySelector(".obra-detalle__anio");e.anio&&(n.textContent=String(e.anio));let c=document.querySelector(".obra-detalle__descripcion-larga");e.descripcionLarga&&(c.textContent=e.descripcionLarga);let w=document.querySelector(".obra-detalle__video");if(e.video){let s=document.createElement("iframe");s.src=O(e.video),w.appendChild(s)}}$();export{A as buscarSlug,q as mostrarError,H as renderObraDetalle};
+import { obras } from "../data/obras.js";
+import { crearPictureResponsive } from "../utils/crear-picture.js";
+export function buscarSlug(lista, slug) {
+    return lista.find((obra) => obra.slugObra === slug);
+}
+/*MANUAL: "subí tus videos de espectáculos a YouTube y pegá el link acá")*/
+function convertirAEmbedYoutube(url) {
+    const urlObj = new URL(url);
+    let id;
+    if (urlObj.hostname === "youtube.be") {
+        id = urlObj.pathname.slice(1);
+    }
+    else {
+        id = urlObj.searchParams.get("v");
+    }
+    return `https://www.youtube.com/embed/${id}`;
+}
+function initObraDetalle() {
+    const parametros = new URLSearchParams(window.location.search);
+    const slug = parametros.get("slug");
+    if (!slug) {
+        mostrarError("Pagina no encontrada");
+        return;
+    }
+    const encontrado = buscarSlug(obras, slug);
+    if (!encontrado) {
+        mostrarError("Pagina no encontrada");
+        return;
+    }
+    renderObraDetalle(encontrado);
+}
+export function mostrarError(mensaje) {
+    const errorMsg = document.createElement("p");
+    errorMsg.textContent = mensaje;
+    document.body.appendChild(errorMsg);
+}
+export function renderObraDetalle(obra) {
+    const imgPpalActual = document.querySelector(".obra-detalle__img-ppal");
+    const pictureNuevo = crearPictureResponsive({
+        nombreBase: obra.imgPpal,
+        carpeta: "obras",
+        alt: obra.titulo,
+        sizes: "100vw",
+        loading: "eager",
+        fetchPriority: "high",
+        className: "obra-detalle__img-ppal",
+    });
+    const imgDentro = pictureNuevo.querySelector("img");
+    imgDentro.dataset.slug = obra.slugObra;
+    imgPpalActual.replaceWith(pictureNuevo);
+    const titulo = document.querySelector(".obra-detalle__titulo");
+    titulo.innerHTML = obra.titulo;
+    const descripcionCorta = document.querySelector(".obra-detalle__descripcion-corta");
+    descripcionCorta.innerHTML = obra.descripcionCorta;
+    const galeria = document.querySelector(".obra-detalle__galeria");
+    galeria.innerHTML = "";
+    const modal = document.querySelector(".obra-detalle__modal");
+    const closeBtnGaleria = document.querySelector(".obra-detalle__close-btn");
+    /*"MANUAL: la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
+    const pantallaLaptop = window.matchMedia("(min-width: 1024px)");
+    let galeriaARenderizar;
+    if (pantallaLaptop.matches) {
+        galeriaARenderizar = obra.galeria;
+    }
+    else {
+        galeriaARenderizar = obra.galeria?.filter((rutaImg) => rutaImg !== obra.imgPpal);
+    }
+    let indiceActual = 0;
+    if (galeriaARenderizar) {
+        const listaGaleria = galeriaARenderizar;
+        function actualizarImagenModal(nombreBase, alt) {
+            const pictureActual = document.querySelector(".obra-detalle__modal-picture");
+            const pictureNuevo = crearPictureResponsive({
+                nombreBase,
+                carpeta: "obras",
+                alt,
+                loading: "eager",
+                soloLarge: true,
+                className: "obra-detalle__modal-img",
+            });
+            pictureNuevo.classList.add("obra-detalle__modal-picture");
+            pictureActual.replaceWith(pictureNuevo);
+        }
+        function abrirModal(index) {
+            indiceActual = index;
+            actualizarImagenModal(listaGaleria[indiceActual], obra.titulo);
+            modal.classList.add("obra-detalle__modal--activo");
+            document.body.classList.add("scroll-lock");
+        }
+        function cerrarModal() {
+            modal.classList.remove("obra-detalle__modal--activo");
+            document.body.classList.remove("scroll-lock");
+        }
+        closeBtnGaleria.addEventListener("click", cerrarModal);
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        });
+        galeriaARenderizar.forEach((nombreBase, index) => {
+            const imgWrapper = document.createElement("div");
+            imgWrapper.classList.add("obra-detalle__img-wrapper");
+            const picture = crearPictureResponsive({
+                nombreBase,
+                carpeta: "obras",
+                alt: obra.titulo,
+                sizes: "(min-width: 1024px) 20rem, 100vw",
+                loading: "lazy",
+            });
+            imgWrapper.addEventListener("click", () => abrirModal(index));
+            imgWrapper.appendChild(picture);
+            galeria.appendChild(imgWrapper);
+        });
+    }
+    const rol = document.querySelector(".obra-detalle__rol");
+    rol.innerHTML = obra.rol;
+    const anio = document.querySelector(".obra-detalle__anio");
+    if (obra.anio) {
+        anio.textContent = String(obra.anio);
+    }
+    const descripcionLarga = document.querySelector(".obra-detalle__descripcion-larga");
+    if (obra.descripcionLarga) {
+        descripcionLarga.textContent = obra.descripcionLarga;
+    }
+    const videoContainer = document.querySelector(".obra-detalle__video");
+    if (obra.video) {
+        const iframe = document.createElement("iframe");
+        iframe.src = convertirAEmbedYoutube(obra.video);
+        videoContainer.appendChild(iframe);
+    }
+}
+initObraDetalle();
 //# sourceMappingURL=render-obra-detalle.js.map

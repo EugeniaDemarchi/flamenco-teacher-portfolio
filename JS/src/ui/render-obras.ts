@@ -11,7 +11,7 @@ export function renderObras(obras: Obra[]) {
     a.titulo.localeCompare(b.titulo, "es"),
   );
 
-  copiaObras.forEach((obra) => {
+  copiaObras.forEach((obra, index) => {
     const caja = document.createElement("a");
     caja.classList.add("obras__portada");
     caja.href = `obra-detalle.html?slug=${obra.slugObra}`;
@@ -21,7 +21,8 @@ export function renderObras(obras: Obra[]) {
       carpeta: "obras",
       alt: obra.titulo,
       sizes: "100vw",
-      loading: "eager",
+      loading: index === 0 ? "eager" : "lazy",
+      fetchPriority: index === 0 ? "high" : undefined,
       className: "obras__img",
     });
 

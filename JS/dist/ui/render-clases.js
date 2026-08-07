@@ -1,2 +1,111 @@
-var c={imagenPrincipal:"clase-flamenco-zapateo",descripcionGeneral:"Natalia Riopedre concibe la clase como extensi\xF3n de su propia b\xFAsqueda art\xEDstica. Sus clases cruzan t\xE9cnica, expresi\xF3n y entrenamiento corporal, integrando herramientas de distintas disciplinas para potenciar el proceso individual y grupal.",imagenMetodologia:"muestra-alumnas-flamenco",metodologia:["Ciclo lectivo anual y cursos de perfeccionamiento","Clases Grupales para todos los niveles","T\xE9cnica , coreograf\xEDa y manejo de elementos                               (Mant\xF3n, Abanicos, Casta\xF1uelas)","Clases con M\xFAsicos en vivo","Clases individuales","Muestras parciales y de fin de a\xF1o"]},w=[{imagenClase:"clase-flamenco-alegrias",titulo:"Alegr\xEDas",nivelClase:"intermedio",horarios:[{dia:"Lunes",horario:"19 hs"},{dia:"Mi\xE9rcoles",horario:"19 hs"}],descripcionCorta:"Descubr\xED la elegancia y luminosidad de las alegr\xEDas, desarrollando el comp\xE1s, el movimiento y la expresividad propios de este palo gaditano.",descripcionLarga:"Clase de nivel intermedio dedicada a las alegr\xEDas, uno de los palos m\xE1s representativos del flamenco por su car\xE1cter festivo y elegante. Trabajamos el comp\xE1s de doce tiempos, el manejo del mant\xF3n y las marcaciones, el braceo, el zapateo y la interpretaci\xF3n, desarrollando la musicalidad y la presencia esc\xE9nica. El objetivo es afianzar la t\xE9cnica sin perder la frescura y el aire caracter\xEDstico de este palo.",ubicacion:{direccion:"Senillosa 730",mapsUrl:"https://www.google.com/maps/place/Dance+%26+Art/@-34.6257065,-58.4284088,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcca51fc577147:0xe03bcaf72ea20867!8m2!3d-34.6257065!4d-58.4284088!16s%2Fg%2F1v44g4np?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",barrio:"Caballito"}},{imagenClase:"clase-flamenco-martinete",titulo:"Martinete con bast\xF3n ",nivelClase:"avanzado",horarios:[{dia:"Lunes",horario:"20 hs"},{dia:"Mi\xE9rcoles",horario:"20 hs"}],descripcionCorta:"Explor\xE1 la fuerza y la intensidad del martinete incorporando el trabajo t\xE9cnico y expresivo del bast\xF3n como elemento esc\xE9nico.",descripcionLarga:"Clase de nivel avanzado enfocada en el martinete con bast\xF3n, un palo de gran intensidad expresiva que exige precisi\xF3n t\xE9cnica y presencia esc\xE9nica. Trabajamos el uso del bast\xF3n como extensi\xF3n del movimiento, la coordinaci\xF3n corporal, los remates, el zapateo y la interpretaci\xF3n, profundizando en el car\xE1cter sobrio y contundente propio de este estilo.",ubicacion:{direccion:"Senillosa 730",mapsUrl:"https://www.google.com/maps/place/Dance+%26+Art/@-34.6257065,-58.4284088,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcca51fc577147:0xe03bcaf72ea20867!8m2!3d-34.6257065!4d-58.4284088!16s%2Fg%2F1v44g4np?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",barrio:"Caballito"}},{imagenClase:"clase-flamenco-bulerias",titulo:"Buler\xEDas",nivelClase:"intermedio",horarios:[{dia:"Martes",horario:"18 hs"}],descripcionCorta:"Profundiz\xE1 en el comp\xE1s de buler\xEDas desarrollando la improvisaci\xF3n, los remates y la comunicaci\xF3n con el cante y la guitarra.",descripcionLarga:"Clase de nivel intermedio dedicada a las buler\xEDas, uno de los palos m\xE1s din\xE1micos y desafiantes del flamenco. Trabajamos el comp\xE1s, las llamadas, cierres y remates, adem\xE1s de recursos para improvisar y desenvolverse con soltura en situaciones de cuadro flamenco. La propuesta busca fortalecer la seguridad r\xEDtmica y la capacidad de interpretar desde la espontaneidad.",ubicacion:{direccion:"Tucum\xE1n 3378",mapsUrl:"https://www.google.com/maps/place/Mediterr%C3%A1nea+Caf%C3%A9+Teatro/@-34.600177,-58.4133485,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcca8916aefda1:0xfaf2d315de3a1fc!8m2!3d-34.600177!4d-58.4133485!16s%2Fg%2F1wn_78qd?entry=ttu&g_ep=EgoyMDI2MDcyNi4wIKXMDSoASAFQAw%3D%3D",barrio:"Abasto"}},{imagenClase:"clase-flamenco-farruca",titulo:"Farruca ",nivelClase:"inicial",horarios:[{dia:"Martes",horario:"19 hs"}],descripcionCorta:"Desarroll\xE1 la fuerza, la precisi\xF3n y el car\xE1cter de la farruca mediante el trabajo t\xE9cnico del zapateo y la expresi\xF3n corporal.",descripcionLarga:"Clase de nivel avanzado centrada en la farruca, un palo de gran fuerza y sobriedad que requiere control t\xE9cnico y musical. Trabajamos la limpieza del zapateo, la coordinaci\xF3n, la colocaci\xF3n corporal y la calidad del movimiento, buscando una interpretaci\xF3n s\xF3lida y expresiva. El recorrido pone especial \xE9nfasis en la potencia esc\xE9nica sin perder la elegancia caracter\xEDstica de este estilo.",ubicacion:{direccion:"Tucum\xE1n 3378",mapsUrl:"https://www.google.com/maps/place/Mediterr%C3%A1nea+Caf%C3%A9+Teatro/@-34.600177,-58.4133485,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcca8916aefda1:0xfaf2d315de3a1fc!8m2!3d-34.600177!4d-58.4133485!16s%2Fg%2F1wn_78qd?entry=ttu&g_ep=EgoyMDI2MDcyNi4wIKXMDSoASAFQAw%3D%3D",barrio:"Abasto"}},{imagenClase:"clase-flamenco-guajira",titulo:"Guajira con abanico ",nivelClase:"intermedio",horarios:[{dia:"S\xE1bados",horario:"16 hs"}],descripcionCorta:"T\xE9cnica, musicalidad y abanico en una de las danzas m\xE1s refinadas del flamenco.",descripcionLarga:"Una propuesta para profundizar en la Guajira a trav\xE9s del trabajo con abanico, explorando la relaci\xF3n entre el movimiento, el ritmo y la expresividad. La clase combina t\xE9cnica, secuencias coreogr\xE1ficas e interpretaci\xF3n para potenciar la presencia esc\xE9nica de cada bailaora.",ubicacion:{direccion:"French 266",mapsUrl:"https://www.google.com/maps/place/French+266,+B1828HKF+Banfield,+Provincia+de+Buenos+Aires/@-34.7426342,-58.4006939,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcd29e37689f83:0xb3894f33e277cba8!8m2!3d-34.7426342!4d-58.398119?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",barrio:"Banfield"}}];function v(s){let e=document.createElement("div"),i=document.createElement("div"),o=document.createElement("button");o.classList.add("mas-info-btn"),o.textContent="+ info";let r=document.createElement("p");r.classList.add("parrafo"),r.textContent=s;let l=!1;return o.onclick=()=>{l=!l,o.textContent=l?"- info":"+ info",r.classList.toggle("show")},e.appendChild(o),i.appendChild(r),[e,i]}var y={bio:{"natalia-riopedre-alumnas":{width:1920,height:1280},"natalia-riopedre-cria-cuervos":{width:1920,height:1280},"natalia-riopedre":{width:1920,height:1280},"natalia-riopedre-obra":{width:1920,height:2881},"natalia-riopedre-tablao":{width:1920,height:1280}},clases:{"clase-flamenco-alegrias":{width:1920,height:2740},"clase-flamenco-bulerias":{width:1920,height:2880},"clase-flamenco-farruca":{width:1920,height:1071},"clase-flamenco-guajira":{width:1920,height:1536},"clase-flamenco-martinete":{width:1920,height:2875},"clase-flamenco-zapateo":{width:1920,height:1005},"muestra-alumnas-flamenco":{width:1920,height:1341}},contacto:{"natalia-riopedre-bailaora":{width:1920,height:1571}},index:{},obras:{"abre-flamenco-galeria-1":{width:1920,height:2881},"abre-flamenco-galeria-2":{width:1920,height:1280},"abre-flamenco-portada":{width:1920,height:1280},"apariciones-galeria-1":{width:1920,height:2876},"apariciones-galeria-2":{width:1920,height:2735},"apariciones-galeria-3":{width:1920,height:2880},"apariciones-galeria-4":{width:1920,height:2880},"apariciones-portada":{width:1920,height:2876},"conciertos-de-bailes-galeria-1":{width:1920,height:1280},"conciertos-de-bailes-galeria-2":{width:1920,height:1280},"conciertos-de-bailes-galeria-3":{width:1920,height:2400},"conciertos-de-bailes-portada":{width:1920,height:1280},"cria-cuervos-portada":{width:1920,height:1384},"crudo-galeria-1":{width:1920,height:1280},"crudo-galeria-2":{width:1920,height:1280},"crudo-galeria-3":{width:1920,height:1280},"crudo-portada":{width:1920,height:1280},"perimetral-galeria-1":{width:1920,height:2880},"perimetral-galeria-2":{width:1920,height:3481},"perimetral-galeria-3":{width:1920,height:2880},"perimetral-portada":{width:1920,height:1173},"que-me-lleve-flyer":{width:1920,height:1356},"redes-galeria-1":{width:1920,height:2880},"redes-portada":{width:1920,height:1280}},shows:{tablao:{width:1920,height:2224},"tablao-natalia-riopedre":{width:1920,height:1102}}};function b(s){let{nombreBase:e,carpeta:i,alt:o,sizes:r="100vw",loading:l="lazy",fetchPriority:d,soloLarge:t=!1,className:m}=s,p=t?[{nombre:"large",ancho:1920}]:[{nombre:"small",ancho:768},{nombre:"medium",ancho:1440},{nombre:"large",ancho:1920}],u=document.createElement("picture");["avif","webp"].forEach(g=>{let f=document.createElement("source");f.type=`image/${g}`,f.srcset=p.map(C=>`/ASSETS/IMAGES/${i}/${e}-${C.nombre}.${g} ${C.ancho}w`).join(", "),t||(f.sizes=r),u.appendChild(f)});let a=document.createElement("img"),h=t?"large":"small";a.src=`/ASSETS/IMAGES/${i}/${e}-${h}.jpg`,a.srcset=p.map(g=>`/ASSETS/IMAGES/${i}/${e}-${g.nombre}.jpg ${g.ancho}w`).join(", "),t||(a.sizes=r),a.alt=o,a.loading=l,a.decoding="async",d&&(a.fetchPriority=d),m&&a.classList.add(m);let n=y[i]?.[e];return n&&(a.width=n.width,a.height=n.height),u.appendChild(a),u}var M=document.querySelector(".clases__grid");function E(s){let e=document.querySelector(".descripcionClases__img"),i=b({nombreBase:s.imagenPrincipal,carpeta:"clases",alt:"Clase de Natalia Riopedre",sizes:"100vw",loading:"eager",fetchPriority:"high",className:"descripcionClases__img"});e.replaceWith(i)}var L=document.querySelector(".descripcionClases__descGral-titulo"),_=document.querySelector(".descripcionClases__descGral");c.descripcionGeneral&&(L.textContent="Enfoque",_.textContent=c.descripcionGeneral);var x=document.querySelector(".descripcionClases__imgMetod");if(c.imagenMetodologia){let s=b({nombreBase:c.imagenMetodologia,carpeta:"clases",alt:"Clases de Natalia Riopedre",sizes:"100vw",loading:"lazy",className:"descripcionClases__imgMetod"});x.replaceWith(s)}var S=document.querySelector(".descripcionClases__descGral-metod"),D=document.querySelector(".descripcionClases__metodologia");c.metodologia&&(S.textContent="Modalidad",c.metodologia.forEach(s=>{let e=document.createElement("li");e.textContent=s,e.className="descripcionClases__bulletsMetod",D.appendChild(e)}));function T(s){M.innerHTML="",s.forEach(e=>{let i=document.createElement("div");i.classList.add("clases__div");let o=document.createElement("div");o.classList.add("clases__imgWrapper");let r=document.createElement("h3");r.textContent=e.titulo,r.classList.add("clases__titulo");let l=b({nombreBase:e.imagenClase,carpeta:"clases",alt:e.titulo,sizes:"(min-width: 1440px) 25vw, (min-width: 768px) 50vw, 100vw",loading:"lazy",className:"clases__img"}),d=document.createElement("h3");d.textContent=`Nivel: ${e.nivelClase}`,d.classList.add("clases__nivel"),o.appendChild(l),o.appendChild(r),o.appendChild(d);let t=document.createElement("div");t.classList.add("clases__infoDiv");let m=document.createElement("ul");m.classList.add("clases__horarios"),e.horarios.forEach(h=>{let n=document.createElement("li");n.textContent=`${h.dia}, ${h.horario}`,n.classList.add("clases__li"),m.appendChild(n)}),i.appendChild(o),t.appendChild(m);let p=document.createElement("p");if(p.classList.add("clases__descCorta"),e.descripcionCorta&&(p.textContent=e.descripcionCorta,t.appendChild(p)),document.createElement("p").classList.add("clases__descLarga"),e.descripcionLarga){let[h,n]=v(e.descripcionLarga);t.appendChild(h),t.appendChild(n)}let a=document.createElement("a");a.classList.add("clases__ubicacion"),a.textContent=`\u{1F4CD}${e.ubicacion.direccion}, ${e.ubicacion.barrio}`,e.ubicacion.mapsUrl&&(a.href=e.ubicacion.mapsUrl,a.target="_blank",a.rel="noopener noreferrer"),t.appendChild(a),i.appendChild(t),M.appendChild(i)})}E(c);T(w);export{T as renderClases,E as renderDescripcionClases};
+import { clases, seccionClasesInfo } from "../data/clases.js";
+import { masInfo } from "./componentesComunes.js";
+import { crearPictureResponsive } from "../utils/crear-picture.js";
+const containerClases = document.querySelector(".clases__grid");
+export function renderDescripcionClases(seccionClasesInfo) {
+    const imgPpalActual = document.querySelector(".descripcionClases__img");
+    const pictureImgPpal = crearPictureResponsive({
+        nombreBase: seccionClasesInfo.imagenPrincipal,
+        carpeta: "clases",
+        alt: "Clase de Natalia Riopedre",
+        sizes: "100vw",
+        loading: "eager",
+        fetchPriority: "high",
+        className: "descripcionClases__img",
+    });
+    imgPpalActual.replaceWith(pictureImgPpal);
+}
+const descGralTitulo = document.querySelector(".descripcionClases__descGral-titulo");
+const descGral = document.querySelector(".descripcionClases__descGral");
+if (seccionClasesInfo.descripcionGeneral) {
+    descGralTitulo.textContent = "Enfoque";
+    descGral.textContent = seccionClasesInfo.descripcionGeneral;
+}
+const imgMetodologiaActual = document.querySelector(".descripcionClases__imgMetod");
+if (seccionClasesInfo.imagenMetodologia) {
+    const pictureMetodologia = crearPictureResponsive({
+        nombreBase: seccionClasesInfo.imagenMetodologia,
+        carpeta: "clases",
+        alt: "Clases de Natalia Riopedre",
+        sizes: "100vw",
+        loading: "lazy",
+        className: "descripcionClases__imgMetod",
+    });
+    imgMetodologiaActual.replaceWith(pictureMetodologia);
+}
+const metodTitulo = document.querySelector(".descripcionClases__descGral-metod");
+const metodologia = document.querySelector(".descripcionClases__metodologia");
+if (seccionClasesInfo.metodologia) {
+    metodTitulo.textContent = "Modalidad";
+    seccionClasesInfo.metodologia.forEach((punto) => {
+        const li = document.createElement("li");
+        li.textContent = punto;
+        li.className = "descripcionClases__bulletsMetod";
+        metodologia.appendChild(li);
+    });
+}
+export function renderClases(clases) {
+    containerClases.innerHTML = "";
+    clases.forEach((clase) => {
+        const clasesDiv = document.createElement("div");
+        clasesDiv.classList.add("clases__div");
+        const imgWrapper = document.createElement("div");
+        imgWrapper.classList.add("clases__imgWrapper");
+        const titulo = document.createElement("h3");
+        titulo.textContent = clase.titulo;
+        titulo.classList.add("clases__titulo");
+        const pictureClase = crearPictureResponsive({
+            nombreBase: clase.imagenClase,
+            carpeta: "clases",
+            alt: clase.titulo,
+            sizes: "(min-width: 1440px) 25vw, (min-width: 768px) 50vw, 100vw",
+            loading: "lazy",
+            className: "clases__img",
+        });
+        const nivel = document.createElement("h3");
+        nivel.textContent = `Nivel: ${clase.nivelClase}`;
+        nivel.classList.add("clases__nivel");
+        imgWrapper.appendChild(pictureClase);
+        imgWrapper.appendChild(titulo);
+        imgWrapper.appendChild(nivel);
+        const clasesInfoDiv = document.createElement("div");
+        clasesInfoDiv.classList.add("clases__infoDiv");
+        const horarios = document.createElement("ul");
+        horarios.classList.add("clases__horarios");
+        clase.horarios.forEach((dia) => {
+            const li = document.createElement("li");
+            li.textContent = `${dia.dia}, ${dia.horario}`;
+            li.classList.add("clases__li");
+            horarios.appendChild(li);
+        });
+        clasesDiv.appendChild(imgWrapper);
+        clasesInfoDiv.appendChild(horarios);
+        const descCorta = document.createElement("p");
+        descCorta.classList.add("clases__descCorta");
+        if (clase.descripcionCorta) {
+            descCorta.textContent = clase.descripcionCorta;
+            clasesInfoDiv.appendChild(descCorta);
+        }
+        const descLarga = document.createElement("p");
+        descLarga.classList.add("clases__descLarga");
+        if (clase.descripcionLarga) {
+            const [botonDiv, descDiv] = masInfo(clase.descripcionLarga);
+            clasesInfoDiv.appendChild(botonDiv);
+            clasesInfoDiv.appendChild(descDiv);
+        }
+        const ubicacion = document.createElement("a");
+        ubicacion.classList.add("clases__ubicacion");
+        ubicacion.textContent = `📍${clase.ubicacion.direccion}, ${clase.ubicacion.barrio}`;
+        if (clase.ubicacion.mapsUrl) {
+            ubicacion.href = clase.ubicacion.mapsUrl;
+            ubicacion.target = "_blank";
+            ubicacion.rel = "noopener noreferrer";
+        }
+        clasesInfoDiv.appendChild(ubicacion);
+        clasesDiv.appendChild(clasesInfoDiv);
+        containerClases.appendChild(clasesDiv);
+    });
+}
+renderDescripcionClases(seccionClasesInfo);
+renderClases(clases);
 //# sourceMappingURL=render-clases.js.map

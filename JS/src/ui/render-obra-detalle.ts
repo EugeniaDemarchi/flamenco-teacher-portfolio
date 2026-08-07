@@ -82,15 +82,11 @@ export function renderObraDetalle(obra: Obra) {
     ".obra-detalle__modal",
   ) as HTMLDivElement;
 
-  const imgModal = document.querySelector(
-    ".obra-detalle__modal-img",
-  ) as HTMLImageElement;
-
   const closeBtnGaleria = document.querySelector(
     ".obra-detalle__close-btn",
   ) as HTMLButtonElement;
 
-  /*"la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
+  /*"MANUAL: la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
   const pantallaLaptop = window.matchMedia("(min-width: 1024px)");
 
   let galeriaARenderizar;
@@ -108,18 +104,22 @@ export function renderObraDetalle(obra: Obra) {
   if (galeriaARenderizar) {
     const listaGaleria = galeriaARenderizar;
     function actualizarImagenModal(nombreBase: string, alt: string) {
-      const carpeta = "obras";
-      const sourceAvif = document.querySelector(
-        ".obra-detalle__modal-picture source[type='image/avif']",
-      ) as HTMLSourceElement;
-      const sourceWebp = document.querySelector(
-        ".obra-detalle__modal-picture source[type='image/webp']",
-      ) as HTMLSourceElement;
+      const pictureActual = document.querySelector(
+        ".obra-detalle__modal-picture",
+      ) as HTMLPictureElement;
 
-      sourceAvif.srcset = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.avif`;
-      sourceWebp.srcset = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.webp`;
-      imgModal.src = `/ASSETS/IMAGES/${carpeta}/${nombreBase}-large.jpg`;
-      imgModal.alt = alt;
+      const pictureNuevo = crearPictureResponsive({
+        nombreBase,
+        carpeta: "obras",
+        alt,
+        loading: "eager",
+        soloLarge: true,
+        className: "obra-detalle__modal-img",
+      });
+
+      pictureNuevo.classList.add("obra-detalle__modal-picture");
+
+      pictureActual.replaceWith(pictureNuevo);
     }
 
     function abrirModal(index: number) {
