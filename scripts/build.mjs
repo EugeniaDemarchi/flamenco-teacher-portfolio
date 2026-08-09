@@ -21,7 +21,7 @@ const cssEntryPoints = [
   { in: "CSS/entries/shows.entry.css", out: "shows" },
 ];
 
-await esbuild.build({
+const jsOptions = {
   entryPoints: jsEntryPoints,
   outdir: "JS/dist",
   outbase: "JS/src",
@@ -30,14 +30,28 @@ await esbuild.build({
   sourcemap: true,
   format: "esm",
   target: "es2020",
-});
+};
 
-await esbuild.build({
+const cssOptions = {
   entryPoints: cssEntryPoints,
   outdir: "CSS/dist",
   bundle: true,
   minify: true,
   external: ["/ASSETS/*"],
-});
+};
 
-console.log("Build listo.");
+const watch = process.argv.includes("--watch");
+
+if (watch) {
+  const jsCtx = await esbuild.context(jsOptions);
+  const cssCtx = await esbuild.context(cssOptions);
+
+  await Promise.all([jsCtx.watch(), cssCtx.watch()]);
+
+  console.log("Watching... (Ctrl+C para salir)");
+} else {
+  await esbuild.build(jsOptions);
+  await esbuild.build(cssOptions);
+
+  console.log("Build listo.");
+}
