@@ -78,5 +78,5 @@ export const showsEnCartel: ShowsEnCartel[] = [
         rol: "Guitarra",
       },
     ],
-  }, */
+  },*/
 ];

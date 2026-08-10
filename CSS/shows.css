@@ -412,21 +412,10 @@
   display: block;
   align-self: center;
   margin: 2rem auto;
-  padding: 1rem;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.945);
-  font-family: "Abel";
   font-weight: 700;
-  font-size: var(--fs-p);
   letter-spacing: 3px;
-  cursor: pointer;
-  transition: var(--btn-transition);
-  will-change: transform;
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.301),
-    0 0 10px rgba(255, 255, 255, 0.37);
+  font-size: var(--fs-p); /* distinto al resto — ver nota abajo */
 }
-
 .shows__entradas:hover {
   transform: scale(var(--btn-scale-hover));
   background-color: white;

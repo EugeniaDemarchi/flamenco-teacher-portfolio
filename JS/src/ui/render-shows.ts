@@ -27,11 +27,6 @@ showsEnCartel.forEach((show) => {
   tituloShow.classList.add("shows__titulo");
   imgWrapper.appendChild(tituloShow);
 
-  /*   const imgShow = document.createElement("img");
-  imgShow.classList.add("shows__img");
-  imgShow.src = show.imagen;
-  imgShow.alt = show.titulo;
-  imgWrapper.appendChild(imgShow); */
   const pictureShow = crearPictureResponsive({
     nombreBase: show.imagen,
     carpeta: "shows",
@@ -154,7 +149,7 @@ showsEnCartel.forEach((show) => {
 
   if (show.entradas) {
     const entradas = document.createElement("a");
-    entradas.classList.add("shows__entradas");
+    entradas.classList.add("btn", "btn--light", "shows__entradas");
     entradas.textContent = "🎫 Entradas";
     entradas.href = show.entradas;
     entradas.target = "_blank";

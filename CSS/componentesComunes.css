@@ -42,3 +42,52 @@
   gap: 4rem;
   margin: 2rem;
 }
+/* ===== BOTONES: BASE ===== */
+.btn {
+  display: inline-block;
+  padding: var(--btn-padding);
+  font-family: "Abel";
+  font-size: var(--fs-p-a);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  will-change: transform;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: scale(var(--btn-scale-hover));
+}
+
+.btn:active {
+  transform: scale(var(--btn-scale-active));
+}
+
+/* ===== BOTONES: VARIANTES ===== */
+.btn--light {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.945);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.301),
+    0 0 10px rgba(255, 255, 255, 0.37);
+}
+
+.btn--light:hover,
+.btn--light:active {
+  background-color: white;
+}
+
+.btn--outline {
+  color: white;
+  background-color: transparent;
+  border: solid 2px white;
+}
+
+.btn--danger {
+  color: white;
+  background-color: #dc0046;
+}
+
+.btn--danger:hover {
+  background-color: #ff0d5a;
+}

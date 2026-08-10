@@ -22,7 +22,7 @@ export function masInfo(descripcion: string): HTMLElement[] {
   const clasesMasInfoDesc = document.createElement("div");
 
   const masInfoBtn = document.createElement("button");
-  masInfoBtn.classList.add("mas-info-btn");
+  masInfoBtn.classList.add("btn", "btn--outline", "mas-info-btn");
   masInfoBtn.textContent = "+ info";
 
   const parrafo = document.createElement("p");

@@ -86,4 +86,13 @@
   .obras__img-ppal {
     height: var(--banner-h-desktop);
   }
+  .obras__img[data-slug="perimetral"] {
+    object-position: bottom;
+  }
+  .obras__img[data-slug="abre-flamenco"] {
+    object-position: center 20%;
+  }
+  .obras__img[data-slug="apariciones"] {
+    object-fit: contain;
+  }
 }

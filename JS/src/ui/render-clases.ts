@@ -127,6 +127,7 @@ export function renderClases(clases: Clase[]) {
     if (clase.descripcionLarga) {
       const [botonDiv, descDiv] = masInfo(clase.descripcionLarga);
       clasesInfoDiv.appendChild(botonDiv);
+
       clasesInfoDiv.appendChild(descDiv);
     }
 

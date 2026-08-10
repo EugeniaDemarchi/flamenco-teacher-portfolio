@@ -162,14 +162,16 @@
 }
 
 /* ===== BOTONES ===== */
-.mas-info-btn {
-  padding: var(--btn-padding);
-  font-size: var(--fs-p-a);
-  transition: var(--btn-transition);
-  will-change: transform;
-  font-family: "Abel";
+
+.clases__btn-masInfo {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
 }
 
+.mas-info-btn {
+  width: 8rem;
+}
 .mas-info-btn:hover {
   transform: scale(var(--btn-scale-hover));
 }
@@ -180,7 +182,7 @@
 
 .clases__btn-masInfo {
   color: black;
-  padding: 0.6em;
+  padding: var(--btn-padding);
   background-color: rgba(255, 255, 255, 0.945);
   display: block;
   width: fit-content;
@@ -204,7 +206,11 @@
   transform: scale(var(--btn-scale-active));
   background-color: white;
 }
-
+.parrafo.show {
+  font-family: Inter, sans-serif;
+  text-align: justify;
+  line-height: 1.7;
+}
 /* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
   .descripcionClases__img {
@@ -222,12 +228,6 @@
 
   .clases__horarios {
     align-items: flex-start;
-  }
-
-  .mas-info-btn,
-  .clases__btn-masInfo {
-    font-size: var(--fs-h4);
-    letter-spacing: 2px;
   }
 }
 

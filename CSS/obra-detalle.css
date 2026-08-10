@@ -183,11 +183,17 @@
   .obra-detalle__video {
     max-width: 42.5rem;
   }
+  .obra-detalle__img-ppal[data-slug="apariciones"] {
+    object-fit: contain;
+  }
 }
 
 @media (min-width: 1440px) {
   .obra-detalle__img-ppal {
     height: var(--banner-h-desktop);
+  }
+  .obra-detalle__img-ppal[data-slug="cria-cuervos"] {
+    object-position: center 30%;
   }
 
   .contacto__grid {

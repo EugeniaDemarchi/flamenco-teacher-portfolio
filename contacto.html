@@ -30,11 +30,8 @@
       type="font/woff2"
       crossorigin
     />
-    <!--     <link rel="stylesheet" href="./CSS/layout.css" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/contacto.css" /> -->
-    <!--     <link rel="stylesheet" href="./CSS/scroll-to-top.css" /> -->
     <link rel="stylesheet" href="./CSS/dist/base.css" />
+    <link rel="stylesheet" href="./CSS/dist/components.css" />
     <link rel="stylesheet" href="./CSS/dist/contacto.css" />
   </head>
   <body>
@@ -113,14 +110,18 @@
             required
           ></textarea>
         </div>
-        <button class="contacto__btn" type="submit">Enviar</button>
+        <button class="btn btn--danger contacto__btn" type="submit">
+          Enviar
+        </button>
       </form>
       <div class="contacto__exito">
         <p>
           ¡Gracias por tu mensaje! <br />
           Te contestaremos a la brevedad
         </p>
-        <button class="contacto__btnReiniciar">Enviar otro mensaje</button>
+        <button class="btn btn--danger contacto__btnReiniciar">
+          Enviar otro mensaje
+        </button>
       </div>
     </section>
     <div id="footer-container"></div>
