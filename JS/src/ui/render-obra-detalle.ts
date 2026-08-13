@@ -142,6 +142,27 @@ export function renderObraDetalle(obra: Obra) {
       }
     });
 
+    const prevBtn = document.querySelector(
+      ".obra-detalle__modal-prev",
+    ) as HTMLButtonElement;
+    const nextBtn = document.querySelector(
+      ".obra-detalle__modal-next",
+    ) as HTMLButtonElement;
+
+    function mostrarSiguiente() {
+      indiceActual = (indiceActual + 1) % listaGaleria.length;
+      actualizarImagenModal(listaGaleria[indiceActual], obra.titulo);
+    }
+
+    function mostrarAnterior() {
+      indiceActual =
+        (indiceActual - 1 + listaGaleria.length) % listaGaleria.length;
+      actualizarImagenModal(listaGaleria[indiceActual], obra.titulo);
+    }
+
+    nextBtn.addEventListener("click", mostrarSiguiente);
+    prevBtn.addEventListener("click", mostrarAnterior);
+
     galeriaARenderizar.forEach((nombreBase, index) => {
       const imgWrapper = document.createElement("div");
       imgWrapper.classList.add("obra-detalle__img-wrapper");

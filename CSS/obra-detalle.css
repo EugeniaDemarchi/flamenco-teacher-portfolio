@@ -123,7 +123,21 @@
 .obra-detalle__close-btn:hover {
   transform: rotate(135deg);
 }
+.obra-detalle__modal-prev,
+.obra-detalle__modal-next {
+  position: absolute;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-p-a);
+}
+.obra-detalle__modal-prev {
+  left: 2rem;
+}
 
+.obra-detalle__modal-next {
+  right: 2rem;
+}
 .scroll-lock {
   overflow: hidden;
 }

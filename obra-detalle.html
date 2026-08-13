@@ -59,13 +59,20 @@
     </div>
 
     <div class="obra-detalle__modal">
-      <button class="obra-detalle__close-btn">
+      <button class="obra-detalle__close-btn" aria-label="Cerrar">
         <ion-icon
           name="close-outline"
           md="close-sharp"
           class="close-outline"
         ></ion-icon>
       </button>
+      <button class="obra-detalle__modal-prev" aria-label="Imagen anterior">
+        <ion-icon name="chevron-back-outline" aria-hidden="true"></ion-icon>
+      </button>
+      <button class="obra-detalle__modal-next" aria-label="Imagen siguiente">
+        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+      </button>
+
       <picture class="obra-detalle__modal-picture">
         <source type="image/avif" />
         <source type="image/webp" />
