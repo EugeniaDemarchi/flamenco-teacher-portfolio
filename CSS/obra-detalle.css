@@ -123,7 +123,7 @@
 .obra-detalle__close-btn:hover {
   transform: rotate(135deg);
 }
-.obra-detalle__modal-prev,
+/* .obra-detalle__modal-prev,
 .obra-detalle__modal-next {
   position: absolute;
   color: white;
@@ -137,6 +137,11 @@
 
 .obra-detalle__modal-next {
   right: 2rem;
+} */
+.obra-detalle__modal-prev,
+.obra-detalle__modal-next {
+  display: none;
+  color: white;
 }
 .scroll-lock {
   overflow: hidden;
@@ -187,6 +192,22 @@
     flex: 1 1 18rem;
     height: 20rem;
     object-fit: cover;
+  }
+  .obra-detalle__modal-prev,
+  .obra-detalle__modal-next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--fs-p-a);
+  }
+
+  .obra-detalle__modal-prev {
+    left: 2rem;
+  }
+
+  .obra-detalle__modal-next {
+    right: 2rem;
   }
   .obra-detalle__titulo {
     padding-bottom: 3rem;
