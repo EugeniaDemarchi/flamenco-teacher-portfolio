@@ -62,7 +62,7 @@
 @media (min-width: 768px) {
   .obras__img-ppal {
     height: var(--banner-h-tablet);
-    object-position: center 30%;
+    object-position: bottom;
   }
 }
 
@@ -70,6 +70,7 @@
   .obras__img-ppal {
     height: var(--banner-h-laptop);
     object-fit: cover;
+    /*  object-position: bottom; */
   }
   .obras__grid {
     margin: 2rem 10rem;

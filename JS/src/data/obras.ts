@@ -16,7 +16,7 @@ export const obras: Obra[] = [
     titulo: "Apariciones",
     imagenPortada: "apariciones-portada",
     slugObra: "apariciones",
-    imgPpal: "apariciones-galeria-1",
+    imgPpal: "apariciones-portada",
     descripcionCorta:
       "Apariciones propone una reflexión poética sobre el último período de la dictadura militar argentina, indagando en la memoria, la ausencia y la persistencia de aquello que resiste al olvido.",
     rol: "Coreógrafa e intérprete",

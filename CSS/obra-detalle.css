@@ -14,7 +14,6 @@
   z-index: 1;
 }
 .obra-detalle__img-ppal {
-  /*display: block;*/
   width: 100%;
   height: var(--banner-h-mobile);
   object-fit: cover;
@@ -23,7 +22,7 @@
   object-position: center 40%;
 }
 .obra-detalle__img-ppal[data-slug="apariciones"] {
-  object-position: center 30%;
+  object-position: top;
 }
 
 .obra-detalle__img-ppal[data-slug="cria-cuervos"] {
@@ -148,6 +147,9 @@
 @media (min-width: 768px) {
   .obra-detalle__img-ppal {
     height: var(--banner-h-tablet);
+  }
+  .obra-detalle__img-ppal[data-slug="apariciones"] {
+    object-position: center 10%;
   }
 }
 

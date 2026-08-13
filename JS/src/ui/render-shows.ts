@@ -8,7 +8,7 @@ const containerMsgNoShow = document.querySelector(
 ) as HTMLDivElement;
 
 if (showsEnCartel.length === 0) {
-  const msgNoShow = document.createElement("h4");
+  const msgNoShow = document.createElement("p");
   msgNoShow.textContent =
     "No hay funciones programadas por ahora. Nuevas fechas, próximamente.";
   containerMsgNoShow.appendChild(msgNoShow);
