@@ -221,6 +221,6 @@
 @media (min-width: 1440px) {
   .shows__img-ppal {
     height: var(--banner-h-desktop);
-    object-position: top;
+    object-position: center 25%;
   }
 }
