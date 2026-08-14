@@ -1,7 +1,7 @@
 import { ShowsEnCartel } from "../types/shows.js";
 
 export const showsEnCartel: ShowsEnCartel[] = [
-  /* {
+  {
     categoria: "Tablao flamenco",
     tipo: "puntual",
     fecha: "7/8/2026",
@@ -78,5 +78,5 @@ export const showsEnCartel: ShowsEnCartel[] = [
         rol: "Guitarra",
       },
     ],
-  },*/
+  },
 ];
