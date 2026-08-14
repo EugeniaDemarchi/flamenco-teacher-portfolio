@@ -7,7 +7,7 @@ export function buscarSlug(lista: Obra[], slug: string) {
 }
 
 /*MANUAL: "subí tus videos de espectáculos a YouTube y pegá el link acá")*/
-function convertirAEmbedYoutube(url: string): string {
+/* function convertirAEmbedYoutube(url: string): string {
   const urlObj = new URL(url);
   let id: string | null;
 
@@ -17,6 +17,18 @@ function convertirAEmbedYoutube(url: string): string {
     id = urlObj.searchParams.get("v");
   }
   return `https://www.youtube.com/embed/${id}`;
+} */
+
+function convertirAEmbedYoutube(url: string): string {
+  const urlObj = new URL(url);
+  let id: string | null;
+
+  if (urlObj.hostname === "youtube.be") {
+    id = urlObj.pathname.slice(1);
+  } else {
+    id = urlObj.searchParams.get("v");
+  }
+  return `https://www.youtube-nocookie.com/embed/${id}`;
 }
 
 function initObraDetalle() {
