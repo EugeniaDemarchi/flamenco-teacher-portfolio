@@ -244,7 +244,7 @@ export function renderObraDetalle(obra: Obra) {
       facade.classList.add("obra-detalle__video-facade");
 
       const thumb = document.createElement("img");
-      thumb.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+      thumb.src = `/ASSETS/IMAGES/videos/${obra.slugObra}-thumb.jpg`;
       thumb.alt = `Miniatura del video de ${obra.titulo}`;
       thumb.loading = "lazy";
       thumb.classList.add("obra-detalle__video-thumb");
