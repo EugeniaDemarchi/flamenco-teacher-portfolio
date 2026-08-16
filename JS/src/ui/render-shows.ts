@@ -109,7 +109,7 @@ showsEnCartel.forEach((show) => {
 
   infoContainer.appendChild(artistas);
 
-  const contacto = document.createElement("ul");
+  const contacto = document.createElement("div");
   contacto.classList.add("shows__contacto");
 
   if (show.contacto.link) {
