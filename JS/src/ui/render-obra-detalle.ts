@@ -19,7 +19,7 @@ export function buscarSlug(lista: Obra[], slug: string) {
   return `https://www.youtube.com/embed/${id}`;
 } */
 
-function convertirAEmbedYoutube(url: string): string {
+/* function convertirAEmbedYoutube(url: string): string {
   const urlObj = new URL(url);
   let id: string | null;
 
@@ -29,6 +29,18 @@ function convertirAEmbedYoutube(url: string): string {
     id = urlObj.searchParams.get("v");
   }
   return `https://www.youtube-nocookie.com/embed/${id}`;
+} */
+
+function extraerIdYoutube(url: string): string | null {
+  const urlObj = new URL(url);
+  if (urlObj.hostname === "youtube.be") {
+    return urlObj.pathname.slice(1);
+  }
+  return urlObj.searchParams.get("v");
+}
+
+function crearEmbedYoutube(id: string): string {
+  return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
 }
 
 function initObraDetalle() {
@@ -212,13 +224,51 @@ export function renderObraDetalle(obra: Obra) {
     descripcionLarga.textContent = obra.descripcionLarga;
   }
 
-  const videoContainer = document.querySelector(
+  /*   const videoContainer = document.querySelector(
     ".obra-detalle__video",
   ) as HTMLDivElement;
   if (obra.video) {
     const iframe = document.createElement("iframe");
     iframe.src = convertirAEmbedYoutube(obra.video);
     videoContainer.appendChild(iframe);
+  } */
+  const videoContainer = document.querySelector(
+    ".obra-detalle__video",
+  ) as HTMLDivElement;
+
+  if (obra.video) {
+    const id = extraerIdYoutube(obra.video);
+
+    if (id) {
+      const facade = document.createElement("div");
+      facade.classList.add("obra-detalle__video-facade");
+
+      const thumb = document.createElement("img");
+      thumb.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+      thumb.alt = `Miniatura del video de ${obra.titulo}`;
+      thumb.loading = "lazy";
+      thumb.classList.add("obra-detalle__video-thumb");
+
+      const playBtn = document.createElement("button");
+      playBtn.type = "button";
+      playBtn.classList.add("obra-detalle__video-play");
+      playBtn.setAttribute("aria-label", "Reproducir video");
+      playBtn.innerHTML = `<ion-icon name="play-outline" aria-hidden="true"></ion-icon>`;
+
+      facade.appendChild(thumb);
+      facade.appendChild(playBtn);
+
+      facade.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = crearEmbedYoutube(id);
+        iframe.title = `Video de ${obra.titulo}`;
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.allowFullscreen = true;
+        facade.replaceWith(iframe);
+      });
+
+      videoContainer.appendChild(facade);
+    }
   }
 }
 
