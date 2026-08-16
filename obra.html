@@ -40,8 +40,12 @@
   </head>
   <body>
     <div id="nav-container" class="nav-container--fixed"></div>
-    <div class="obras_img-ppal-container">
-      <div class="obras_img-ppal-container">
+    <button id="scrollTopBtn" aria-label="Volver arriba">
+      <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
+    </button>
+
+   <main>
+    <div class="obras__img-ppal-container">
         <picture>
           <source
             type="image/avif"
@@ -69,7 +73,7 @@
               /ASSETS/IMAGES/obras/perimetral-portada-large.jpg  1920w
             "
             sizes="100vw"
-            alt="Natalia Riopedre en la obra Abre Flamenco"
+      alt="Natalia Riopedre en la obra Perimetral"
             class="obras__img-ppal"
             loading="eager"
             fetchpriority="high"
@@ -78,10 +82,11 @@
       </div>
     </div>
     <h2 class="titulo_seccion">Obra</h2>
-    <button id="scrollTopBtn" aria-label="Volver arriba ">
+<!--     <button id="scrollTopBtn" aria-label="Volver arriba ">
       <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
-    </button>
-    <main class="obras__grid"></main>
+    </button> -->
+    <div class="obras__grid"></div>
+    </main>
     <div id="footer-container"></div>
     <script
       type="module"
