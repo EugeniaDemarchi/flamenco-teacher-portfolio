@@ -40,94 +40,98 @@
   </head>
   <body>
     <div id="nav-container" class="nav-container--fixed"></div>
-    <h3 class="titulo_seccion">Contacto</h3>
-    <section class="contacto__grid">
-      <div class="contacto__contenedor-img">
-        <picture>
-          <source
-            type="image/avif"
-            srcset="
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.avif   768w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.avif 1440w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.avif  1920w
-            "
-            sizes="100vw"
-          />
-          <source
-            type="image/webp"
-            srcset="
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.webp   768w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.webp 1440w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.webp  1920w
-            "
-            sizes="100vw"
-          />
-          <img
-            src="/ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg"
-            srcset="
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg   768w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.jpg 1440w,
-              /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.jpg  1920w
-            "
-            sizes="100vw"
-            alt="Natalia Riopedre, bailaora de flamenco"
-            class="contacto__img"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-      </div>
-      <form
-        action="/procesar-datos"
-        method="POST"
-        id="form"
-        class="contacto__form"
-      >
-        <div class="contacto__campo">
-          <label for="nombre" class="visually-hidden">Nombre:</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Nombre"
-            required
-          />
+    <main>
+      <h2 class="titulo_seccion">Contacto</h2>
+      <section class="contacto__grid">
+        <div class="contacto__contenedor-img">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.avif   768w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.avif 1440w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.avif  1920w
+              "
+              sizes="100vw"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.webp   768w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.webp 1440w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.webp  1920w
+              "
+              sizes="100vw"
+            />
+            <img
+              src="/ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg"
+              srcset="
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-small.jpg   768w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-medium.jpg 1440w,
+                /ASSETS/IMAGES/contacto/natalia-riopedre-bailaora-large.jpg  1920w
+              "
+              sizes="100vw"
+              alt="Natalia Riopedre, bailaora de flamenco"
+              class="contacto__img"
+              loading="lazy"
+              decoding="async"
+              width="768"
+              height="629"
+            />
+          </picture>
         </div>
-        <div class="contacto__campo">
-          <label for="mail" class="visually-hidden">Email:</label>
-          <input
-            type="text"
-            id="mail"
-            name="mail"
-            placeholder="Mail"
-            required
-          />
+        <form
+          action="/procesar-datos"
+          method="POST"
+          id="form"
+          class="contacto__form"
+        >
+          <div class="contacto__campo">
+            <label for="nombre" class="visually-hidden">Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+          <div class="contacto__campo">
+            <label for="mail" class="visually-hidden">Email:</label>
+            <input
+              type="text"
+              id="mail"
+              name="mail"
+              placeholder="Mail"
+              required
+            />
+          </div>
+          <div class="contacto__campo">
+            <label for="mensaje" class="visually-hidden">Mensaje:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="5"
+              cols="40"
+              placeholder="Mensaje:"
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn--danger contacto__btn" type="submit">
+            Enviar
+          </button>
+        </form>
+        <div class="contacto__exito">
+          <p>
+            ¡Gracias por tu mensaje! <br />
+            Te contestaremos a la brevedad
+          </p>
+          <button class="btn btn--danger contacto__btnReiniciar">
+            Enviar otro mensaje
+          </button>
         </div>
-        <div class="contacto__campo">
-          <label for="mensaje" class="visually-hidden">Mensaje:</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            rows="5"
-            cols="40"
-            placeholder="Mensaje:"
-            required
-          ></textarea>
-        </div>
-        <button class="btn btn--danger contacto__btn" type="submit">
-          Enviar
-        </button>
-      </form>
-      <div class="contacto__exito">
-        <p>
-          ¡Gracias por tu mensaje! <br />
-          Te contestaremos a la brevedad
-        </p>
-        <button class="btn btn--danger contacto__btnReiniciar">
-          Enviar otro mensaje
-        </button>
-      </div>
-    </section>
+      </section>
+    </main>
     <div id="footer-container"></div>
     <script
       type="module"
