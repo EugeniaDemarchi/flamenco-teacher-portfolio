@@ -32,7 +32,7 @@ export function renderObras(obras: Obra[]) {
     const contenido = document.createElement("div");
     contenido.classList.add("obras__contenido");
 
-    const title = document.createElement("h4");
+    const title = document.createElement("h3");
     title.classList.add("obras__titulo");
     title.textContent = obra.titulo;
 
