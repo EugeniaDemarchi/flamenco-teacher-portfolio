@@ -59,36 +59,14 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   border: 1px solid #dc0046;
 }
-/*
+
 .contacto__btn,
 .contacto__btnReiniciar {
-  background-color: #dc0046;
-  color: white;
   align-self: flex-start;
-  padding: var(--btn-padding);
-  transition: var(--btn-transition);
-  will-change: transform;
+  letter-spacing: 1px;
   font-size: var(--fs-p);
-  font-family: "Abel";
-  letter-spacing: 1px;
-}*/
-/* contacto.css */
-.contacto__btn,
-.contacto__btnReiniciar {
-  align-self: flex-start;
-  letter-spacing: 1px;
-  font-size: var(--fs-p); /* distinto al resto — ver nota abajo */
 }
 
-.contacto__btn:hover,
-.contacto__btnReiniciar:hover {
-  transform: scale(var(--btn-scale-hover));
-  background-color: #ff0d5a;
-}
-.contacto__btn:active,
-.contacto__btnReiniciar:active {
-  transform: scale(var(--btn-scale-active));
-}
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);

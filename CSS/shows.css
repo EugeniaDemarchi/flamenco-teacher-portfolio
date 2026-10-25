@@ -183,18 +183,8 @@
   margin: 2rem auto;
   font-weight: 700;
   letter-spacing: 3px;
-  font-size: var(--fs-p); /* distinto al resto — ver nota abajo */
+  font-size: var(--fs-p);
 }
-.shows__entradas:hover {
-  transform: scale(var(--btn-scale-hover));
-  background-color: white;
-}
-
-.shows__entradas:active {
-  transform: scale(var(--btn-scale-active));
-  background-color: white;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
   .shows__img-ppal {
