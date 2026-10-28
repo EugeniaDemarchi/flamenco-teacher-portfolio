@@ -49,16 +49,15 @@
   border: none;
   cursor: pointer;
   transition: var(--btn-transition);
-  will-change: transform;
   text-align: center;
 }
 
 .btn:hover {
-  transform: scale(var(--btn-scale-hover));
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.45);
 }
 
 .btn:active {
-  transform: scale(var(--btn-scale-active));
+  box-shadow: none;
 }
 
 /* ===== BOTONES: VARIANTES ===== */

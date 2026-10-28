@@ -43,9 +43,7 @@
   /*BUTTON STYLES*/
 
   --btn-padding: 0.4rem;
-  --btn-transition: transform 0.2s ease-out, background-color 0.2s ease-out;
-  --btn-scale-hover: 1.03;
-  --btn-scale-active: 0.97;
+  --btn-transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 * {
