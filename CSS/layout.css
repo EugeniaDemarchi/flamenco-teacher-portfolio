@@ -6,6 +6,18 @@
   src: url("/ASSETS/FONTS/Abel-Regular.woff2") format("woff2");
 }
 
+/* Misma fuente, solo para el título "NATALIA RIOPEDRE" (marca del sitio).
+   "block": el título queda invisible (hasta ~3 s) mientras carga Abel, en vez
+   de mostrarse un instante con otra fuente. El resto del texto usa "swap"
+   (arriba) para que se pueda leer cuanto antes. El archivo se descarga una vez. */
+@font-face {
+  font-family: "Abel Marca";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/ASSETS/FONTS/Abel-Regular.woff2") format("woff2");
+}
+
 nav {
   padding: 1rem 1rem 1rem 1rem;
 }
@@ -96,7 +108,6 @@ h1 a:hover {
   list-style: none;
 }
 .menu-list a {
-  font-family: "Abel";
   display: block;
   padding: 0.5rem;
   transition: transform var(--transition-slow);
@@ -133,7 +144,6 @@ footer {
 }
 footer p {
   text-align: center;
-  font-family: "Abel";
   /*   letter-spacing: 1px;
  */
   text-transform: uppercase;
@@ -147,7 +157,6 @@ footer a:hover ion-icon {
 }
 
 .chivo {
-  font-family: "Abel";
   color: var(--color-worn-silver);
   transition: var(--transition-base);
 }

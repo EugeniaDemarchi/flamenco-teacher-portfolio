@@ -22,9 +22,11 @@
   --transition-base: 0.3s ease-in-out; /* hovers, micro-interacciones */
   --transition-slow: 700ms ease; /* movimientos grandes: menu slide-in/out */
 
-  /* === FONT-FAMILY===*/
-  --font-family-h1: "Abel";
-  --font-family-h2: "Abel";
+  /* === FONT-FAMILY === */
+  /* sans-serif es el respaldo si Abel no cargó: evita que aparezca una fuente con serifa (Times). */
+  --font-principal: "Abel", sans-serif;
+  --font-family-h1: "Abel Marca", "Abel", sans-serif;
+  --font-family-h2: var(--font-principal);
 
   /*typography: LINE-HIGHT*/
   --line-height-general-text: 1.8rem;
@@ -50,7 +52,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Abel";
+  font-family: var(--font-principal);
 }
 body {
   background-color: var(--color-black-metal);

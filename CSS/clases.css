@@ -30,7 +30,6 @@
 .descripcionClases__descGral {
   grid-area: descripcion;
   text-align: start;
-  font-family: "Abel";
   line-height: 1.5;
   font-size: var(--fs-p-a);
 }
@@ -51,7 +50,6 @@
 }
 
 .descripcionClases__metodologia li {
-  font-family: "Abel";
   position: relative;
   font-size: var(--fs-p-a);
   padding-bottom: 1rem;
@@ -103,7 +101,6 @@
   width: 100%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
-  font-family: "Abel";
   padding: 0.8rem;
   margin: 0;
   text-align: center;
@@ -111,7 +108,6 @@
 
 .clases__nivel {
   color: white;
-  font-family: "Abel";
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -158,7 +154,6 @@
 .clases__ubicacion {
   font-size: var(--fs-h4);
   color: white;
-  font-family: "Abel";
 }
 
 /* ===== BOTONES ===== */
@@ -212,7 +207,6 @@
 
   .descripcionClases__descGral-titulo,
   .descripcionClases__descGral-metod {
-    font-family: "Abel";
   }
 
   .descripcionClases__descGral {

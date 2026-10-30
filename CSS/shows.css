@@ -6,7 +6,6 @@
 }
 
 .shows__empty-msg {
-  font-family: "Abel";
   padding: 3rem 2rem;
   text-align: center;
   text-transform: uppercase;
@@ -61,7 +60,6 @@
   padding: 0.8rem;
   margin: 0;
   text-align: center;
-  font-family: "Abel";
 }
 
 .shows__funcionDatos {
@@ -97,19 +95,16 @@
   gap: 1.8rem;
   padding: 2rem;
   box-sizing: border-box;
-  font-family: "Abel";
 }
 
 .shows__descCorta {
   font-size: var(--fs-h4);
-  font-family: "Abel";
   color: var(--color-candlelight-peach);
   text-align: center;
 }
 
 .shows__obraRelacionada {
   font-size: clamp(1.4rem, 2vw, 2rem);
-  font-family: "Abel";
   color: var(--color-worn-silver);
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
@@ -123,7 +118,6 @@
 .shows__localidadesAgotadas {
   color: red;
   text-align: center;
-  font-family: "Abel";
 }
 
 /* ===== ARTISTAS ===== */
@@ -155,7 +149,6 @@
 }
 
 .shows__nombres p {
-  font-family: "Abel";
 }
 
 /* ===== CONTACTO / UBICACIÓN ===== */

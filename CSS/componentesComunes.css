@@ -44,7 +44,6 @@
 .btn {
   display: inline-block;
   padding: var(--btn-padding);
-  font-family: "Abel";
   font-size: var(--fs-p-a);
   border: none;
   cursor: pointer;
