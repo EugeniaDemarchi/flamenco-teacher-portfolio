@@ -89,7 +89,7 @@ export const clases: Clase[] = [
       "Desarrollá la fuerza, la precisión y el carácter de la farruca mediante el trabajo técnico del zapateo y la expresión corporal.",
 
     descripcionLarga:
-      "Clase de nivel avanzado centrada en la farruca, un palo de gran fuerza y sobriedad que requiere control técnico y musical. Trabajamos la limpieza del zapateo, la coordinación, la colocación corporal y la calidad del movimiento, buscando una interpretación sólida y expresiva. El recorrido pone especial énfasis en la potencia escénica sin perder la elegancia característica de este estilo.",
+      "Clase de nivel inicial centrada en la farruca, un palo de gran fuerza y sobriedad que requiere control técnico y musical. Trabajamos la limpieza del zapateo, la coordinación, la colocación corporal y la calidad del movimiento, buscando una interpretación sólida y expresiva. El recorrido pone especial énfasis en la potencia escénica sin perder la elegancia característica de este estilo.",
     ubicacion: {
       direccion: "Tucumán 3378",
       mapsUrl:

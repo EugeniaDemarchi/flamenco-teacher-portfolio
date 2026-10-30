@@ -121,7 +121,7 @@ function renderGaleria(obra: Obra) {
   const lista = obtenerGaleriaARenderizar(obra);
   if (lista.length === 0) return;
 
-  const abrirModal = iniciarModal(lista, obra.titulo);
+  const abrirModal = conectarModal(lista, obra.titulo);
 
   lista.forEach((nombreBase, indice) => {
     const imgWrapper = document.createElement("div");
@@ -142,11 +142,11 @@ function renderGaleria(obra: Obra) {
 }
 
 /**
- * Conecta el modal de la galería (abrir, cerrar, anterior, siguiente).
+ * Conecta los eventos del modal de la galería (abrir, cerrar, anterior, siguiente).
  * Devuelve la función `abrirModal`, que recuerda la lista y la imagen actual
  * gracias a una clausura (closure).
  */
-function iniciarModal(lista: string[], alt: string) {
+function conectarModal(lista: string[], alt: string) {
   const modal = document.querySelector(
     ".obra-detalle__modal",
   ) as HTMLDivElement;

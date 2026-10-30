@@ -1,150 +1,180 @@
-import { SeccionClasesInfo } from "../types/clases.js";
-import { Clase } from "../types/clases.js";
+import { SeccionClasesInfo, Clase } from "../types/clases.js";
 import { clases, seccionClasesInfo } from "../data/clases.js";
-import { masInfo } from "./componentesComunes.js";
+import {
+  crearDesplegableInfo,
+  crearLinkUbicacion,
+} from "./componentesComunes.js";
 import { crearPictureResponsive } from "../utils/crear-picture.js";
 
-const containerClases = document.querySelector(
-  ".clases__grid",
-) as HTMLDivElement;
+const CARPETA_CLASES = "clases";
 
-export function renderDescripcionClases(seccionClasesInfo: SeccionClasesInfo) {
-  const imgPpalActual = document.querySelector(
+// ===== Punto de entrada =====
+
+function initClases() {
+  renderIntroClases(seccionClasesInfo);
+  renderClases(clases);
+}
+
+// ===== Introducción de la sección (enfoque y modalidad) =====
+
+function renderIntroClases(info: SeccionClasesInfo) {
+  renderImagenPrincipal(info.imagenPrincipal);
+  renderEnfoque(info.descripcionGeneral);
+  renderModalidad(info.metodologia);
+  renderImagenMetodologia(info.imagenMetodologia);
+}
+
+function renderImagenPrincipal(nombreBase: string) {
+  const imgActual = document.querySelector(
     ".descripcionClases__img",
   ) as HTMLImageElement;
 
-  const pictureImgPpal = crearPictureResponsive({
-    nombreBase: seccionClasesInfo.imagenPrincipal,
-    carpeta: "clases",
+  const picture = crearPictureResponsive({
+    nombreBase,
+    carpeta: CARPETA_CLASES,
     alt: "Clase de Natalia Riopedre",
     sizes: "100vw",
     loading: "eager",
     fetchPriority: "high",
     className: "descripcionClases__img",
   });
-  imgPpalActual.replaceWith(pictureImgPpal);
+  imgActual.replaceWith(picture);
 }
 
-const descGralTitulo = document.querySelector(
-  ".descripcionClases__descGral-titulo",
-) as HTMLHeadingElement;
+// Los títulos "Enfoque" y "Modalidad" se escriben solo si hay contenido:
+// así no queda un título sin texto debajo.
+function renderEnfoque(descripcion?: string) {
+  if (!descripcion) return;
 
-const descGral = document.querySelector(
-  ".descripcionClases__descGral",
-) as HTMLParagraphElement;
-if (seccionClasesInfo.descripcionGeneral) {
-  descGralTitulo.textContent = "Enfoque";
-  descGral.textContent = seccionClasesInfo.descripcionGeneral;
+  const titulo = document.querySelector(
+    ".descripcionClases__descGral-titulo",
+  ) as HTMLHeadingElement;
+  const parrafo = document.querySelector(
+    ".descripcionClases__descGral",
+  ) as HTMLParagraphElement;
+
+  titulo.textContent = "Enfoque";
+  parrafo.textContent = descripcion;
 }
 
-const imgMetodologiaActual = document.querySelector(
-  ".descripcionClases__imgMetod",
-) as HTMLImageElement;
-if (seccionClasesInfo.imagenMetodologia) {
-  const pictureMetodologia = crearPictureResponsive({
-    nombreBase: seccionClasesInfo.imagenMetodologia,
-    carpeta: "clases",
+function renderModalidad(puntos?: string[]) {
+  if (!puntos) return;
+
+  const titulo = document.querySelector(
+    ".descripcionClases__descGral-metod",
+  ) as HTMLHeadingElement;
+  const lista = document.querySelector(
+    ".descripcionClases__metodologia",
+  ) as HTMLUListElement;
+
+  titulo.textContent = "Modalidad";
+  puntos.forEach((punto) => {
+    const li = document.createElement("li");
+    li.textContent = punto;
+    li.className = "descripcionClases__bulletsMetod";
+    lista.appendChild(li);
+  });
+}
+
+function renderImagenMetodologia(nombreBase?: string) {
+  if (!nombreBase) return;
+
+  const imgActual = document.querySelector(
+    ".descripcionClases__imgMetod",
+  ) as HTMLImageElement;
+
+  const picture = crearPictureResponsive({
+    nombreBase,
+    carpeta: CARPETA_CLASES,
     alt: "Clases de Natalia Riopedre",
     sizes: "100vw",
     loading: "lazy",
     className: "descripcionClases__imgMetod",
   });
-  imgMetodologiaActual.replaceWith(pictureMetodologia);
+  imgActual.replaceWith(picture);
 }
 
-const metodTitulo = document.querySelector(
-  ".descripcionClases__descGral-metod",
-) as HTMLHeadingElement;
+// ===== Tarjetas de clases =====
 
-const metodologia = document.querySelector(
-  ".descripcionClases__metodologia",
-) as HTMLUListElement;
-if (seccionClasesInfo.metodologia) {
-  metodTitulo.textContent = "Modalidad";
-  seccionClasesInfo.metodologia.forEach((punto) => {
-    const li = document.createElement("li");
-    li.textContent = punto;
-    li.className = "descripcionClases__bulletsMetod";
-    metodologia.appendChild(li);
+export function renderClases(lista: Clase[]) {
+  const contenedor = document.querySelector(".clases__grid") as HTMLDivElement;
+  contenedor.innerHTML = "";
+
+  lista.forEach((clase) => contenedor.appendChild(crearTarjetaClase(clase)));
+}
+
+/** Una tarjeta = cabecera (imagen, título, nivel) + información (horarios, textos, ubicación). */
+function crearTarjetaClase(clase: Clase): HTMLDivElement {
+  const tarjeta = document.createElement("div");
+  tarjeta.classList.add("clases__div");
+
+  tarjeta.appendChild(crearCabeceraClase(clase));
+  tarjeta.appendChild(crearInfoClase(clase));
+  return tarjeta;
+}
+
+function crearCabeceraClase(clase: Clase): HTMLDivElement {
+  const cabecera = document.createElement("div");
+  cabecera.classList.add("clases__imgWrapper");
+
+  const picture = crearPictureResponsive({
+    nombreBase: clase.imagenClase,
+    carpeta: CARPETA_CLASES,
+    alt: clase.titulo,
+    sizes: "(min-width: 1440px) 25vw, (min-width: 768px) 50vw, 100vw",
+    loading: "lazy",
+    className: "clases__img",
   });
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = clase.titulo;
+  titulo.classList.add("clases__titulo");
+
+  const nivel = document.createElement("h3");
+  nivel.textContent = `Nivel: ${clase.nivelClase}`;
+  nivel.classList.add("clases__nivel");
+
+  cabecera.appendChild(picture);
+  cabecera.appendChild(titulo);
+  cabecera.appendChild(nivel);
+  return cabecera;
 }
 
-export function renderClases(clases: Clase[]) {
-  containerClases.innerHTML = "";
+function crearInfoClase(clase: Clase): HTMLDivElement {
+  const info = document.createElement("div");
+  info.classList.add("clases__infoDiv");
 
-  clases.forEach((clase) => {
-    const clasesDiv = document.createElement("div");
-    clasesDiv.classList.add("clases__div");
+  info.appendChild(crearListaHorarios(clase.horarios));
 
-    const imgWrapper = document.createElement("div");
-    imgWrapper.classList.add("clases__imgWrapper");
-
-    const titulo = document.createElement("h3") as HTMLParagraphElement;
-    titulo.textContent = clase.titulo;
-    titulo.classList.add("clases__titulo");
-
-    const pictureClase = crearPictureResponsive({
-      nombreBase: clase.imagenClase,
-      carpeta: "clases",
-      alt: clase.titulo,
-      sizes: "(min-width: 1440px) 25vw, (min-width: 768px) 50vw, 100vw",
-      loading: "lazy",
-      className: "clases__img",
-    });
-
-    const nivel = document.createElement("h3") as HTMLParagraphElement;
-    nivel.textContent = `Nivel: ${clase.nivelClase}`;
-    nivel.classList.add("clases__nivel");
-
-    imgWrapper.appendChild(pictureClase);
-    imgWrapper.appendChild(titulo);
-    imgWrapper.appendChild(nivel);
-
-    const clasesInfoDiv = document.createElement("div");
-    clasesInfoDiv.classList.add("clases__infoDiv");
-
-    const horarios = document.createElement("ul");
-    horarios.classList.add("clases__horarios");
-    clase.horarios.forEach((dia) => {
-      const li = document.createElement("li");
-      li.textContent = `${dia.dia}, ${dia.horario}`;
-      li.classList.add("clases__li");
-      horarios.appendChild(li);
-    });
-
-    clasesDiv.appendChild(imgWrapper);
-    clasesInfoDiv.appendChild(horarios);
-
-    const descCorta = document.createElement("p") as HTMLParagraphElement;
+  // Campos opcionales: si no vienen, no se agrega nada.
+  if (clase.descripcionCorta) {
+    const descCorta = document.createElement("p");
     descCorta.classList.add("clases__descCorta");
-    if (clase.descripcionCorta) {
-      descCorta.textContent = clase.descripcionCorta;
-      clasesInfoDiv.appendChild(descCorta);
-    }
+    descCorta.textContent = clase.descripcionCorta;
+    info.appendChild(descCorta);
+  }
 
-    const descLarga = document.createElement("p") as HTMLParagraphElement;
-    descLarga.classList.add("clases__descLarga");
-    if (clase.descripcionLarga) {
-      const [botonDiv, descDiv] = masInfo(clase.descripcionLarga);
-      clasesInfoDiv.appendChild(botonDiv);
+  if (clase.descripcionLarga) {
+    const [boton, descripcion] = crearDesplegableInfo(clase.descripcionLarga);
+    info.appendChild(boton);
+    info.appendChild(descripcion);
+  }
 
-      clasesInfoDiv.appendChild(descDiv);
-    }
-
-    const ubicacion = document.createElement("a");
-    ubicacion.classList.add("clases__ubicacion");
-    ubicacion.textContent = `📍${clase.ubicacion.direccion}, ${clase.ubicacion.barrio}`;
-    if (clase.ubicacion.mapsUrl) {
-      ubicacion.href = clase.ubicacion.mapsUrl;
-      ubicacion.target = "_blank";
-      ubicacion.rel = "noopener noreferrer";
-    }
-    clasesInfoDiv.appendChild(ubicacion);
-
-    clasesDiv.appendChild(clasesInfoDiv);
-    containerClases.appendChild(clasesDiv);
-  });
+  info.appendChild(crearLinkUbicacion(clase.ubicacion, "clases__ubicacion"));
+  return info;
 }
 
-renderDescripcionClases(seccionClasesInfo);
-renderClases(clases);
+function crearListaHorarios(horarios: Clase["horarios"]): HTMLUListElement {
+  const lista = document.createElement("ul");
+  lista.classList.add("clases__horarios");
+
+  horarios.forEach(({ dia, horario }) => {
+    const li = document.createElement("li");
+    li.textContent = `${dia}, ${horario}`;
+    li.classList.add("clases__li");
+    lista.appendChild(li);
+  });
+  return lista;
+}
+
+initClases();

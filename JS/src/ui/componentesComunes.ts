@@ -1,3 +1,5 @@
+import { Ubicacion } from "../types/comunes.js";
+
 export function scrollToTop(): void {
   const scrollTopBtn = document.getElementById(
     "scrollTopBtn",
@@ -17,27 +19,56 @@ export function scrollToTop(): void {
   });
 }
 
-export function masInfo(descripcion: string): HTMLElement[] {
-  const clasesMasInfoBtn = document.createElement("div");
-  const clasesMasInfoDesc = document.createElement("div");
+/**
+ * Botón "+ info" que muestra u oculta un texto largo.
+ * Devuelve [contenedor del botón, contenedor del texto] para ubicarlos por separado.
+ */
+export function crearDesplegableInfo(
+  descripcion: string,
+): [HTMLDivElement, HTMLDivElement] {
+  const contenedorBoton = document.createElement("div");
+  const contenedorTexto = document.createElement("div");
 
-  const masInfoBtn = document.createElement("button");
-  masInfoBtn.classList.add("btn", "btn--outline", "mas-info-btn");
-  masInfoBtn.textContent = "+ info";
+  const boton = document.createElement("button");
+  boton.classList.add("btn", "btn--outline", "mas-info-btn");
+  boton.textContent = "+ info";
+  // aria-expanded le indica a los lectores de pantalla si el texto está visible.
+  boton.setAttribute("aria-expanded", "false");
 
   const parrafo = document.createElement("p");
   parrafo.classList.add("parrafo");
   parrafo.textContent = descripcion;
 
-  let isOpen: boolean = false;
-  masInfoBtn.onclick = () => {
-    isOpen = !isOpen;
-    masInfoBtn.textContent = isOpen ? "- info" : "+ info";
+  let abierto = false;
+  boton.addEventListener("click", () => {
+    abierto = !abierto;
+    boton.textContent = abierto ? "- info" : "+ info";
+    boton.setAttribute("aria-expanded", String(abierto));
     parrafo.classList.toggle("show");
-  };
+  });
 
-  clasesMasInfoBtn.appendChild(masInfoBtn);
-  clasesMasInfoDesc.appendChild(parrafo);
+  contenedorBoton.appendChild(boton);
+  contenedorTexto.appendChild(parrafo);
 
-  return [clasesMasInfoBtn, clasesMasInfoDesc];
+  return [contenedorBoton, contenedorTexto];
+}
+
+/**
+ * Texto "📍 dirección, barrio". Si hay link de Google Maps, es un enlace
+ * que se abre en otra pestaña. Lo usan Clases y (más adelante) Shows.
+ */
+export function crearLinkUbicacion(
+  ubicacion: Ubicacion,
+  className: string,
+): HTMLAnchorElement {
+  const link = document.createElement("a");
+  link.classList.add(className);
+  link.textContent = `📍${ubicacion.direccion}, ${ubicacion.barrio}`;
+
+  if (ubicacion.mapsUrl) {
+    link.href = ubicacion.mapsUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
+  return link;
 }
