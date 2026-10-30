@@ -65,6 +65,9 @@ function renderBanner(obra: Obra) {
 }
 
 function renderTextos(obra: Obra) {
+  // Título de la pestaña con el nombre de la obra (en el HTML queda "Obras · ..." como respaldo).
+  document.title = `${obra.titulo} · Natalia Riopedre`;
+
   const titulo = document.querySelector(
     ".obra-detalle__titulo",
   ) as HTMLHeadingElement;
