@@ -27,7 +27,7 @@ export const obras: Obra[] = [
       "apariciones-galeria-4",
       "apariciones-portada",
     ],
-    video: "https://www.youtube.com/watch?v=naOhe-ulsvk",
+    video: "https://youtu.be/naOhe-ulsvk",
   },
   {
     titulo: "Crudo, un impulso quebrado",

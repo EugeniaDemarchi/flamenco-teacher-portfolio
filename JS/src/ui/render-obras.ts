@@ -2,10 +2,10 @@ import { Obra } from "../types/obras.js";
 import { obras } from "../data/obras.js";
 import { crearPictureResponsive } from "../utils/crear-picture.js";
 
-const conatinerObras = document.querySelector(".obras__grid") as HTMLDivElement;
+const containerObras = document.querySelector(".obras__grid") as HTMLDivElement;
 
 export function renderObras(obras: Obra[]) {
-  conatinerObras.innerHTML = "";
+  containerObras.innerHTML = "";
 
   const copiaObras = [...obras].sort((a, b) =>
     a.titulo.localeCompare(b.titulo, "es"),
@@ -44,7 +44,7 @@ export function renderObras(obras: Obra[]) {
     contenido.appendChild(link);
     caja.appendChild(picture);
     caja.appendChild(contenido);
-    conatinerObras.appendChild(caja);
+    containerObras.appendChild(caja);
   });
 }
 renderObras(obras);

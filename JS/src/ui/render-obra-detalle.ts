@@ -6,34 +6,9 @@ export function buscarSlug(lista: Obra[], slug: string) {
   return lista.find((obra) => obra.slugObra === slug);
 }
 
-/*MANUAL: "subí tus videos de espectáculos a YouTube y pegá el link acá")*/
-/* function convertirAEmbedYoutube(url: string): string {
-  const urlObj = new URL(url);
-  let id: string | null;
-
-  if (urlObj.hostname === "youtube.be") {
-    id = urlObj.pathname.slice(1);
-  } else {
-    id = urlObj.searchParams.get("v");
-  }
-  return `https://www.youtube.com/embed/${id}`;
-} */
-
-/* function convertirAEmbedYoutube(url: string): string {
-  const urlObj = new URL(url);
-  let id: string | null;
-
-  if (urlObj.hostname === "youtube.be") {
-    id = urlObj.pathname.slice(1);
-  } else {
-    id = urlObj.searchParams.get("v");
-  }
-  return `https://www.youtube-nocookie.com/embed/${id}`;
-} */
-
 function extraerIdYoutube(url: string): string | null {
   const urlObj = new URL(url);
-  if (urlObj.hostname === "youtube.be") {
+  if (urlObj.hostname === "youtu.be") {
     return urlObj.pathname.slice(1);
   }
   return urlObj.searchParams.get("v");
@@ -89,13 +64,13 @@ export function renderObraDetalle(obra: Obra) {
 
   const titulo = document.querySelector(
     ".obra-detalle__titulo",
-  ) as HTMLTitleElement;
-  titulo.innerHTML = obra.titulo;
+  ) as HTMLHeadingElement;
+  titulo.textContent = obra.titulo;
 
   const descripcionCorta = document.querySelector(
     ".obra-detalle__descripcion-corta",
   ) as HTMLParagraphElement;
-  descripcionCorta.innerHTML = obra.descripcionCorta;
+  descripcionCorta.textContent = obra.descripcionCorta;
 
   const galeria = document.querySelector(
     ".obra-detalle__galeria",
@@ -110,7 +85,8 @@ export function renderObraDetalle(obra: Obra) {
     ".obra-detalle__close-btn",
   ) as HTMLButtonElement;
 
-  /*"MANUAL: la imagen de imgPpal tiene que estar también, tal cual, dentro de galeria"*/
+  // La galería incluye también imgPpal. En mobile se filtra para no repetir la imagen del banner.
+  // Esta dependencia se elimina al conectar con la API (ver docs/especificacion-api.md, sección 7.2).
   const pantallaLaptop = window.matchMedia("(min-width: 1024px)");
 
   let galeriaARenderizar;
@@ -208,7 +184,7 @@ export function renderObraDetalle(obra: Obra) {
   const rol = document.querySelector(
     ".obra-detalle__rol",
   ) as HTMLParagraphElement;
-  rol.innerHTML = obra.rol;
+  rol.textContent = obra.rol;
 
   const anio = document.querySelector(
     ".obra-detalle__anio",

@@ -27,7 +27,7 @@ export function renderDescripcionClases(seccionClasesInfo: SeccionClasesInfo) {
 
 const descGralTitulo = document.querySelector(
   ".descripcionClases__descGral-titulo",
-) as HTMLTitleElement;
+) as HTMLHeadingElement;
 
 const descGral = document.querySelector(
   ".descripcionClases__descGral",
@@ -54,7 +54,7 @@ if (seccionClasesInfo.imagenMetodologia) {
 
 const metodTitulo = document.querySelector(
   ".descripcionClases__descGral-metod",
-) as HTMLTitleElement;
+) as HTMLHeadingElement;
 
 const metodologia = document.querySelector(
   ".descripcionClases__metodologia",
