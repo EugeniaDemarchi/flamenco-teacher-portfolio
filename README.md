@@ -99,6 +99,7 @@ scripts/
 
 docs/
   especificacion-api.md  # API specification for the backend phase (written before implementing)
+  plan-de-gestion.md     # project management plan: scope, risks, estimation, sprints, KPIs (Spanish)
 
 *.html              # one static HTML shell per page (index, bio, obra, obra-detalle, clases, shows, contacto)
 ```
@@ -141,6 +142,8 @@ Content is currently **developer-managed**: works, shows, classes, and their tex
 A **backend with an admin panel is the next phase**, so Natalia can log in and manage **Obras, Clases and Shows** herself (create, edit, delete), and read the messages sent through the contact form. Planned stack: Express running on Netlify Functions, MongoDB Atlas, and Cloudinary for images. All decisions, data models and endpoints are documented in [`docs/especificacion-api.md`](docs/especificacion-api.md), written before implementation.
 
 ## Roadmap
+
+The project is managed with Scrum in two-week sprints. Backlog, sprints and traceability live in Jira (project `NR`); the full management plan is in [`docs/plan-de-gestion.md`](docs/plan-de-gestion.md).
 
 1. **Backend + admin panel**: Natalia manages Obras, Clases and Shows herself. Specification in progress: [`docs/especificacion-api.md`](docs/especificacion-api.md).
 2. **Contact form through the project's own backend**: messages stored in the database and an email notice to Natalia, replacing Formspree.
