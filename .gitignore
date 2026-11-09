@@ -1,1 +1,13 @@
+# Dependencias
 node_modules/
+
+# Variables de entorno y secretos (nunca se suben)
+.env
+.env.*
+!.env.example
+
+# Archivos con códigos o claves, por si se guardan en la carpeta por error
+*recovery*
+*secret*
+*.pem
+*.key
