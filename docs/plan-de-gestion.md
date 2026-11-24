@@ -9,7 +9,7 @@
 | **Sitio** | [nataliariopedre.com](https://nataliariopedre.com) |
 | **Tablero** | [Jira · proyecto NR](https://demarchieugenia23.atlassian.net/jira/software/projects/NR/boards/1) |
 | **Especificación** | [`docs/especificacion-api.md`](especificacion-api.md) |
-| **Versión del plan** | 1.4 · 06/11/2026 |
+| **Versión del plan** | 1.5 · 24/11/2026 |
 
 > Documento vivo, versionado junto al código (docs-as-code). Enlaza a Jira y a la
 > especificación en lugar de copiarlas, para que no haya dos versiones de lo mismo.
@@ -119,6 +119,7 @@ Probabilidad e impacto: Baja / Media / Alta.
 | R8 | Feriados de diciembre y enero reducen la capacidad | Alta | Bajo | Sprint 4 planificado con menos puntos |
 | R10 | El dominio `nataliariopedre.com` vence: está registrado en la cuenta de GoDaddy de la desarrolladora y pagado por un año | Media | Alto | Transferir el dominio a una cuenta de Natalia con renovación automática antes del cierre (NR-40) · recordatorio un mes antes del vencimiento |
 | R11 | El posicionamiento depende de factores externos (algoritmo de Google, competencia, enlaces) y tarda meses | Alta | Medio | Metas por tipo de búsqueda y plazos realistas · medición con Search Console · Google Business Profile para las búsquedas locales |
+| R12 | Disponibilidad reducida por compromisos académicos (exámenes y cierre de cursada de la Tecnicatura) | Alta | Alto | Revisar el calendario académico antes de cada planificación · comprometer puntos según las horas reales disponibles · si una semana no se puede avanzar, dejarlo registrado en la tarea en curso |
 | R9 | Deuda técnica planificada: `render-shows.ts`, `contacto.ts` y `render-obras.ts` todavía no siguen las convenciones del proyecto; podría quedar sin resolver si se aprieta el cronograma | Media | Bajo | Refactor incluido como criterio de aceptación en NR-21, NR-28 y NR-30: por la DoD, esas historias no se cierran sin él. Se pospone a propósito, porque esos archivos se reescriben al conectarse con la API |
 
 ### Supuestos
@@ -303,7 +304,31 @@ responsable del proyecto.
 ### Registro de sprints
 | Sprint | Objetivo cumplido | Comprometido | Terminado | Estado | Retrospectiva: una mejora |
 |---|---|---|---|---|---|
-| 1 | — | 17 | — | — | — |
+| 1 | No | 17 | 2 | 🔴 | Planificar según la capacidad real y el calendario personal, no según lo deseado |
+| 2 | — | 10 | — | — | — |
+
+#### Sprint 1 (06/11 – 20/11) · retrospectiva
+
+- **Contexto:** las dos últimas semanas del sprint coincidieron con el cierre de
+  cursada de la Tecnicatura (exámenes). Hubo unas 5 horas de trabajo, concentradas
+  del 6 al 8/11. Riesgo nuevo: R12.
+- **Salió bien:** trazabilidad GitHub ↔ Jira, plantilla de PR con la DoD y `main`
+  protegida (NR-18); seguridad de cuentas y dominio por encima de lo planificado
+  (NR-51); riesgos detectados y registrados en el momento (NR-57); refinamiento del
+  backlog (criterio de 2FA movido de NR-51 a NR-17); decisiones de producto de
+  Clases y Shows tomadas y documentadas con su motivo.
+- **No salió bien:** compromiso de 17 puntos sin conocer la capacidad; dos semanas
+  sin avance ni registro; trabajo no planificado sin medir (GoDaddy, Google,
+  NR-57); especificación sin commit durante dos semanas; cierre del sprint sin
+  revisión ni retrospectiva.
+- **Acciones para el Sprint 2:** compromiso de 10 puntos para unas 20 horas
+  disponibles · commit al final de cada sesión · la responsable opera Jira y
+  registra horas · control a mitad de sprint el 01/12 · retrospectiva el 08/12,
+  antes de planificar el Sprint 3.
+- **Impacto en el cronograma:** la velocidad del Sprint 1 no es representativa.
+  Al cerrar el Sprint 2 se recalcula el plan de releases con la velocidad real;
+  si el go-live del 26/02/2027 deja de ser alcanzable, se registra como CR-04 y se
+  acuerda con Natalia.
 
 ---
 
@@ -352,3 +377,4 @@ Detallado en la incidencia NR-41:
 | 1.2 | 06/11/2026 | CR-01: objetivo OE-6 de posicionamiento, épica NR-44, dominio propio como excepción de costo, riesgos R10 y R11, plan de 8 sprints con cierre el 26/02/2027 |
 | 1.3 | 06/11/2026 | CR-02: contrato firmado al inicio (hito H2), traspaso de cuentas al cierre |
 | 1.4 | 06/11/2026 | CR-03: medidas de seguridad (RNF-08, R7 ampliado, hito H7), plan de 9 sprints con go-live el 26/02 y cierre el 12/03/2027 |
+| 1.5 | 24/11/2026 | Retrospectiva del Sprint 1, riesgo R12 (disponibilidad por compromisos académicos) y compromiso del Sprint 2 |
