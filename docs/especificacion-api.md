@@ -466,8 +466,121 @@ Los tests fijan la fecha de "hoy" para que el resultado no dependa del día en q
 
 ---
 
-## 10. Pendientes de especificar
+## 10. Contacto
 
-- [ ] Contacto (guardado en base + aviso por email + anti-spam)
+Reemplaza a Formspree. El mensaje se **guarda en la base** y se le **avisa a
+Natalia por mail**. Si el mail falla, el mensaje no se pierde.
+
+### 10.1 Modelo: Mensaje
+
+| Campo | Tipo | Obligatorio | Reglas |
+|---|---|---|---|
+| `_id` | ID de MongoDB | automático | — |
+| `nombre` | texto | sí | 1 a 80 caracteres. Se quitan los espacios al principio y al final. |
+| `mail` | texto | sí | Dirección de mail válida, hasta 254 caracteres |
+| `telefono` | texto | no | 6 a 20 caracteres: solo números, espacios, `+` y `-` |
+| `motivo` | opción | no | Una de: `Clases`, `Contratación de shows`, `Prensa`, `Otro` |
+| `mensaje` | texto | sí | 10 a 3000 caracteres |
+| `leido` | sí/no | automático | `false` al crearse. Natalia lo cambia desde el panel. |
+| `avisoEnviado` | sí/no | automático | `true` si el mail a Natalia se envió bien |
+| `createdAt` | fecha | automático | Lo completa MongoDB. Se usa para el borrado automático. |
+
+El formulario envía además dos campos de control que **no se guardan** (ver 10.2):
+`sitioWeb` (campo trampa) y `cargadoEn` (momento en que se cargó la página).
+
+### 10.2 Decisiones y su motivo
+
+- **Backend propio en lugar de Formspree.** Los mensajes quedan guardados y son
+  de Natalia, no dependen del límite de un servicio externo y se pueden leer
+  desde el panel.
+- **Motivo y teléfono opcionales.** El motivo le permite a Natalia saber de qué
+  se trata antes de abrir el mensaje, y va en el asunto del mail.
+- **Aviso por mail a Natalia, con "responder a" el mail del visitante.** Natalia
+  aprieta "Responder" en su correo y le contesta directo. La dirección de destino
+  vive en una variable de entorno, no en el código.
+- **Sin mail automático al visitante.** El mensaje de éxito en pantalla cumple esa
+  función, sin costo extra ni riesgo de que el dominio quede marcado como spam.
+- **Si el mail falla, el mensaje igual se guarda** con `avisoEnviado: false`, y el
+  panel lo muestra. El visitante ve el mensaje de éxito, porque su consulta llegó.
+- **Anti-spam sin captcha.** Un captcha molesta a las personas y los más usados
+  rastrean al visitante. Se usan tres medidas habituales en sitios chicos:
+  - **Campo trampa** (`sitioWeb`): invisible para las personas, también para los
+    lectores de pantalla (`aria-hidden`, `tabindex="-1"`, `autocomplete="off"`).
+    Los bots lo completan. Si viene con algo, el mensaje se descarta.
+  - **Tiempo mínimo:** si el formulario se envía menos de 3 segundos después de
+    cargar la página, es un bot y se descarta.
+  - **Límite de envíos:** hasta 3 mensajes cada 10 minutos por conexión (IP). El
+    contador vive en la base con vencimiento automático, porque en Netlify
+    Functions la memoria no se comparte entre ejecuciones. La IP se guarda
+    cifrada con un hash, nunca en texto plano, y no se asocia al mensaje.
+
+  A un mensaje descartado por la trampa o por el tiempo **se le responde como si
+  hubiera salido bien**, para que el bot no aprenda a esquivar la regla. Si con
+  el tiempo igual llega spam, se evalúa agregar un captcha liviano.
+- **Privacidad (Ley 25.326).** Natalia es la responsable de los datos. Debajo del
+  formulario se muestra: *"Tus datos (nombre, mail y teléfono) se usan solo para
+  responder tu consulta. Podés pedir que se borren escribiendo a Natalia."*
+- **Borrado automático a los 2 años** desde la creación del mensaje, con un
+  índice de vencimiento (TTL) de MongoDB. Es lo habitual para consultas (entre 1 y
+  2 años) y alcanza para que Natalia tenga el historial de alumnas y contrataciones.
+  **Propuesta a validar con Natalia y a confirmar con el abogado (NR-50).**
+- **Errores en pantalla, no en `alert()`.** Si el envío falla, el formulario
+  muestra el error debajo del botón y no borra lo que la persona escribió.
+- **Panel:** lista de mensajes del más nuevo al más viejo, marca de leído / no
+  leído, borrar, **contador de no leídos** en el menú ("Mensajes (2)") y botón
+  **"Responder por mail"**, que abre el correo de Natalia con el destinatario y el
+  asunto completos (`Re: <motivo>`). No se responde desde el panel.
+
+### 10.3 Endpoints
+
+| Método | Ruta | Acceso | Uso |
+|---|---|---|---|
+| `POST` | `/api/contacto` | público | Enviar un mensaje desde el formulario |
+| `GET` | `/api/mensajes` | protegido | Bandeja del panel, del más nuevo al más viejo |
+| `GET` | `/api/mensajes/no-leidos` | protegido | Contador del menú: `{ "cantidad": 2 }` |
+| `PATCH` | `/api/mensajes/:id` | protegido | Marcar como leído o no leído: `{ "leido": true }` |
+| `DELETE` | `/api/mensajes/:id` | protegido | Borrar un mensaje |
+
+> `PATCH` cambia solo una parte del recurso. Se usa acá porque desde el panel
+> solo se modifica `leido`: el contenido de un mensaje nunca se edita.
+
+### 10.4 Criterios de aceptación (→ tests)
+
+**`POST /api/contacto`**
+- Datos válidos → `201`. El mensaje queda guardado con `leido: false` y se le
+  envía a Natalia un mail con el motivo en el asunto y "responder a" el mail del visitante.
+- Faltan campos obligatorios o no cumplen las reglas → `400` con el detalle de cada campo.
+- `mail` inválido → `400`.
+- `motivo` que no está en la lista → `400`.
+- `sitioWeb` con contenido → `201`, pero **no** se guarda nada ni se envía mail.
+- Enviado menos de 3 segundos después de `cargadoEn` → `201`, pero **no** se guarda nada.
+- Cuarto mensaje desde la misma IP en 10 minutos → `429`, y no se guarda.
+- El servicio de mail falla → `201`, el mensaje queda guardado con `avisoEnviado: false`.
+- La IP no aparece en el mensaje guardado.
+
+**`GET /api/mensajes`** y **`GET /api/mensajes/no-leidos`**
+- Sin sesión → `401`.
+- `/mensajes` devuelve `200` con los mensajes, del más nuevo al más viejo.
+- `/no-leidos` devuelve la cantidad de mensajes con `leido: false`.
+
+**`PATCH /api/mensajes/:id`**
+- Sin sesión → `401`.
+- `id` inexistente → `404`.
+- Un campo distinto de `leido`, o `leido` que no es sí/no → `400`.
+- Correcto → `200` con el mensaje actualizado.
+
+**`DELETE /api/mensajes/:id`**
+- Sin sesión → `401`.
+- `id` inexistente → `404`.
+- Correcto → `204`.
+
+**Borrado automático**
+- La colección tiene un índice TTL sobre `createdAt` de 2 años (730 días).
+
+---
+
+## 11. Pendientes de especificar
+
 - [ ] Autenticación: endpoints de login, logout y recuperación de contraseña
-- [ ] Servicio de email: Resend o Brevo
+- [ ] Servicio de email: Resend o Brevo. Requiere verificar el dominio en GoDaddy para enviar desde `@nataliariopedre.com`.
+- [ ] Validar con Natalia: plazo de conservación de los mensajes (propuesta: 2 años) y texto de privacidad.
