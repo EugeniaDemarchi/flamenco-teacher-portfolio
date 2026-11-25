@@ -89,11 +89,11 @@ editarlas, pero no crearlas ni borrarlas.
 - **Lectura pública:** todos los `GET` de Obras, Clases y Shows.
 - **Escritura protegida:** todos los `POST`, `PUT` y `DELETE` requieren sesión iniciada.
 - **Un solo usuario** (Natalia), creado con un script. No existe registro público.
-- La contraseña se guarda como **hash** (bcrypt o argon2), nunca en texto plano.
-- La sesión es un **JWT en cookie** `httpOnly`, `Secure` y `SameSite`.
-- **Límite de intentos** en el login.
+- La contraseña se guarda como **hash** (bcrypt), nunca en texto plano. Detalle en la sección 11.
+- La sesión es un **JWT en cookie** `httpOnly`, `Secure` y `SameSite=Strict`, y dura 7 días.
+- **Límite de intentos** en el login: 5 fallidos cada 15 minutos.
 - Las claves y contraseñas viven en variables de entorno (`.env`), que **nunca** se suben al repositorio.
-- Pendiente de definir: recuperación de contraseña por email.
+- Recuperación de contraseña por mail, con un enlace de un solo uso (sección 11).
 
 ---
 
@@ -579,8 +579,128 @@ El formulario envía además dos campos de control que **no se guardan** (ver 10
 
 ---
 
-## 11. Pendientes de especificar
+## 11. Autenticación
 
-- [ ] Autenticación: endpoints de login, logout y recuperación de contraseña
+Un solo usuario: Natalia. No hay registro público. La cuenta se crea con un
+script (`npm run crear-admin`) que pide el mail y la contraseña por consola, sin
+pasarlos como argumentos, para que no queden en el historial de la terminal.
+
+### 11.1 Modelos
+
+**Usuario**
+
+| Campo | Tipo | Reglas |
+|---|---|---|
+| `_id` | ID de MongoDB | automático |
+| `mail` | texto | Único. Se guarda en minúsculas. |
+| `hashContrasena` | texto | Hash bcrypt de la contraseña. La contraseña nunca se guarda. |
+| `versionSesion` | número | Empieza en 1 y sube cada vez que cambia la contraseña (ver 11.2) |
+| `createdAt` / `updatedAt` | fecha | Los completa MongoDB |
+
+**Token de recuperación**
+
+| Campo | Tipo | Reglas |
+|---|---|---|
+| `hashToken` | texto | Hash del token que viaja en el enlace. El token en sí no se guarda. |
+| `usuario` | ID de Usuario | — |
+| `expiraEn` | fecha | 30 minutos después de crearse. Índice TTL: MongoDB lo borra solo. |
+| `usado` | sí/no | `true` después de usarse. No sirve una segunda vez. |
+
+**Contraseña:** entre 12 y 128 caracteres, con cualquier carácter (espacios,
+acentos, emojis). No se exigen mayúsculas, números ni símbolos.
+
+### 11.2 Decisiones y su motivo
+
+- **Sesión de 7 días** en el dispositivo de Natalia, con botón "Cerrar sesión".
+  Entra al panel cada tanto y no tiene que iniciar sesión cada vez. Si usa una
+  computadora ajena, cierra la sesión al terminar (lo explica el manual de usuario).
+- **Cookie** `sesion`: `httpOnly` (el JavaScript de la página no la puede leer),
+  `Secure` (solo viaja por HTTPS), `SameSite=Strict` (no se envía desde otros
+  sitios, lo que frena ataques CSRF), `Path=/api` y vencimiento a los 7 días.
+- **JWT firmado** con un secreto de al menos 32 caracteres guardado en una variable
+  de entorno (`JWT_SECRETO`). Contiene solo el ID del usuario y su `versionSesion`.
+- **Cambiar la contraseña cierra todas las sesiones.** Al subir `versionSesion`,
+  los JWT anteriores dejan de valer. Si alguien entró con una contraseña robada,
+  pierde el acceso en cuanto Natalia la cambia.
+- **Contraseña larga, sin reglas de composición** (mínimo 12 caracteres). Sigue la
+  recomendación actual del NIST (SP 800-63B): las reglas del tipo "mayúscula,
+  número y símbolo" llevan a contraseñas previsibles como `Flamenco1!`. Una frase
+  como `bailo bulerias los martes` es más segura y más fácil de recordar.
+- **bcrypt con costo 12** (biblioteca `bcryptjs`). Es lento a propósito, para que
+  probar contraseñas por fuerza bruta sea caro. Se usa la versión en JavaScript
+  puro porque funciona en Netlify Functions sin compilar código nativo.
+- **Recuperación por mail.** En el login hay un enlace "Olvidé mi contraseña". A
+  Natalia le llega un enlace que vale 30 minutos y sirve una sola vez. Así no
+  depende de la desarrolladora (restricción de cero mantenimiento).
+- **Mensajes que no revelan información.** El login responde siempre "Mail o
+  contraseña incorrectos", sin decir cuál de los dos falló. Pedir la recuperación
+  responde siempre lo mismo, exista o no el mail. Así nadie puede averiguar qué
+  mail tiene cuenta.
+- **Aviso por mail cuando cambia la contraseña:** *"Tu contraseña fue cambiada. Si
+  no fuiste vos, avisá."* Si alguien entrara a su cuenta y la cambiara, Natalia se entera.
+- **Límite de intentos.** Login: 5 fallidos cada 15 minutos por IP. Recuperación:
+  3 pedidos por hora por IP. Igual que en Contacto, el contador vive en la base,
+  con la IP cifrada y vencimiento automático.
+- **Doble factor en el panel: fase 2.** Para el MVP alcanzan la contraseña larga,
+  el límite de intentos y el aviso por mail. Si hace falta, se suma después.
+
+### 11.3 Endpoints
+
+| Método | Ruta | Acceso | Uso |
+|---|---|---|---|
+| `POST` | `/api/auth/login` | público | Iniciar sesión: `{ "mail", "contrasena" }` |
+| `POST` | `/api/auth/logout` | público | Cerrar sesión: borra la cookie |
+| `GET` | `/api/auth/sesion` | protegido | El panel consulta si hay una sesión activa |
+| `POST` | `/api/auth/recuperar` | público | Pedir el enlace: `{ "mail" }` |
+| `POST` | `/api/auth/restablecer` | público | Elegir una contraseña nueva: `{ "token", "contrasenaNueva" }` |
+| `PUT` | `/api/auth/contrasena` | protegido | Cambiar la contraseña desde el panel: `{ "contrasenaActual", "contrasenaNueva" }` |
+
+> **Protección de rutas:** todos los endpoints marcados como "protegido" en este
+> documento verifican la cookie, la firma y el vencimiento del JWT y que
+> `versionSesion` coincida con la del usuario. Si algo falla → `401`.
+
+### 11.4 Criterios de aceptación (→ tests)
+
+**`POST /api/auth/login`**
+- Mail y contraseña correctos → `200` y cookie `sesion` con `httpOnly`, `Secure`,
+  `SameSite=Strict` y vencimiento a 7 días. La respuesta no incluye el token.
+- El mail se acepta con mayúsculas o minúsculas.
+- Contraseña incorrecta → `401` con "Mail o contraseña incorrectos".
+- Mail inexistente → `401` con **el mismo** mensaje.
+- Sexto intento fallido desde la misma IP en 15 minutos → `429`, aunque la contraseña sea correcta.
+
+**`POST /api/auth/logout`**
+- → `204` y la cookie queda vencida. Funciona aunque no haya sesión.
+
+**`GET /api/auth/sesion`**
+- Con sesión válida → `200` con el mail del usuario.
+- Sin cookie, con JWT vencido, con firma inválida o con `versionSesion` vieja → `401`.
+
+**`POST /api/auth/recuperar`**
+- Mail existente → `200` y se envía el enlace. El token vence a los 30 minutos.
+- Mail inexistente → `200` con **la misma** respuesta, y no se envía nada.
+- Cuarto pedido desde la misma IP en una hora → `429`.
+
+**`POST /api/auth/restablecer`**
+- Token válido y contraseña de 12 caracteres o más → `200`. Sube `versionSesion`
+  (las sesiones abiertas dejan de valer), el token queda usado y se envía el aviso por mail.
+- Token vencido, ya usado o inexistente → `400`.
+- Contraseña de menos de 12 caracteres → `400`.
+
+**`PUT /api/auth/contrasena`**
+- Sin sesión → `401`.
+- Contraseña actual incorrecta → `400`.
+- Contraseña nueva de menos de 12 caracteres → `400`.
+- Correcto → `200`. Sube `versionSesion` y se emite una cookie nueva, así la
+  sesión actual sigue abierta y las otras se cierran. Se envía el aviso por mail.
+
+**Seguridad general**
+- La contraseña no aparece en ninguna respuesta, log ni mensaje de error.
+- Cualquier endpoint protegido con un JWT de una `versionSesion` vieja → `401`.
+
+---
+
+## 12. Pendientes de especificar
+
 - [ ] Servicio de email: Resend o Brevo. Requiere verificar el dominio en GoDaddy para enviar desde `@nataliariopedre.com`.
-- [ ] Validar con Natalia: plazo de conservación de los mensajes (propuesta: 2 años) y texto de privacidad.
+- [ ] Validar con Natalia: plazo de conservación de los mensajes (propuesta: 2 años), texto de privacidad, sesión de 7 días y recuperación por mail.
