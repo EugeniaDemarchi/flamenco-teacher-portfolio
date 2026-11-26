@@ -7,7 +7,7 @@
     "test:watch": "vitest",
     "build": "node scripts/build.mjs",
     "watch": "node scripts/build.mjs --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json"
   },
   "repository": {
     "type": "git",
