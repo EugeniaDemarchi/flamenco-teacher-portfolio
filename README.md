@@ -110,13 +110,13 @@ docs/
 
 Function and variable names are in Spanish, matching the domain (obras, clases, shows). Every function name starts with a verb that tells what kind of work it does:
 
-| Prefix | What it does | Touches the page? | Examples |
-|---|---|---|---|
-| `init…` | Entry point of a page module. Reads what it needs (e.g. the `slug` from the URL) and calls the functions below. One per module, called once at the bottom of the file. | Indirectly | `initObraDetalle`, `initClases` |
-| `render…` | Fills elements that **already exist** in the HTML shell (text, images, containers). | Yes | `renderBanner`, `renderTextos`, `renderClases` |
-| `crear…` | Builds a new element and **returns** it without inserting it. The caller decides where it goes. | No | `crearTarjetaClase`, `crearLinkUbicacion`, `crearPictureResponsive` |
-| `conectar…` | Attaches event listeners to existing elements. May return a function to control the behavior. | Yes (events) | `conectarModal` |
-| `obtener…` / `buscar…` / `extraer…` | Pure functions: data in, data out. No DOM access, so they are the easiest to test. | No | `obtenerGaleriaARenderizar`, `buscarSlug`, `extraerIdYoutube` |
+| Prefix                              | What it does                                                                                                                                                           | Touches the page? | Examples                                                            |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------- |
+| `init…`                             | Entry point of a page module. Reads what it needs (e.g. the `slug` from the URL) and calls the functions below. One per module, called once at the bottom of the file. | Indirectly        | `initObraDetalle`, `initClases`                                     |
+| `render…`                           | Fills elements that **already exist** in the HTML shell (text, images, containers).                                                                                    | Yes               | `renderBanner`, `renderTextos`, `renderClases`                      |
+| `crear…`                            | Builds a new element and **returns** it without inserting it. The caller decides where it goes.                                                                        | No                | `crearTarjetaClase`, `crearLinkUbicacion`, `crearPictureResponsive` |
+| `conectar…`                         | Attaches event listeners to existing elements. May return a function to control the behavior.                                                                          | Yes (events)      | `conectarModal`                                                     |
+| `obtener…` / `buscar…` / `extraer…` | Pure functions: data in, data out. No DOM access, so they are the easiest to test.                                                                                     | No                | `obtenerGaleriaARenderizar`, `buscarSlug`, `extraerIdYoutube`       |
 
 Other rules followed across the code:
 
@@ -132,7 +132,7 @@ Other rules followed across the code:
 - **Guard clauses for optional fields.** If an optional field is missing, the function returns early and the element is left empty or not created at all.
 - **Content is inserted with `textContent`, never `innerHTML`.** Once content comes from the admin panel, `innerHTML` would allow script injection (XSS). `innerHTML` is only used to empty a container or with fixed markup written in the code.
 - **Repeated values live in one constant** (e.g. `CARPETA_OBRAS`, `CARPETA_CLASES`).
-- **Comments explain *why*, not *what*.** Business rules belong in code, not in comments: a rule that only lives in a comment will eventually be broken by someone who never read it.
+- **Comments explain _why_, not _what_.** Business rules belong in code, not in comments: a rule that only lives in a comment will eventually be broken by someone who never read it.
 - **Old code is deleted, not commented out.** Git keeps the history.
 
 ## Content Management
@@ -153,3 +153,36 @@ The project is managed with Scrum in two-week sprints. Backlog, sprints and trac
 ## Author
 
 **Eugenia Demarchi** · [Portfolio](https://portfolio-demarchi.netlify.app/) · [GitHub](https://github.com/EugeniaDemarchi)
+
+## Backend (API)
+
+Express sobre Netlify Functions. El código vive en `server/`, organizado por capas:
+
+| Carpeta        | Responsabilidad                                                   |
+| -------------- | ----------------------------------------------------------------- |
+| `routes/`      | Qué método y URL existen, y qué controller los atiende            |
+| `controllers/` | Leen el pedido y arman la respuesta HTTP                          |
+| `services/`    | Reglas del negocio, sin saber nada de HTTP                        |
+| `models/`      | Forma de los datos en MongoDB                                     |
+| `middlewares/` | Controles antes de las rutas y manejo central de errores          |
+| `errors/`      | `ErrorApi`: errores esperados con el formato de la especificación |
+| `tests/`       | Un test por criterio de aceptación de la especificación           |
+
+`netlify/functions/api.ts` es la puerta de entrada: Netlify la ejecuta y `netlify.toml` redirige `/api/*` hacia ella.
+
+### Cómo correrlo
+
+1. Requisitos: Node 22 y Netlify CLI (`npm install -g netlify-cli`).
+2. `npm install`
+3. Copiar `.env.example` como `.env` y completar los valores. **El `.env` nunca se sube.**
+4. `netlify dev` → sitio y API en http://localhost:8888 (probar con `/api/health`).
+
+### Scripts
+
+| Comando              | Qué hace                                        |
+| -------------------- | ----------------------------------------------- |
+| `npm test`           | Corre todos los tests una vez                   |
+| `npm run test:watch` | Corre los tests cada vez que guardás un archivo |
+| `npm run typecheck`  | Revisa los tipos del frontend y del backend     |
+
+La especificación de la API está en [`docs/especificacion-api.md`](docs/especificacion-api.md).
