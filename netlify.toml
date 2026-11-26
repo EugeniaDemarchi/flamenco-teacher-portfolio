@@ -6,3 +6,9 @@ directory = "netlify/functions"
 from="/api/*"
 to= "/.netlify/functions/api/:splat"
 status = 200
+
+
+[dev]
+  framework = "#static"
+  publish = "."
+  port = 8888
