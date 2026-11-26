@@ -1,13 +1,13 @@
 {
   "name": "flamenco-teacher-portfolio",
   "version": "1.0.0",
-  "description": "/_mapsUrl — Natalia lo consigue buscando el lugar en Google Maps, clickeando \"Compartir\", y copiando el link._/",
-  "main": "index.js",
+  "description": "Sitio web de Natalia Riopedre, bailaora y docente de flamenco: frontend estático y API con Express en Netlify Functions.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "build": "node scripts/build.mjs",
     "watch": "node scripts/build.mjs --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json"
   },
   "repository": {
     "type": "git",
@@ -16,12 +16,25 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "22.x"
+  },
   "bugs": {
     "url": "https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio/issues"
   },
   "homepage": "https://github.com/EugeniaDemarchi/flamenco-teacher-portfolio#readme",
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.7",
+    "@types/supertest": "^7.2.1",
     "esbuild": "^0.28.1",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "supertest": "^7.3.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.2"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "serverless-http": "^4.0.0"
   }
 }

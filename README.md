@@ -110,13 +110,13 @@ docs/
 
 Function and variable names are in Spanish, matching the domain (obras, clases, shows). Every function name starts with a verb that tells what kind of work it does:
 
-| Prefix | What it does | Touches the page? | Examples |
-|---|---|---|---|
-| `init…` | Entry point of a page module. Reads what it needs (e.g. the `slug` from the URL) and calls the functions below. One per module, called once at the bottom of the file. | Indirectly | `initObraDetalle`, `initClases` |
-| `render…` | Fills elements that **already exist** in the HTML shell (text, images, containers). | Yes | `renderBanner`, `renderTextos`, `renderClases` |
-| `crear…` | Builds a new element and **returns** it without inserting it. The caller decides where it goes. | No | `crearTarjetaClase`, `crearLinkUbicacion`, `crearPictureResponsive` |
-| `conectar…` | Attaches event listeners to existing elements. May return a function to control the behavior. | Yes (events) | `conectarModal` |
-| `obtener…` / `buscar…` / `extraer…` | Pure functions: data in, data out. No DOM access, so they are the easiest to test. | No | `obtenerGaleriaARenderizar`, `buscarSlug`, `extraerIdYoutube` |
+| Prefix                              | What it does                                                                                                                                                           | Touches the page? | Examples                                                            |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------- |
+| `init…`                             | Entry point of a page module. Reads what it needs (e.g. the `slug` from the URL) and calls the functions below. One per module, called once at the bottom of the file. | Indirectly        | `initObraDetalle`, `initClases`                                     |
+| `render…`                           | Fills elements that **already exist** in the HTML shell (text, images, containers).                                                                                    | Yes               | `renderBanner`, `renderTextos`, `renderClases`                      |
+| `crear…`                            | Builds a new element and **returns** it without inserting it. The caller decides where it goes.                                                                        | No                | `crearTarjetaClase`, `crearLinkUbicacion`, `crearPictureResponsive` |
+| `conectar…`                         | Attaches event listeners to existing elements. May return a function to control the behavior.                                                                          | Yes (events)      | `conectarModal`                                                     |
+| `obtener…` / `buscar…` / `extraer…` | Pure functions: data in, data out. No DOM access, so they are the easiest to test.                                                                                     | No                | `obtenerGaleriaARenderizar`, `buscarSlug`, `extraerIdYoutube`       |
 
 Other rules followed across the code:
 
@@ -132,20 +132,53 @@ Other rules followed across the code:
 - **Guard clauses for optional fields.** If an optional field is missing, the function returns early and the element is left empty or not created at all.
 - **Content is inserted with `textContent`, never `innerHTML`.** Once content comes from the admin panel, `innerHTML` would allow script injection (XSS). `innerHTML` is only used to empty a container or with fixed markup written in the code.
 - **Repeated values live in one constant** (e.g. `CARPETA_OBRAS`, `CARPETA_CLASES`).
-- **Comments explain *why*, not *what*.** Business rules belong in code, not in comments: a rule that only lives in a comment will eventually be broken by someone who never read it.
+- **Comments explain _why_, not _what_.** Business rules belong in code, not in comments: a rule that only lives in a comment will eventually be broken by someone who never read it.
 - **Old code is deleted, not commented out.** Git keeps the history.
+
+## Backend (API)
+
+Express on Netlify Functions. The code lives in `server/`, organised in layers:
+
+| Folder         | Responsibility                                                     |
+| -------------- | ------------------------------------------------------------------ |
+| `routes/`      | Which method and URL exist, and which controller handles them      |
+| `controllers/` | Read the request and build the HTTP response                       |
+| `services/`    | Business rules, with no knowledge of HTTP                          |
+| `models/`      | Data shape in MongoDB                                              |
+| `middlewares/` | Checks that run before the routes, and centralised error handling  |
+| `errors/`      | `ErrorApi`: expected errors in the format defined by the spec      |
+| `tests/`       | One test per acceptance criterion in the spec                      |
+
+`netlify/functions/api.ts` is the entry point: Netlify runs it, and `netlify.toml` rewrites `/api/*` to it.
+
+### Running it locally
+
+1. Requirements: Node 22 and Netlify CLI (`npm install -g netlify-cli`).
+2. `npm install`
+3. Copy `.env.example` to `.env` and fill in the values. **Never commit `.env`.**
+4. `netlify dev` → site and API at http://localhost:8888 (try `/api/health`).
+
+### Scripts
+
+| Command              | What it does                             |
+| -------------------- | ---------------------------------------- |
+| `npm test`           | Runs every test once                     |
+| `npm run test:watch` | Re-runs the tests on every save          |
+| `npm run typecheck`  | Type-checks the frontend and the backend |
+
+The API specification (in Spanish) is in [`docs/especificacion-api.md`](docs/especificacion-api.md).
 
 ## Content Management
 
 Content is currently **developer-managed**: works, shows, classes, and their text all live in typed TypeScript data files under `JS/src/data/` (`obras.ts`, `shows.ts`, `clases.ts`), and are updated directly in code by the developer based on material Natalia provides. There is no backend and no admin interface today: adding a new work, updating a show date, or swapping an image requires a developer to edit the data files (and, for images, run the image-generation script), then rebuild and redeploy.
 
-A **backend with an admin panel is the next phase**, so Natalia can log in and manage **Obras, Clases and Shows** herself (create, edit, delete), and read the messages sent through the contact form. Planned stack: Express running on Netlify Functions, MongoDB Atlas, and Cloudinary for images. All decisions, data models and endpoints are documented in [`docs/especificacion-api.md`](docs/especificacion-api.md), written before implementation.
+A **backend with an admin panel is in progress**, so Natalia can log in and manage **Obras, Clases and Shows** herself (create, edit, delete), and read the messages sent through the contact form. Planned stack: Express running on Netlify Functions, MongoDB Atlas, and Cloudinary for images. All decisions, data models and endpoints are documented in [`docs/especificacion-api.md`](docs/especificacion-api.md), written before implementation. The API skeleton is in place (see [Backend (API)](#backend-api)); the content endpoints come next.
 
 ## Roadmap
 
 The project is managed with Scrum in two-week sprints. Backlog, sprints and traceability live in Jira (project `NR`); the full management plan is in [`docs/plan-de-gestion.md`](docs/plan-de-gestion.md).
 
-1. **Backend + admin panel**: Natalia manages Obras, Clases and Shows herself. Specification in progress: [`docs/especificacion-api.md`](docs/especificacion-api.md).
+1. **Backend + admin panel**: Natalia manages Obras, Clases and Shows herself. Specification written ([`docs/especificacion-api.md`](docs/especificacion-api.md)); API skeleton with tests in place.
 2. **Contact form through the project's own backend**: messages stored in the database and an email notice to Natalia, replacing Formspree.
 3. **Full Lighthouse pass** across all pages, with scores recorded in this README.
 4. **Phase 2**: editable Bio and Clases introduction.
