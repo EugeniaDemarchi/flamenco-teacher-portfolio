@@ -88,12 +88,15 @@ editarlas, pero no crearlas ni borrarlas.
 
 - **Lectura pública:** todos los `GET` de Obras, Clases y Shows.
 - **Escritura protegida:** todos los `POST`, `PUT` y `DELETE` requieren sesión iniciada.
-- **Un solo usuario** (Natalia), creado con un script. No existe registro público.
+- **Un solo usuario** (Natalia), creado con un script y **sin contraseña**: Natalia elige la suya con la recuperación por mail (sección 11). No existe registro público.
 - La contraseña se guarda como **hash** (bcrypt), nunca en texto plano. Detalle en la sección 11.
 - La sesión es un **JWT en cookie** `httpOnly`, `Secure` y `SameSite=Strict`, y dura 7 días.
 - **Límite de intentos** en el login: 5 fallidos cada 15 minutos.
 - Las claves y contraseñas viven en variables de entorno (`.env`), que **nunca** se suben al repositorio.
 - Recuperación de contraseña por mail, con un enlace de un solo uso (sección 11).
+- **Verificación en dos pasos en el mail de Natalia** (recomendada): ese mail es la llave de la recuperación (ver 11.2).
+- **Backup semanal de la base.** Se guardan las últimas 4 copias (un mes) y la más vieja se reemplaza sola.
+  Un dato borrado desde el panel puede seguir en las copias hasta que vence la última (4 semanas).
 
 ---
 
@@ -110,6 +113,22 @@ Toda imagen que se guarda en la base tiene esta forma:
 | `ancho` | número | sí | En píxeles. Se reserva el espacio en pantalla y se evita CLS |
 | `alto` | número | sí | En píxeles |
 | `alt` | texto | no | Texto alternativo. **Si queda vacío, se usa el título del elemento.** |
+| `encuadre` | opción | no | `auto` (por defecto), `arriba`, `centro` o `abajo` |
+
+**Encuadre:** la misma foto se recorta distinto según la pantalla. La portada de
+una obra es vertical en celular y tablet (4/5) y apaisada en laptop y computadora;
+el encabezado va de 1.5/1 en celular a 4/1 en computadora. Se resuelve en dos capas:
+
+- **Automático (`auto`):** el frontend le pide a Cloudinary una versión por tamaño
+  de pantalla (`<picture>`, `c_fill`) con `g_auto`, que centra el recorte en lo
+  importante de la foto (caras, personas). Alcanza para la mayoría de los casos.
+- **Manual (`arriba`, `centro`, `abajo`):** si el automático corta algo, como una
+  cabeza, Natalia fija el punto. Se traduce a `g_north`, `g_center` o `g_south`.
+
+En el panel, cada imagen muestra una vista previa para celular, tablet, laptop y
+computadora, y cambia en el momento al elegir el encuadre. Esto reemplaza los
+ajustes por obra escritos a mano en `CSS/obra.css` y `CSS/obra-detalle.css`
+(`object-position` por slug). *(Requiere ajustar esos archivos al conectar con la API.)*
 
 ### 6.2 Ubicación
 
@@ -151,7 +170,7 @@ en lugar de reescribirlas (ver 8.2).
 | `_id` | ID de MongoDB | automático | — |
 | `titulo` | texto | sí | 1 a 120 caracteres |
 | `slug` | texto | automático | Se genera **desde el título al crear** y **no cambia después** (ver 7.2). Único. |
-| `rol` | texto | sí | 1 a 80 caracteres. Ej.: "Directora e intérprete" |
+| `rol` | texto | sí | 1 a 80 caracteres. Texto libre con sugerencias (ver 7.2). Ej.: "Directora e intérprete" |
 | `descripcionCorta` | texto | sí | 1 a 300 caracteres |
 | `descripcionLarga` | texto | no | Hasta 5000 caracteres |
 | `imagenPortada` | Imagen | sí | Se muestra en la grilla de Obras |
@@ -171,6 +190,9 @@ en lugar de reescribirlas (ver 8.2).
   Se elimina: la galería guarda solo imágenes extra y **el frontend arma lo que
   muestra** — en computadora `[imgPpal, ...galeria]`, en celular solo `galeria`.
   *(Requiere ajustar `render-obra-detalle.ts` al conectar con la API.)*
+- **Rol libre con sugerencias.** Natalia escribe su rol en cada obra y el panel le
+  sugiere los que ya usó (`GET /api/obras/roles`), igual que la categoría de los
+  shows (ver 9.2). Así no quedan variantes como "Intérprete" e "Interprete".
 - **`imgPpal` opcional.** En la mayoría de las obras es la misma imagen que la
   portada: Natalia sube una sola imagen salvo que quiera un banner distinto.
 - **Orden del listado: alfabético por título**, igual que en el frontend actual
@@ -183,11 +205,14 @@ en lugar de reescribirlas (ver 8.2).
 |---|---|---|---|
 | `GET` | `/api/obras` | público | Grilla de Obras |
 | `GET` | `/api/obras/:slug` | público | Página de detalle (`obra-detalle.html?slug=...`) |
+| `GET` | `/api/obras/roles` | protegido | Sugerencias de rol en el panel |
 | `POST` | `/api/obras` | protegido | Crear obra desde el panel |
 | `PUT` | `/api/obras/:id` | protegido | Editar obra desde el panel |
 | `DELETE` | `/api/obras/:id` | protegido | Borrar obra desde el panel |
 
 > Las rutas públicas usan `slug` (es lo que aparece en la URL del sitio).
+> `/api/obras/roles` se declara **antes** que `/api/obras/:slug`, para que Express
+> no tome "roles" como un slug.
 > Las rutas del panel usan `id` (no cambia nunca y no depende del título).
 
 ### 7.4 Criterios de aceptación (→ tests)
@@ -219,6 +244,10 @@ en lugar de reescribirlas (ver 8.2).
 - Sin sesión → `401`.
 - `id` inexistente → `404`.
 - Correcto → `204`, y las imágenes de la obra se borran de Cloudinary.
+
+**`GET /api/obras/roles`**
+- Sin sesión → `401`.
+- Devuelve `200` con los roles distintos ya usados, sin repetidos y en orden alfabético.
 
 ---
 
@@ -394,6 +423,9 @@ en lugar de reescribirlas (ver 8.2).
   - Puntual: la primera función vigente.
   - Recurrente: el próximo `diaSemana` desde hoy (si es hoy, cuenta hoy), con su hora.
   - Si dos shows empatan, van en orden alfabético por título.
+- **Artistas con sugerencias.** El rol y los nombres son texto libre, y el panel
+  sugiere los ya cargados (`GET /api/shows/artistas`), para no reescribir a las
+  mismas personas en cada show ni crear variantes del mismo nombre.
 - **La obra relacionada se elige de un desplegable**, no escribiendo el slug a mano.
   La API devuelve su `slug` y su `titulo` para armar el link. Si la obra se borra,
   el show sigue existiendo y el link deja de mostrarse.
@@ -411,6 +443,7 @@ en lugar de reescribirlas (ver 8.2).
 | `GET` | `/api/shows` | público | Página de Shows: solo los vigentes, en orden |
 | `GET` | `/api/shows/todos` | protegido | Panel: todos, incluidos los pasados, cada uno con `estado`: `vigente` o `pasado` |
 | `GET` | `/api/shows/categorias` | protegido | Sugerencias de categoría en el panel |
+| `GET` | `/api/shows/artistas` | protegido | Sugerencias de artistas: `{ "roles": [...], "nombres": [...] }` |
 | `POST` | `/api/shows` | protegido | Crear show |
 | `PUT` | `/api/shows/:id` | protegido | Editar show |
 | `DELETE` | `/api/shows/:id` | protegido | Borrar show |
@@ -463,6 +496,10 @@ Los tests fijan la fecha de "hoy" para que el resultado no dependa del día en q
 - Sin sesión → `401`.
 - `id` inexistente → `404`.
 - Correcto → `204`, y la imagen del show se borra de Cloudinary.
+
+**`GET /api/shows/artistas`**
+- Sin sesión → `401`.
+- Devuelve `200` con los roles y los nombres distintos ya usados, sin repetidos y en orden alfabético.
 
 ---
 
@@ -523,7 +560,10 @@ El formulario envía además dos campos de control que **no se guardan** (ver 10
 - **Borrado automático a los 2 años** desde la creación del mensaje, con un
   índice de vencimiento (TTL) de MongoDB. Es lo habitual para consultas (entre 1 y
   2 años) y alcanza para que Natalia tenga el historial de alumnas y contrataciones.
-  **Propuesta a validar con Natalia y a confirmar con el abogado (NR-50).**
+  **Propuesta a validar con Natalia.**
+- **Borrar un mensaje es definitivo.** No hay papelera: el mensaje se elimina de la
+  base. Antes de borrar, el panel pide confirmación dentro de la página (no con
+  `confirm()`). Solo puede seguir en las copias de seguridad hasta 4 semanas (ver 5).
 - **Errores en pantalla, no en `alert()`.** Si el envío falla, el formulario
   muestra el error debajo del botón y no borra lo que la persona escribió.
 - **Panel:** lista de mensajes del más nuevo al más viejo, marca de leído / no
@@ -572,7 +612,7 @@ El formulario envía además dos campos de control que **no se guardan** (ver 10
 **`DELETE /api/mensajes/:id`**
 - Sin sesión → `401`.
 - `id` inexistente → `404`.
-- Correcto → `204`.
+- Correcto → `204` y el mensaje ya no está en la base.
 
 **Borrado automático**
 - La colección tiene un índice TTL sobre `createdAt` de 2 años (730 días).
@@ -582,8 +622,9 @@ El formulario envía además dos campos de control que **no se guardan** (ver 10
 ## 11. Autenticación
 
 Un solo usuario: Natalia. No hay registro público. La cuenta se crea con un
-script (`npm run crear-admin`) que pide el mail y la contraseña por consola, sin
-pasarlos como argumentos, para que no queden en el historial de la terminal.
+script (`npm run crear-admin`) que pide **solo el mail** por consola y crea el
+usuario **sin contraseña**. La primera vez, Natalia entra con "Olvidé mi
+contraseña" y elige la suya (ver 11.2).
 
 ### 11.1 Modelos
 
@@ -593,7 +634,7 @@ pasarlos como argumentos, para que no queden en el historial de la terminal.
 |---|---|---|
 | `_id` | ID de MongoDB | automático |
 | `mail` | texto | Único. Se guarda en minúsculas. |
-| `hashContrasena` | texto | Hash bcrypt de la contraseña. La contraseña nunca se guarda. |
+| `hashContrasena` | texto | Hash bcrypt de la contraseña. Vacío (`null`) hasta que Natalia elige la suya. La contraseña nunca se guarda. |
 | `versionSesion` | número | Empieza en 1 y sube cada vez que cambia la contraseña (ver 11.2) |
 | `createdAt` / `updatedAt` | fecha | Los completa MongoDB |
 
@@ -611,6 +652,10 @@ acentos, emojis). No se exigen mayúsculas, números ni símbolos.
 
 ### 11.2 Decisiones y su motivo
 
+- **Alta sin contraseña.** La desarrolladora nunca conoce la contraseña de Natalia:
+  no hay una contraseña temporal que pasar por mail o chat, ni que quede sin cambiar.
+  Además deja claro que solo Natalia tiene acceso al panel. Reusa la recuperación,
+  así que no suma código. Requiere que el servicio de mail funcione antes de la entrega.
 - **Sesión de 7 días** en el dispositivo de Natalia, con botón "Cerrar sesión".
   Entra al panel cada tanto y no tiene que iniciar sesión cada vez. Si usa una
   computadora ajena, cierra la sesión al terminar (lo explica el manual de usuario).
@@ -641,6 +686,12 @@ acentos, emojis). No se exigen mayúsculas, números ni símbolos.
 - **Límite de intentos.** Login: 5 fallidos cada 15 minutos por IP. Recuperación:
   3 pedidos por hora por IP. Igual que en Contacto, el contador vive en la base,
   con la IP cifrada y vencimiento automático.
+- **Botón para mostrar la contraseña** (ojito) en todos los campos de contraseña
+  del panel: login, restablecer y Mi cuenta. Con contraseñas largas, ver lo que se
+  escribe evita errores. Es accesible: `aria-label` y `aria-pressed`.
+- **Verificación en dos pasos en el mail de Natalia (recomendada).** El mail es la
+  llave de la recuperación: quien entre a su correo puede elegir una contraseña
+  nueva para el panel. Se le recomienda activarla en su correo y figura en el manual de usuario.
 - **Doble factor en el panel: fase 2.** Para el MVP alcanzan la contraseña larga,
   el límite de intentos y el aviso por mail. Si hace falta, se suma después.
 
@@ -667,6 +718,7 @@ acentos, emojis). No se exigen mayúsculas, números ni símbolos.
 - El mail se acepta con mayúsculas o minúsculas.
 - Contraseña incorrecta → `401` con "Mail o contraseña incorrectos".
 - Mail inexistente → `401` con **el mismo** mensaje.
+- Usuario que todavía no eligió contraseña → `401` con **el mismo** mensaje.
 - Sexto intento fallido desde la misma IP en 15 minutos → `429`, aunque la contraseña sea correcta.
 
 **`POST /api/auth/logout`**
@@ -686,6 +738,7 @@ acentos, emojis). No se exigen mayúsculas, números ni símbolos.
   (las sesiones abiertas dejan de valer), el token queda usado y se envía el aviso por mail.
 - Token vencido, ya usado o inexistente → `400`.
 - Contraseña de menos de 12 caracteres → `400`.
+- Funciona igual para un usuario sin contraseña: así elige la primera.
 
 **`PUT /api/auth/contrasena`**
 - Sin sesión → `401`.
@@ -704,3 +757,4 @@ acentos, emojis). No se exigen mayúsculas, números ni símbolos.
 
 - [ ] Servicio de email: Resend o Brevo. Requiere verificar el dominio en GoDaddy para enviar desde `@nataliariopedre.com`.
 - [ ] Validar con Natalia: plazo de conservación de los mensajes (propuesta: 2 años), texto de privacidad, sesión de 7 días y recuperación por mail.
+  Enviado el 27/11 con un video del prototipo del panel y 5 preguntas por escrito; responde después del 15/12.

@@ -21,6 +21,7 @@ Verificación en dos pasos (2FA) con app autenticadora; el SMS solo como respald
 | Google | Search Console y Perfil de Empresa | Natalia, administrada por la desarrolladora hasta el traspaso (NR-57) | App autenticadora | Códigos alternativos | 08/11/2026 |
 | MongoDB Atlas | Base de datos | Natalia (NR-17) | Pendiente | — | — |
 | Cloudinary | Imágenes | Natalia (NR-17) | Pendiente | — | — |
+| Mail de Natalia | Recuperación de la contraseña del panel | Natalia | Recomendada (es la llave del panel) | — | — |
 
 **Mínimo privilegio:** la app GitHub for Atlassian tiene acceso solo a este
 repositorio. Las cuentas de Natalia se traspasan con acceso delegado para la
@@ -47,5 +48,5 @@ desarrolladora, sin compartir contraseñas (NR-57).
 ## 4. Pendiente
 
 Según el plan de gestión (sprint 7 y hito H7): cabeceras de seguridad, auditoría
-de dependencias, backup de la base de datos, registro de actividad del panel y
+de dependencias, backup semanal de la base de datos (se guardan las últimas 4 copias), registro de actividad del panel y
 revisión OWASP Top 10 (NR-56).
