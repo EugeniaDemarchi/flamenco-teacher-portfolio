@@ -28,6 +28,7 @@
     "@types/node": "^22.20.7",
     "@types/supertest": "^7.2.1",
     "esbuild": "^0.28.1",
+    "mongodb-memory-server": "^11.4.0",
     "sharp": "^0.35.3",
     "supertest": "^7.3.2",
     "typescript": "^7.0.2",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "express": "^5.3.0",
+    "mongoose": "^9.13.1",
     "serverless-http": "^4.0.0"
   }
 }
